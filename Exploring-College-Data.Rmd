@@ -9,3 +9,18 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+We will start by importing the data from The Wall Street Journal and Payscale regarding Salaries based on college.
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+
+```
+
+```{r}
+
+salaries = read.csv("Data/college-salaries/salaries-by-college-type.csv")
+salaries
+
+
+
+```

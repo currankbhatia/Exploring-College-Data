@@ -124,7 +124,1090 @@ $(document).ready(function () {
 </div>
 
 
-
+<p>We will start by importing the data from The Wall Street Journal and Payscale regarding Salaries based on college.</p>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre class="r"><code>salaries = read.csv(&quot;Data/college-salaries/salaries-by-college-type.csv&quot;)
+salaries</code></pre>
+<pre><code>##                                                             School.Name
+## 1                           Massachusetts Institute of Technology (MIT)
+## 2                              California Institute of Technology (CIT)
+## 3                                                   Harvey Mudd College
+## 4                          Polytechnic University of New York, Brooklyn
+## 5                                                          Cooper Union
+## 6                                 Worcester Polytechnic Institute (WPI)
+## 7                                      Carnegie Mellon University (CMU)
+## 8                                Rensselaer Polytechnic Institute (RPI)
+## 9                                       Georgia Institute of Technology
+## 10                                             Colorado School of Mines
+## 11                                      Stevens Institute of Technology
+## 12                               Illinois Institute of Technology (IIT)
+## 13                                    Wentworth Institute of Technology
+## 14  Virginia Polytechnic Institute and State University (Virginia Tech)
+## 15                            South Dakota School of Mines &amp; Technology
+## 16      New Mexico Institute of Mining and Technology (New Mexico Tech)
+## 17                              Rochester Institute of Technology (RIT)
+## 18                          Embry-Riddle Aeronautical University (ERAU)
+## 19                                   Tennessee Technological University
+## 20                    University of Illinois at Urbana-Champaign (UIUC)
+## 21                                 University of Maryland, College Park
+## 22                       University of California, Santa Barbara (UCSB)
+## 23                                    University of Texas (UT) - Austin
+## 24                        State University of New York (SUNY) at Albany
+## 25                                           University of Florida (UF)
+## 26                                     Louisiana State University (LSU)
+## 27                                          University of Georgia (UGA)
+## 28                                  Pennsylvania State University (PSU)
+## 29                                       Arizona State University (ASU)
+## 30                                 Indiana University (IU), Bloomington
+## 31                                              University of Iowa (UI)
+## 32                                               Randolph-Macon College
+## 33                                    University of Alabama, Tuscaloosa
+## 34                                            University of Mississippi
+## 35                                    University of New Hampshire (UNH)
+## 36                                       West Virginia University (WVU)
+## 37                                              University of Tennessee
+## 38                                                      Ohio University
+## 39                                       Florida State University (FSU)
+## 40                                                  Bucknell University
+## 41                                                   Colgate University
+## 42                                                      Amherst College
+## 43                                                    Lafayette College
+## 44                                                      Bowdoin College
+## 45                                            College of the Holy Cross
+## 46                                                   Occidental College
+## 47                                        Washington and Lee University
+## 48                                                   Swarthmore College
+## 49                                                     Davidson College
+## 50                                                     Carleton College
+## 51                                                     Williams College
+## 52                                                       Pomona College
+## 53                        Wesleyan University (Middletown, Connecticut)
+## 54                                                        Bates College
+## 55                                                        Union College
+## 56                                               University of Richmond
+## 57                                                       Vassar College
+## 58                                                   Middlebury College
+## 59                                                Mount Holyoke College
+## 60                                        Franklin and Marshall College
+## 61                                                    DePauw University
+## 62                                                     St. Olaf College
+## 63                                                        Colby College
+## 64                                                   Gettysburg College
+## 65                                                        Siena College
+## 66                                                        Smith College
+## 67                                                     Hamilton College
+## 68                                               Randolph-Macon College
+## 69                                                    Wellesley College
+## 70                                                   Denison University
+## 71                                                      Oberlin College
+## 72                                            University of Puget Sound
+## 73                                                Colorado College (CC)
+## 74                                                         Reed College
+## 75                                            Gustavus Adolphus College
+## 76                                                      Whitman College
+## 77                                                      Ursinus College
+## 78                                                      Juniata College
+## 79                                                Wittenberg University
+## 80                                                     Grinnell College
+## 81                                                     Skidmore College
+## 82                                                     Moravian College
+## 83                                                Lewis &amp; Clark College
+## 84                                                   Fort Lewis College
+## 85                                               Thomas Aquinas College
+## 86                                              Evergreen State College
+## 87                                                    Dartmouth College
+## 88                                                 Princeton University
+## 89                                                      Yale University
+## 90                                                   Harvard University
+## 91                                           University of Pennsylvania
+## 92                                                   Cornell University
+## 93                                                     Brown University
+## 94                                                  Columbia University
+## 95                                   University of California, Berkeley
+## 96                                         University of Virginia (UVA)
+## 97                                             Cal Poly San Luis Obispo
+## 98                       University of California at Los Angeles (UCLA)
+## 99                           University of California, San Diego (UCSD)
+## 100                                     University of California, Davis
+## 101                              University of Colorado - Boulder (UCB)
+## 102                              University of California, Irvine (UCI)
+## 103                   University of Illinois at Urbana-Champaign (UIUC)
+## 104                                                Texas A&amp;M University
+## 105                                               Binghamton University
+## 106                                University of Missouri - Rolla (UMR)
+## 107                                    San Jose State University (SJSU)
+## 108                                University of Maryland, College Park
+## 109                      University of California, Santa Barbara (UCSB)
+## 110                                   University of Texas (UT) - Austin
+## 111                                              University of Michigan
+## 112                                              Stony Brook University
+## 113                       State University of New York (SUNY) at Albany
+## 114                                                  Rutgers University
+## 115                                                   Purdue University
+## 116                                   University of Connecticut (UConn)
+## 117                       University of Massachusetts (UMass) - Amherst
+## 118                            California State University (CSU), Chico
+## 119                                          University of Florida (UF)
+## 120                              University of Wisconsin (UW) - Madison
+## 121                                    Louisiana State University (LSU)
+## 122                       California State University, Fullerton (CSUF)
+## 123                                             George Mason University
+## 124                        University of Massachusetts (UMass) - Lowell
+## 125                               San Francisco State University (SFSU)
+## 126                                               University of Arizona
+## 127                                                  Clemson University
+## 128                                         University of Georgia (UGA)
+## 129                                 Pennsylvania State University (PSU)
+## 130                                       University of Washington (UW)
+## 131                                     Michigan State University (MSU)
+## 132                                    University of Rhode Island (URI)
+## 133                                   San Diego State University (SDSU)
+## 134                                                   Auburn University
+## 135                                   Washington State University (WSU)
+## 136                     California State University, Long Beach (CSULB)
+## 137                                               Iowa State University
+## 138                                              University of Delaware
+## 139                                     University of Colorado - Denver
+## 140                       California State University, East Bay (CSUEB)
+## 141                  State University of New York (SUNY) at Farmingdale
+## 142                                             University of Minnesota
+## 143                                      Arizona State University (ASU)
+## 144                         University of California, Santa Cruz (UCSC)
+## 145                                Indiana University (IU), Bloomington
+## 146                                             University of Iowa (UI)
+## 147                                         Ohio State University (OSU)
+## 148                              North Carolina State University (NCSU)
+## 149                                       Oregon State University (OSU)
+## 150                                                  University of Utah
+## 151                                    University of Nevada, Reno (UNR)
+## 152                                              University of Oklahoma
+## 153                                              University of Arkansas
+## 154                                         University of Vermont (UVM)
+## 155                           University of Alabama at Huntsville (UAH)
+## 156                      California State University, Sacramento (CSUS)
+## 157                                                 University of Idaho
+## 158                                   University of Illinois at Chicago
+## 159                      State University of New York (SUNY) at Buffalo
+## 160                                                University of Kansas
+## 161                                      University of New Mexico (UNM)
+## 162                  University of North Carolina at Chapel Hill (UNCH)
+## 163                                   University of Alabama, Tuscaloosa
+## 164                           University of California, Riverside (UCR)
+## 165                      State University of New York (SUNY) at Geneseo
+## 166                                   University of Missouri - Columbia
+## 167                                              University of Nebraska
+## 168                              University of Texas at Arlington (UTA)
+## 169                                  Northern Illinois University (NIU)
+## 170                                           Oklahoma State University
+## 171                                          University of North Dakota
+## 172                      California State University, Northridge (CSUN)
+## 173                                          University of Houston (UH)
+## 174                                           University of Mississippi
+## 175                                         New Mexico State University
+## 176                                                    Lamar University
+## 177                                  Mississippi State University (MSU)
+## 178                                     Colorado State University (CSU)
+## 179                                       Kansas State University (KSU)
+## 180                                          University of Wyoming (UW)
+## 181                                               Utah State University
+## 182                          University of Wisconsin (UW) - Platteville
+## 183                                                University of Oregon
+## 184                                         University of Kentucky (UK)
+## 185                                   University of New Hampshire (UNH)
+## 186                        University of Massachusetts (UMass) - Boston
+## 187                                      West Virginia University (WVU)
+## 188                      University of Maryland Baltimore County (UMBC)
+## 189                                North Dakota State University (NDSU)
+## 190                       State University of New York (SUNY) at Oswego
+## 191                     University of Massachusetts (UMass) - Dartmouth
+## 192                                  Montana State University - Bozeman
+## 193                      State University of New York (SUNY) at Oneonta
+## 194                           University of Louisiana (UL) at Lafayette
+## 195                  State University of New York (SUNY) at Plattsburgh
+## 196                                              Wayne State University
+## 197                                                University of Hawaii
+## 198                                                University of Toledo
+## 199                              Florida International University (FIU)
+## 200                           University of Wisconsin (UW) - Whitewater
+## 201                                       Western Washington University
+## 202                                Minnesota State University - Mankato
+## 203                                             University of Tennessee
+## 204                            University of Wisconsin (UW) - Milwaukee
+## 205                           University of Arkansas - Monticello (UAM)
+## 206                                             Penn State - Harrisburg
+## 207                    University of North Carolina at Charlotte (UNCC)
+## 208                                            Georgia State University
+## 209                                   Western Michigan University (WMU)
+## 210                                South Dakota State University (SDSU)
+## 211                                              Idaho State University
+## 212                                                     Ohio University
+## 213                                           Illinois State University
+## 214                                          Cleveland State University
+## 215                                      Florida State University (FSU)
+## 216                                     University of Alaska, Anchorage
+## 217                                             Fitchburg State College
+## 218                                     University of Nebraska at Omaha
+## 219                             Southern Illinois University Carbondale
+## 220                               University of Texas at El Paso (UTEP)
+## 221                California State University, Dominguez Hills (CSUDH)
+## 222                                                 University Of Maine
+## 223                                         Eastern Michigan University
+## 224                                      Bowling Green State University
+## 225                                               University of Montana
+## 226                                 University of Central Florida (UCF)
+## 227                                        University of South Carolina
+## 228                              University of Nevada, Las Vegas (UNLV)
+## 229                                          St. Cloud State University
+## 230                             University of Wisconsin (UW) - Parkside
+## 231                       California State University (CSU), Stanislaus
+## 232                                           Humboldt State University
+## 233                                   Florida Atlantic University (FAU)
+## 234                                   University of South Florida (USF)
+## 235                                     Portland State University (PSU)
+## 236                                       Eastern Washington University
+## 237                           University of Texas at San Antonio (UTSA)
+## 238                                                 University of Akron
+## 239                      State University of New York (SUNY) at Potsdam
+## 240                           University of Alabama at Birmingham (UAB)
+## 241                                      University of Memphis (U of M)
+## 242                                        Boise State University (BSU)
+## 243                                     Missouri State University (MSU)
+## 244                            University of Wisconsin (UW) - La Crosse
+## 245                                        Appalachian State University
+## 246                              Virginia Commonwealth University (VCU)
+## 247                                University of Wisconsin (UW) - Stout
+## 248                                      East Carolina University (ECU)
+## 249                                           Utah Valley State College
+## 250                           University of Missouri - St. Louis (UMSL)
+## 251                                         Western Carolina University
+## 252                              University of Wisconsin (UW) - Oshkosh
+## 253                     State University of New York (SUNY) at Fredonia
+## 254                         University of Missouri - Kansas City (UMKC)
+## 255                           University of Wisconsin (UW) - Eau Claire
+## 256                                         Ball State University (BSU)
+## 257                   University of North Carolina at Wilmington (UNCW)
+## 258                        University of Wisconsin (UW) - Stevens Point
+## 259                                        University of Southern Maine
+## 260                                     Arkansas State University (ASU)
+## 261                                               Kent State University
+## 262                                     Tarleton State University (TSU)
+## 263                            University of Wisconsin (UW) - Green Bay
+## 264                                           Morehead State University
+## 265                                        Austin Peay State University
+## 266                                          Pittsburg State University
+## 267                                            Southern Utah University
+## 268                                 Montana State University - Billings
+## 269                                        Black Hills State University
+##      School.Type Starting.Median.Salary Mid.Career.Median.Salary
+## 1    Engineering             $72,200.00              $126,000.00
+## 2    Engineering             $75,500.00              $123,000.00
+## 3    Engineering             $71,800.00              $122,000.00
+## 4    Engineering             $62,400.00              $114,000.00
+## 5    Engineering             $62,200.00              $114,000.00
+## 6    Engineering             $61,000.00              $114,000.00
+## 7    Engineering             $61,800.00              $111,000.00
+## 8    Engineering             $61,100.00              $110,000.00
+## 9    Engineering             $58,300.00              $106,000.00
+## 10   Engineering             $58,100.00              $106,000.00
+## 11   Engineering             $60,600.00              $105,000.00
+## 12   Engineering             $56,000.00               $97,800.00
+## 13   Engineering             $53,000.00               $96,700.00
+## 14   Engineering             $53,500.00               $95,400.00
+## 15   Engineering             $55,800.00               $93,400.00
+## 16   Engineering             $51,000.00               $93,400.00
+## 17   Engineering             $48,900.00               $84,600.00
+## 18   Engineering             $52,700.00               $80,700.00
+## 19   Engineering             $46,200.00               $80,000.00
+## 20         Party             $52,900.00               $96,100.00
+## 21         Party             $52,000.00               $95,000.00
+## 22         Party             $50,500.00               $95,000.00
+## 23         Party             $49,700.00               $93,900.00
+## 24         Party             $44,500.00               $92,200.00
+## 25         Party             $47,100.00               $87,900.00
+## 26         Party             $46,900.00               $87,800.00
+## 27         Party             $44,100.00               $86,000.00
+## 28         Party             $49,900.00               $85,700.00
+## 29         Party             $47,400.00               $84,100.00
+## 30         Party             $46,300.00               $84,000.00
+## 31         Party             $44,700.00               $83,900.00
+## 32         Party             $42,600.00               $83,600.00
+## 33         Party             $41,300.00               $81,400.00
+## 34         Party             $41,400.00               $79,700.00
+## 35         Party             $41,800.00               $78,300.00
+## 36         Party             $43,100.00               $78,100.00
+## 37         Party             $43,800.00               $74,600.00
+## 38         Party             $42,200.00               $73,400.00
+## 39         Party             $42,100.00               $73,000.00
+## 40  Liberal Arts             $54,100.00              $110,000.00
+## 41  Liberal Arts             $52,800.00              $108,000.00
+## 42  Liberal Arts             $54,500.00              $107,000.00
+## 43  Liberal Arts             $53,900.00              $107,000.00
+## 44  Liberal Arts             $48,100.00              $107,000.00
+## 45  Liberal Arts             $50,200.00              $106,000.00
+## 46  Liberal Arts             $51,900.00              $105,000.00
+## 47  Liberal Arts             $53,600.00              $104,000.00
+## 48  Liberal Arts             $49,700.00              $104,000.00
+## 49  Liberal Arts             $46,100.00              $104,000.00
+## 50  Liberal Arts             $47,500.00              $103,000.00
+## 51  Liberal Arts             $51,700.00              $102,000.00
+## 52  Liberal Arts             $48,600.00              $101,000.00
+## 53  Liberal Arts             $46,500.00               $97,900.00
+## 54  Liberal Arts             $47,300.00               $96,500.00
+## 55  Liberal Arts             $47,200.00               $95,800.00
+## 56  Liberal Arts             $48,600.00               $94,600.00
+## 57  Liberal Arts             $46,000.00               $94,600.00
+## 58  Liberal Arts             $47,700.00               $94,200.00
+## 59  Liberal Arts             $42,400.00               $94,100.00
+## 60  Liberal Arts             $49,100.00               $92,800.00
+## 61  Liberal Arts             $41,400.00               $88,300.00
+## 62  Liberal Arts             $45,300.00               $86,200.00
+## 63  Liberal Arts             $46,400.00               $85,800.00
+## 64  Liberal Arts             $44,700.00               $85,800.00
+## 65  Liberal Arts             $45,500.00               $85,200.00
+## 66  Liberal Arts             $44,000.00               $83,900.00
+## 67  Liberal Arts             $49,200.00               $83,700.00
+## 68  Liberal Arts             $42,600.00               $83,600.00
+## 69  Liberal Arts             $42,800.00               $83,500.00
+## 70  Liberal Arts             $42,000.00               $83,500.00
+## 71  Liberal Arts             $43,400.00               $81,600.00
+## 72  Liberal Arts             $46,600.00               $81,500.00
+## 73  Liberal Arts             $38,500.00               $81,400.00
+## 74  Liberal Arts             $40,500.00               $81,100.00
+## 75  Liberal Arts             $44,500.00               $80,600.00
+## 76  Liberal Arts             $43,500.00               $80,100.00
+## 77  Liberal Arts             $42,100.00               $80,000.00
+## 78  Liberal Arts             $41,800.00               $78,900.00
+## 79  Liberal Arts             $39,200.00               $78,200.00
+## 80  Liberal Arts             $42,600.00               $76,600.00
+## 81  Liberal Arts             $41,600.00               $74,600.00
+## 82  Liberal Arts             $42,500.00               $74,400.00
+## 83  Liberal Arts             $38,900.00               $72,600.00
+## 84  Liberal Arts             $42,000.00               $69,800.00
+## 85  Liberal Arts             $41,500.00               $67,500.00
+## 86  Liberal Arts             $39,500.00               $63,900.00
+## 87    Ivy League             $58,000.00              $134,000.00
+## 88    Ivy League             $66,500.00              $131,000.00
+## 89    Ivy League             $59,100.00              $126,000.00
+## 90    Ivy League             $63,400.00              $124,000.00
+## 91    Ivy League             $60,900.00              $120,000.00
+## 92    Ivy League             $60,300.00              $110,000.00
+## 93    Ivy League             $56,200.00              $109,000.00
+## 94    Ivy League             $59,400.00              $107,000.00
+## 95         State             $59,900.00              $112,000.00
+## 96         State             $52,700.00              $103,000.00
+## 97         State             $57,200.00              $101,000.00
+## 98         State             $52,600.00              $101,000.00
+## 99         State             $51,100.00              $101,000.00
+## 100        State             $52,300.00               $99,600.00
+## 101        State             $47,100.00               $97,600.00
+## 102        State             $48,300.00               $96,700.00
+## 103        State             $52,900.00               $96,100.00
+## 104        State             $49,700.00               $96,100.00
+## 105        State             $53,600.00               $95,900.00
+## 106        State             $57,100.00               $95,800.00
+## 107        State             $53,500.00               $95,600.00
+## 108        State             $52,000.00               $95,000.00
+## 109        State             $50,500.00               $95,000.00
+## 110        State             $49,700.00               $93,900.00
+## 111        State             $52,700.00               $93,000.00
+## 112        State             $49,500.00               $93,000.00
+## 113        State             $44,500.00               $92,200.00
+## 114        State             $50,300.00               $91,800.00
+## 115        State             $51,400.00               $90,500.00
+## 116        State             $48,000.00               $88,800.00
+## 117        State             $46,600.00               $88,200.00
+## 118        State             $47,400.00               $88,100.00
+## 119        State             $47,100.00               $87,900.00
+## 120        State             $48,900.00               $87,800.00
+## 121        State             $46,900.00               $87,800.00
+## 122        State             $45,700.00               $87,000.00
+## 123        State             $47,800.00               $86,900.00
+## 124        State             $45,400.00               $86,600.00
+## 125        State             $47,300.00               $86,400.00
+## 126        State             $47,500.00               $86,100.00
+## 127        State             $48,400.00               $86,000.00
+## 128        State             $44,100.00               $86,000.00
+## 129        State             $49,900.00               $85,700.00
+## 130        State             $48,800.00               $85,300.00
+## 131        State             $46,300.00               $85,300.00
+## 132        State             $43,900.00               $85,300.00
+## 133        State             $46,200.00               $85,200.00
+## 134        State             $45,400.00               $84,700.00
+## 135        State             $45,300.00               $84,700.00
+## 136        State             $45,100.00               $84,700.00
+## 137        State             $45,400.00               $84,600.00
+## 138        State             $45,900.00               $84,500.00
+## 139        State             $46,100.00               $84,400.00
+## 140        State             $49,200.00               $84,300.00
+## 141        State             $47,300.00               $84,200.00
+## 142        State             $46,200.00               $84,200.00
+## 143        State             $47,400.00               $84,100.00
+## 144        State             $44,700.00               $84,100.00
+## 145        State             $46,300.00               $84,000.00
+## 146        State             $44,700.00               $83,900.00
+## 147        State             $44,900.00               $83,700.00
+## 148        State             $47,200.00               $83,300.00
+## 149        State             $45,100.00               $83,300.00
+## 150        State             $45,400.00               $83,200.00
+## 151        State             $46,500.00               $82,900.00
+## 152        State             $44,700.00               $82,900.00
+## 153        State             $44,100.00               $82,800.00
+## 154        State             $44,800.00               $82,700.00
+## 155        State             $43,100.00               $82,700.00
+## 156        State             $47,800.00               $82,400.00
+## 157        State             $44,900.00               $82,000.00
+## 158        State             $47,500.00               $81,700.00
+## 159        State             $46,200.00               $81,700.00
+## 160        State             $42,400.00               $81,600.00
+## 161        State             $41,600.00               $81,600.00
+## 162        State             $42,900.00               $81,500.00
+## 163        State             $41,300.00               $81,400.00
+## 164        State             $46,800.00               $81,300.00
+## 165        State             $42,300.00               $81,300.00
+## 166        State             $41,700.00               $81,000.00
+## 167        State             $45,700.00               $80,900.00
+## 168        State             $45,400.00               $80,800.00
+## 169        State             $43,600.00               $80,800.00
+## 170        State             $42,800.00               $80,700.00
+## 171        State             $44,000.00               $80,600.00
+## 172        State             $45,500.00               $80,400.00
+## 173        State             $46,000.00               $79,900.00
+## 174        State             $41,400.00               $79,700.00
+## 175        State             $44,300.00               $79,500.00
+## 176        State             $46,500.00               $79,400.00
+## 177        State             $44,500.00               $79,300.00
+## 178        State             $44,800.00               $79,000.00
+## 179        State             $43,300.00               $79,000.00
+## 180        State             $44,500.00               $78,700.00
+## 181        State             $43,800.00               $78,700.00
+## 182        State             $45,800.00               $78,500.00
+## 183        State             $42,200.00               $78,400.00
+## 184        State             $42,800.00               $78,300.00
+## 185        State             $41,800.00               $78,300.00
+## 186        State             $45,600.00               $78,200.00
+## 187        State             $43,100.00               $78,100.00
+## 188        State             $47,000.00               $77,800.00
+## 189        State             $45,100.00               $77,800.00
+## 190        State             $38,000.00               $77,800.00
+## 191        State             $43,200.00               $77,700.00
+## 192        State             $46,600.00               $77,500.00
+## 193        State             $37,500.00               $76,700.00
+## 194        State             $41,100.00               $76,300.00
+## 195        State             $40,800.00               $76,200.00
+## 196        State             $42,800.00               $76,100.00
+## 197        State             $43,800.00               $76,000.00
+## 198        State             $43,100.00               $75,900.00
+## 199        State             $43,200.00               $75,500.00
+## 200        State             $40,800.00               $75,500.00
+## 201        State             $42,700.00               $75,400.00
+## 202        State             $43,300.00               $74,700.00
+## 203        State             $43,800.00               $74,600.00
+## 204        State             $42,300.00               $74,600.00
+## 205        State             $39,200.00               $74,500.00
+## 206        State             $45,700.00               $74,000.00
+## 207        State             $43,100.00               $74,000.00
+## 208        State             $41,800.00               $74,000.00
+## 209        State             $42,300.00               $73,800.00
+## 210        State             $41,100.00               $73,500.00
+## 211        State             $44,900.00               $73,400.00
+## 212        State             $42,200.00               $73,400.00
+## 213        State             $42,000.00               $73,400.00
+## 214        State             $43,500.00               $73,100.00
+## 215        State             $42,100.00               $73,000.00
+## 216        State             $45,900.00               $72,600.00
+## 217        State             $42,400.00               $72,600.00
+## 218        State             $41,500.00               $72,600.00
+## 219        State             $43,000.00               $72,500.00
+## 220        State             $43,400.00               $72,100.00
+## 221        State             $42,700.00               $72,100.00
+## 222        State             $41,200.00               $72,100.00
+## 223        State             $40,300.00               $72,100.00
+## 224        State             $39,800.00               $72,100.00
+## 225        State             $37,300.00               $71,900.00
+## 226        State             $42,600.00               $71,700.00
+## 227        State             $40,000.00               $71,700.00
+## 228        State             $45,200.00               $71,600.00
+## 229        State             $41,800.00               $71,400.00
+## 230        State             $40,700.00               $71,400.00
+## 231        State             $38,000.00               $71,400.00
+## 232        State             $42,600.00               $71,300.00
+## 233        State             $42,600.00               $71,100.00
+## 234        State             $41,100.00               $71,100.00
+## 235        State             $42,600.00               $70,900.00
+## 236        State             $38,600.00               $70,900.00
+## 237        State             $42,500.00               $70,700.00
+## 238        State             $41,100.00               $70,300.00
+## 239        State             $38,000.00               $70,300.00
+## 240        State             $39,200.00               $70,100.00
+## 241        State             $41,400.00               $69,700.00
+## 242        State             $40,800.00               $69,500.00
+## 243        State             $36,100.00               $69,500.00
+## 244        State             $42,200.00               $69,300.00
+## 245        State             $40,400.00               $69,100.00
+## 246        State             $42,000.00               $68,400.00
+## 247        State             $43,600.00               $68,300.00
+## 248        State             $40,200.00               $67,500.00
+## 249        State             $42,400.00               $67,100.00
+## 250        State             $41,400.00               $67,100.00
+## 251        State             $36,900.00               $66,600.00
+## 252        State             $39,300.00               $66,400.00
+## 253        State             $37,800.00               $66,200.00
+## 254        State             $38,900.00               $65,800.00
+## 255        State             $41,400.00               $64,800.00
+## 256        State             $39,100.00               $64,500.00
+## 257        State             $37,500.00               $64,400.00
+## 258        State             $39,800.00               $64,000.00
+## 259        State             $39,400.00               $63,600.00
+## 260        State             $38,700.00               $63,300.00
+## 261        State             $38,700.00               $62,600.00
+## 262        State             $40,800.00               $62,400.00
+## 263        State             $35,800.00               $60,600.00
+## 264        State             $34,800.00               $60,600.00
+## 265        State             $37,700.00               $59,200.00
+## 266        State             $40,400.00               $58,200.00
+## 267        State             $41,900.00               $56,500.00
+## 268        State             $37,900.00               $50,600.00
+## 269        State             $35,300.00               $43,900.00
+##     Mid.Career.10th.Percentile.Salary Mid.Career.25th.Percentile.Salary
+## 1                          $76,800.00                        $99,200.00
+## 2                                 N/A                       $104,000.00
+## 3                                 N/A                        $96,000.00
+## 4                          $66,800.00                        $94,300.00
+## 5                                 N/A                        $80,200.00
+## 6                          $80,000.00                        $91,200.00
+## 7                          $63,300.00                        $80,100.00
+## 8                          $71,600.00                        $85,500.00
+## 9                          $67,200.00                        $85,200.00
+## 10                         $62,200.00                        $87,900.00
+## 11                         $68,700.00                        $81,900.00
+## 12                         $56,100.00                        $77,400.00
+## 13                         $55,200.00                        $74,000.00
+## 14                         $50,600.00                        $71,400.00
+## 15                         $71,500.00                        $81,900.00
+## 16                                N/A                        $67,400.00
+## 17                         $45,000.00                        $62,100.00
+## 18                         $49,800.00                        $64,000.00
+## 19                         $42,100.00                        $62,600.00
+## 20                         $48,200.00                        $68,900.00
+## 21                         $50,400.00                        $68,300.00
+## 22                         $51,300.00                        $71,200.00
+## 23                         $50,100.00                        $67,400.00
+## 24                         $47,000.00                        $63,100.00
+## 25                         $45,400.00                        $62,900.00
+## 26                         $43,700.00                        $61,300.00
+## 27                         $43,100.00                        $57,800.00
+## 28                         $46,300.00                        $62,000.00
+## 29                         $44,600.00                        $60,700.00
+## 30                         $43,600.00                        $60,400.00
+## 31                         $43,300.00                        $61,100.00
+## 32                                N/A                        $54,100.00
+## 33                         $40,100.00                        $56,500.00
+## 34                         $40,400.00                        $53,500.00
+## 35                         $41,700.00                        $56,400.00
+## 36                         $39,700.00                        $55,700.00
+## 37                         $41,900.00                        $53,200.00
+## 38                         $36,600.00                        $52,800.00
+## 39                         $39,600.00                        $52,800.00
+## 40                         $62,800.00                        $80,600.00
+## 41                         $60,000.00                        $76,700.00
+## 42                                N/A                        $84,900.00
+## 43                         $70,600.00                        $79,300.00
+## 44                                N/A                        $74,600.00
+## 45                                N/A                        $65,600.00
+## 46                                N/A                        $54,800.00
+## 47                                N/A                        $82,800.00
+## 48                                N/A                        $67,200.00
+## 49                                N/A                        $70,500.00
+## 50                                N/A                        $69,400.00
+## 51                                N/A                        $76,400.00
+## 52                                N/A                        $63,300.00
+## 53                         $42,000.00                        $62,500.00
+## 54                                N/A                        $60,700.00
+## 55                         $48,700.00                        $75,200.00
+## 56                         $44,500.00                        $59,400.00
+## 57                                N/A                        $60,600.00
+## 58                                N/A                        $69,100.00
+## 59                                N/A                        $57,100.00
+## 60                                N/A                        $55,800.00
+## 61                         $49,500.00                        $57,400.00
+## 62                         $41,300.00                        $61,000.00
+## 63                                N/A                        $63,500.00
+## 64                                N/A                        $66,300.00
+## 65                         $38,700.00                        $58,400.00
+## 66                         $45,100.00                        $59,800.00
+## 67                                N/A                        $51,900.00
+## 68                                N/A                        $54,100.00
+## 69                                N/A                        $58,600.00
+## 70                                N/A                        $62,100.00
+## 71                                N/A                        $46,400.00
+## 72                         $48,900.00                        $60,100.00
+## 73                                N/A                        $43,000.00
+## 74                                N/A                        $67,400.00
+## 75                                N/A                        $49,300.00
+## 76                                N/A                        $64,800.00
+## 77                         $35,600.00                        $54,300.00
+## 78                                N/A                        $67,200.00
+## 79                                N/A                        $54,100.00
+## 80                                N/A                        $65,100.00
+## 81                                N/A                        $42,800.00
+## 82                                N/A                        $56,700.00
+## 83                         $38,200.00                        $53,400.00
+## 84                                N/A                        $55,000.00
+## 85                                N/A                        $44,600.00
+## 86                         $38,800.00                        $47,200.00
+## 87                         $63,100.00                        $90,200.00
+## 88                         $68,900.00                       $100,000.00
+## 89                         $58,000.00                        $80,600.00
+## 90                         $54,800.00                        $86,200.00
+## 91                         $55,900.00                        $79,200.00
+## 92                         $56,800.00                        $79,800.00
+## 93                         $55,400.00                        $74,400.00
+## 94                         $50,300.00                        $71,900.00
+## 95                         $59,500.00                        $81,000.00
+## 96                         $52,200.00                        $71,800.00
+## 97                         $55,000.00                        $74,700.00
+## 98                         $51,300.00                        $72,500.00
+## 99                         $51,700.00                        $75,400.00
+## 100                        $52,000.00                        $71,600.00
+## 101                        $51,600.00                        $69,000.00
+## 102                        $47,800.00                        $66,000.00
+## 103                        $48,200.00                        $68,900.00
+## 104                        $51,100.00                        $71,300.00
+## 105                        $50,900.00                        $71,200.00
+## 106                        $67,600.00                        $80,400.00
+## 107                        $50,700.00                        $70,500.00
+## 108                        $50,400.00                        $68,300.00
+## 109                        $51,300.00                        $71,200.00
+## 110                        $50,100.00                        $67,400.00
+## 111                        $50,900.00                        $69,400.00
+## 112                        $47,200.00                        $67,100.00
+## 113                        $47,000.00                        $63,100.00
+## 114                        $48,100.00                        $65,100.00
+## 115                        $49,900.00                        $67,400.00
+## 116                        $46,100.00                        $66,400.00
+## 117                        $43,100.00                        $61,300.00
+## 118                        $46,800.00                        $62,800.00
+## 119                        $45,400.00                        $62,900.00
+## 120                        $47,400.00                        $62,400.00
+## 121                        $43,700.00                        $61,300.00
+## 122                        $45,400.00                        $62,500.00
+## 123                        $51,300.00                        $67,200.00
+## 124                        $50,900.00                        $65,000.00
+## 125                        $45,100.00                        $62,700.00
+## 126                        $44,800.00                        $61,700.00
+## 127                        $50,500.00                        $61,800.00
+## 128                        $43,100.00                        $57,800.00
+## 129                        $46,300.00                        $62,000.00
+## 130                        $47,000.00                        $59,800.00
+## 131                        $44,200.00                        $61,500.00
+## 132                        $45,400.00                        $60,100.00
+## 133                        $45,500.00                        $61,800.00
+## 134                        $45,400.00                        $62,700.00
+## 135                        $43,600.00                        $59,000.00
+## 136                        $47,400.00                        $62,500.00
+## 137                        $44,400.00                        $60,000.00
+## 138                        $44,500.00                        $64,000.00
+## 139                        $46,400.00                        $58,600.00
+## 140                        $46,000.00                        $62,400.00
+## 141                        $50,200.00                        $59,800.00
+## 142                        $49,000.00                        $63,200.00
+## 143                        $44,600.00                        $60,700.00
+## 144                        $46,100.00                        $62,000.00
+## 145                        $43,600.00                        $60,400.00
+## 146                        $43,300.00                        $61,100.00
+## 147                        $45,500.00                        $60,700.00
+## 148                        $49,200.00                        $64,800.00
+## 149                        $46,900.00                        $64,000.00
+## 150                        $43,000.00                        $58,400.00
+## 151                        $41,900.00                        $54,600.00
+## 152                        $41,200.00                        $60,300.00
+## 153                        $43,200.00                        $60,700.00
+## 154                        $44,700.00                        $58,000.00
+## 155                        $46,100.00                        $67,800.00
+## 156                        $42,900.00                        $59,600.00
+## 157                        $43,000.00                        $56,700.00
+## 158                        $44,700.00                        $58,800.00
+## 159                        $45,900.00                        $61,400.00
+## 160                        $44,800.00                        $57,200.00
+## 161                        $41,800.00                        $59,100.00
+## 162                        $43,400.00                        $57,500.00
+## 163                        $40,100.00                        $56,500.00
+## 164                        $37,200.00                        $59,900.00
+## 165                        $39,300.00                        $47,600.00
+## 166                        $43,500.00                        $57,100.00
+## 167                        $42,200.00                        $56,600.00
+## 168                        $46,400.00                        $61,200.00
+## 169                        $43,900.00                        $60,200.00
+## 170                        $40,100.00                        $56,500.00
+## 171                        $43,400.00                        $56,400.00
+## 172                        $44,500.00                        $57,800.00
+## 173                        $42,000.00                        $56,200.00
+## 174                        $40,400.00                        $53,500.00
+## 175                        $37,400.00                        $53,800.00
+## 176                        $38,700.00                        $51,600.00
+## 177                        $43,300.00                        $58,800.00
+## 178                        $43,800.00                        $57,100.00
+## 179                        $37,200.00                        $54,100.00
+## 180                        $41,500.00                        $54,000.00
+## 181                        $41,600.00                        $55,400.00
+## 182                        $48,400.00                        $61,200.00
+## 183                        $38,100.00                        $56,200.00
+## 184                        $43,000.00                        $57,300.00
+## 185                        $41,700.00                        $56,400.00
+## 186                        $36,300.00                        $53,800.00
+## 187                        $39,700.00                        $55,700.00
+## 188                        $46,900.00                        $59,100.00
+## 189                        $39,000.00                        $55,800.00
+## 190                        $40,400.00                        $53,000.00
+## 191                        $43,300.00                        $56,200.00
+## 192                        $40,200.00                        $58,100.00
+## 193                        $40,000.00                        $54,300.00
+## 194                        $42,000.00                        $54,500.00
+## 195                        $38,400.00                        $54,100.00
+## 196                        $40,100.00                        $56,200.00
+## 197                        $40,400.00                        $56,300.00
+## 198                        $40,100.00                        $54,100.00
+## 199                        $40,500.00                        $55,800.00
+## 200                        $38,200.00                        $53,500.00
+## 201                        $41,300.00                        $56,700.00
+## 202                        $39,500.00                        $53,800.00
+## 203                        $41,900.00                        $53,200.00
+## 204                        $40,600.00                        $54,000.00
+## 205                        $32,800.00                        $46,100.00
+## 206                        $44,000.00                        $53,100.00
+## 207                        $38,200.00                        $53,200.00
+## 208                        $43,000.00                        $55,300.00
+## 209                        $40,100.00                        $52,500.00
+## 210                        $34,100.00                        $49,900.00
+## 211                        $35,400.00                        $49,600.00
+## 212                        $36,600.00                        $52,800.00
+## 213                        $39,100.00                        $55,200.00
+## 214                        $39,500.00                        $51,600.00
+## 215                        $39,600.00                        $52,800.00
+## 216                        $39,800.00                        $56,600.00
+## 217                        $43,300.00                        $56,100.00
+## 218                        $39,500.00                        $54,400.00
+## 219                        $38,300.00                        $51,300.00
+## 220                        $37,700.00                        $50,400.00
+## 221                        $30,800.00                        $47,000.00
+## 222                        $41,700.00                        $55,600.00
+## 223                        $37,900.00                        $52,800.00
+## 224                        $38,200.00                        $51,800.00
+## 225                        $37,000.00                        $51,500.00
+## 226                        $39,500.00                        $51,500.00
+## 227                        $36,300.00                        $49,900.00
+## 228                        $39,000.00                        $52,400.00
+## 229                        $38,700.00                        $49,400.00
+## 230                        $40,900.00                        $53,100.00
+## 231                        $33,700.00                        $50,500.00
+## 232                        $36,000.00                        $56,300.00
+## 233                        $40,700.00                        $53,000.00
+## 234                        $39,600.00                        $51,500.00
+## 235                        $40,700.00                        $52,300.00
+## 236                        $36,000.00                        $50,500.00
+## 237                        $39,100.00                        $49,800.00
+## 238                        $40,600.00                        $53,300.00
+## 239                        $35,100.00                        $51,200.00
+## 240                        $43,000.00                        $53,400.00
+## 241                        $36,100.00                        $49,100.00
+## 242                        $37,400.00                        $48,700.00
+## 243                        $33,300.00                        $46,900.00
+## 244                        $37,500.00                        $47,200.00
+## 245                        $37,200.00                        $50,400.00
+## 246                        $37,400.00                        $51,900.00
+## 247                        $40,900.00                        $50,600.00
+## 248                        $38,400.00                        $52,000.00
+## 249                        $27,000.00                        $44,100.00
+## 250                        $36,800.00                        $49,600.00
+## 251                        $39,000.00                        $49,500.00
+## 252                        $37,700.00                        $49,700.00
+## 253                        $32,800.00                        $44,200.00
+## 254                        $36,300.00                        $48,100.00
+## 255                        $35,000.00                        $47,300.00
+## 256                        $35,500.00                        $48,200.00
+## 257                        $32,100.00                        $46,600.00
+## 258                        $38,400.00                        $45,100.00
+## 259                        $40,400.00                        $47,900.00
+## 260                        $33,600.00                        $45,300.00
+## 261                        $36,100.00                        $45,800.00
+## 262                        $32,100.00                        $47,400.00
+## 263                        $35,500.00                        $46,800.00
+## 264                        $34,300.00                        $46,500.00
+## 265                        $32,200.00                        $40,500.00
+## 266                        $25,600.00                        $46,000.00
+## 267                        $30,700.00                        $39,700.00
+## 268                        $22,600.00                        $31,800.00
+## 269                        $27,000.00                        $32,200.00
+##     Mid.Career.75th.Percentile.Salary Mid.Career.90th.Percentile.Salary
+## 1                         $168,000.00                       $220,000.00
+## 2                         $161,000.00                               N/A
+## 3                         $180,000.00                               N/A
+## 4                         $143,000.00                       $190,000.00
+## 5                         $142,000.00                               N/A
+## 6                         $137,000.00                       $180,000.00
+## 7                         $150,000.00                       $209,000.00
+## 8                         $140,000.00                       $182,000.00
+## 9                         $137,000.00                       $183,000.00
+## 10                        $142,000.00                       $201,000.00
+## 11                        $138,000.00                       $185,000.00
+## 12                        $121,000.00                       $165,000.00
+## 13                        $117,000.00                       $153,000.00
+## 14                        $124,000.00                       $163,000.00
+## 15                        $122,000.00                       $147,000.00
+## 16                        $123,000.00                               N/A
+## 17                        $112,000.00                       $159,000.00
+## 18                        $106,000.00                       $142,000.00
+## 19                         $99,500.00                       $121,000.00
+## 20                        $132,000.00                       $177,000.00
+## 21                        $126,000.00                       $166,000.00
+## 22                        $129,000.00                       $173,000.00
+## 23                        $129,000.00                       $188,000.00
+## 24                        $135,000.00                       $209,000.00
+## 25                        $120,000.00                       $172,000.00
+## 26                        $120,000.00                       $165,000.00
+## 27                        $118,000.00                       $164,000.00
+## 28                        $117,000.00                       $160,000.00
+## 29                        $114,000.00                       $163,000.00
+## 30                        $119,000.00                       $178,000.00
+## 31                        $116,000.00                       $163,000.00
+## 32                        $123,000.00                               N/A
+## 33                        $117,000.00                       $161,000.00
+## 34                        $108,000.00                       $186,000.00
+## 35                        $114,000.00                       $147,000.00
+## 36                        $106,000.00                       $141,000.00
+## 37                        $106,000.00                       $153,000.00
+## 38                        $106,000.00                       $150,000.00
+## 39                        $107,000.00                       $156,000.00
+## 40                        $156,000.00                       $251,000.00
+## 41                        $167,000.00                       $265,000.00
+## 42                        $162,000.00                               N/A
+## 43                        $144,000.00                       $204,000.00
+## 44                        $146,000.00                               N/A
+## 45                        $143,000.00                               N/A
+## 46                        $157,000.00                               N/A
+## 47                        $146,000.00                               N/A
+## 48                        $167,000.00                               N/A
+## 49                        $146,000.00                               N/A
+## 50                        $141,000.00                               N/A
+## 51                        $143,000.00                               N/A
+## 52                        $161,000.00                               N/A
+## 53                        $126,000.00                       $215,000.00
+## 54                        $162,000.00                               N/A
+## 55                        $135,000.00                       $230,000.00
+## 56                        $151,000.00                       $211,000.00
+## 57                        $123,000.00                               N/A
+## 58                        $129,000.00                               N/A
+## 59                        $131,000.00                               N/A
+## 60                        $185,000.00                               N/A
+## 61                        $133,000.00                       $185,000.00
+## 62                        $120,000.00                       $185,000.00
+## 63                        $129,000.00                               N/A
+## 64                        $132,000.00                               N/A
+## 65                        $129,000.00                       $189,000.00
+## 66                        $129,000.00                       $184,000.00
+## 67                        $123,000.00                               N/A
+## 68                        $123,000.00                               N/A
+## 69                        $125,000.00                               N/A
+## 70                        $122,000.00                               N/A
+## 71                        $128,000.00                               N/A
+## 72                        $104,000.00                       $137,000.00
+## 73                        $148,000.00                               N/A
+## 74                        $101,000.00                               N/A
+## 75                        $101,000.00                               N/A
+## 76                        $111,000.00                               N/A
+## 77                        $100,000.00                       $160,000.00
+## 78                        $110,000.00                               N/A
+## 79                        $131,000.00                               N/A
+## 80                        $116,000.00                               N/A
+## 81                        $147,000.00                               N/A
+## 82                         $94,900.00                               N/A
+## 83                        $104,000.00                       $140,000.00
+## 84                         $94,000.00                               N/A
+## 85                         $93,100.00                               N/A
+## 86                         $91,600.00                       $120,000.00
+## 87                        $234,000.00                       $321,000.00
+## 88                        $190,000.00                       $261,000.00
+## 89                        $198,000.00                       $326,000.00
+## 90                        $179,000.00                       $288,000.00
+## 91                        $192,000.00                       $282,000.00
+## 92                        $160,000.00                       $210,000.00
+## 93                        $159,000.00                       $228,000.00
+## 94                        $161,000.00                       $241,000.00
+## 95                        $149,000.00                       $201,000.00
+## 96                        $146,000.00                       $215,000.00
+## 97                        $133,000.00                       $178,000.00
+## 98                        $139,000.00                       $193,000.00
+## 99                        $131,000.00                       $177,000.00
+## 100                       $135,000.00                       $202,000.00
+## 101                       $128,000.00                       $187,000.00
+## 102                       $123,000.00                       $172,000.00
+## 103                       $132,000.00                       $177,000.00
+## 104                       $131,000.00                       $171,000.00
+## 105                       $146,000.00                       $201,000.00
+## 106                       $122,000.00                       $166,000.00
+## 107                       $122,000.00                       $156,000.00
+## 108                       $126,000.00                       $166,000.00
+## 109                       $129,000.00                       $173,000.00
+## 110                       $129,000.00                       $188,000.00
+## 111                       $128,000.00                       $182,000.00
+## 112                       $129,000.00                       $181,000.00
+## 113                       $135,000.00                       $209,000.00
+## 114                       $128,000.00                       $176,000.00
+## 115                       $121,000.00                       $168,000.00
+## 116                       $120,000.00                       $162,000.00
+## 117                       $122,000.00                       $168,000.00
+## 118                       $122,000.00                       $154,000.00
+## 119                       $120,000.00                       $172,000.00
+## 120                       $118,000.00                       $170,000.00
+## 121                       $120,000.00                       $165,000.00
+## 122                       $119,000.00                       $158,000.00
+## 123                       $114,000.00                       $150,000.00
+## 124                       $113,000.00                       $158,000.00
+## 125                       $114,000.00                       $150,000.00
+## 126                       $117,000.00                       $160,000.00
+## 127                       $111,000.00                       $150,000.00
+## 128                       $118,000.00                       $164,000.00
+## 129                       $117,000.00                       $160,000.00
+## 130                       $115,000.00                       $149,000.00
+## 131                       $119,000.00                       $170,000.00
+## 132                       $112,000.00                       $157,000.00
+## 133                       $116,000.00                       $158,000.00
+## 134                       $109,000.00                       $145,000.00
+## 135                       $113,000.00                       $162,000.00
+## 136                       $113,000.00                       $154,000.00
+## 137                       $109,000.00                       $147,000.00
+## 138                       $119,000.00                       $165,000.00
+## 139                       $105,000.00                       $144,000.00
+## 140                       $115,000.00                       $155,000.00
+## 141                       $110,000.00                       $162,000.00
+## 142                       $112,000.00                       $148,000.00
+## 143                       $114,000.00                       $163,000.00
+## 144                       $121,000.00                       $165,000.00
+## 145                       $119,000.00                       $178,000.00
+## 146                       $116,000.00                       $163,000.00
+## 147                       $116,000.00                       $162,000.00
+## 148                       $112,000.00                       $153,000.00
+## 149                       $113,000.00                       $146,000.00
+## 150                       $116,000.00                       $148,000.00
+## 151                       $113,000.00                       $143,000.00
+## 152                       $114,000.00                       $167,000.00
+## 153                       $113,000.00                       $160,000.00
+## 154                       $122,000.00                       $194,000.00
+## 155                       $106,000.00                       $132,000.00
+## 156                       $111,000.00                       $154,000.00
+## 157                       $104,000.00                       $142,000.00
+## 158                       $110,000.00                       $146,000.00
+## 159                       $110,000.00                       $147,000.00
+## 160                       $115,000.00                       $156,000.00
+## 161                       $105,000.00                       $141,000.00
+## 162                       $117,000.00                       $155,000.00
+## 163                       $117,000.00                       $161,000.00
+## 164                       $109,000.00                       $134,000.00
+## 165                       $117,000.00                       $173,000.00
+## 166                       $111,000.00                       $156,000.00
+## 167                       $113,000.00                       $156,000.00
+## 168                       $106,000.00                       $138,000.00
+## 169                       $111,000.00                       $161,000.00
+## 170                       $114,000.00                       $151,000.00
+## 171                       $111,000.00                       $157,000.00
+## 172                       $108,000.00                       $153,000.00
+## 173                       $106,000.00                       $141,000.00
+## 174                       $108,000.00                       $186,000.00
+## 175                       $102,000.00                       $131,000.00
+## 176                       $114,000.00                       $158,000.00
+## 177                       $108,000.00                       $151,000.00
+## 178                       $112,000.00                       $150,000.00
+## 179                       $106,000.00                       $138,000.00
+## 180                       $105,000.00                       $145,000.00
+## 181                       $101,000.00                       $132,000.00
+## 182                       $100,000.00                       $139,000.00
+## 183                       $117,000.00                       $186,000.00
+## 184                       $107,000.00                       $149,000.00
+## 185                       $114,000.00                       $147,000.00
+## 186                       $109,000.00                       $151,000.00
+## 187                       $106,000.00                       $141,000.00
+## 188                       $105,000.00                       $130,000.00
+## 189                       $100,000.00                       $123,000.00
+## 190                       $115,000.00                       $169,000.00
+## 191                       $107,000.00                       $132,000.00
+## 192                       $111,000.00                       $151,000.00
+## 193                        $97,700.00                       $155,000.00
+## 194                       $107,000.00                       $163,000.00
+## 195                       $105,000.00                       $136,000.00
+## 196                       $101,000.00                       $139,000.00
+## 197                       $104,000.00                       $128,000.00
+## 198                       $100,000.00                       $133,000.00
+## 199                        $98,200.00                       $136,000.00
+## 200                        $99,300.00                       $150,000.00
+## 201                        $99,200.00                       $119,000.00
+## 202                        $95,700.00                       $140,000.00
+## 203                       $106,000.00                       $153,000.00
+## 204                        $93,700.00                       $123,000.00
+## 205                       $110,000.00                       $161,000.00
+## 206                       $104,000.00                       $150,000.00
+## 207                        $99,500.00                       $133,000.00
+## 208                        $99,900.00                       $145,000.00
+## 209                       $103,000.00                       $135,000.00
+## 210                        $99,400.00                       $129,000.00
+## 211                       $101,000.00                       $143,000.00
+## 212                       $106,000.00                       $150,000.00
+## 213                       $105,000.00                       $142,000.00
+## 214                        $97,000.00                       $137,000.00
+## 215                       $107,000.00                       $156,000.00
+## 216                        $99,300.00                       $137,000.00
+## 217                        $99,600.00                       $151,000.00
+## 218                        $97,400.00                       $126,000.00
+## 219                        $99,300.00                       $139,000.00
+## 220                        $99,500.00                       $133,000.00
+## 221                        $92,200.00                       $132,000.00
+## 222                        $99,300.00                       $141,000.00
+## 223                        $95,400.00                       $135,000.00
+## 224                       $101,000.00                       $146,000.00
+## 225                        $96,400.00                       $138,000.00
+## 226                        $98,400.00                       $125,000.00
+## 227                        $98,400.00                       $131,000.00
+## 228                       $100,000.00                       $128,000.00
+## 229                       $101,000.00                       $126,000.00
+## 230                        $84,900.00                       $119,000.00
+## 231                        $94,100.00                       $121,000.00
+## 232                        $94,400.00                       $117,000.00
+## 233                        $99,500.00                       $137,000.00
+## 234                        $98,100.00                       $131,000.00
+## 235                        $94,400.00                       $123,000.00
+## 236                        $93,100.00                       $117,000.00
+## 237                        $92,700.00                       $121,000.00
+## 238                        $95,200.00                       $127,000.00
+## 239                       $100,000.00                       $179,000.00
+## 240                        $91,400.00                       $125,000.00
+## 241                        $93,500.00                       $127,000.00
+## 242                        $87,500.00                       $110,000.00
+## 243                       $102,000.00                       $134,000.00
+## 244                        $93,100.00                       $133,000.00
+## 245                        $90,800.00                       $115,000.00
+## 246                       $100,000.00                       $123,000.00
+## 247                        $91,600.00                       $136,000.00
+## 248                        $98,700.00                       $151,000.00
+## 249                        $84,900.00                       $110,000.00
+## 250                        $97,600.00                       $144,000.00
+## 251                        $94,400.00                       $133,000.00
+## 252                        $90,100.00                       $138,000.00
+## 253                        $93,300.00                       $181,000.00
+## 254                        $95,800.00                       $124,000.00
+## 255                        $93,100.00                       $125,000.00
+## 256                        $89,300.00                       $128,000.00
+## 257                        $97,100.00                       $129,000.00
+## 258                        $95,400.00                       $128,000.00
+## 259                        $85,700.00                       $117,000.00
+## 260                        $83,900.00                       $118,000.00
+## 261                        $87,000.00                       $124,000.00
+## 262                        $80,400.00                       $126,000.00
+## 263                        $81,800.00                       $102,000.00
+## 264                        $72,000.00                        $91,300.00
+## 265                        $73,900.00                        $96,200.00
+## 266                        $84,600.00                       $117,000.00
+## 267                        $78,400.00                       $116,000.00
+## 268                        $78,500.00                        $98,900.00
+## 269                        $60,900.00                        $87,600.00</code></pre>
 
 
 
