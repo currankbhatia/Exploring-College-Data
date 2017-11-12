@@ -1,0 +1,11 @@
+---
+title: "Exploring-College-Data"
+author: "Curran Bhatia"
+date: "11/12/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
