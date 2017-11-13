@@ -20,7 +20,18 @@ library(tidyverse)
 
 salaries = read.csv("Data/college-salaries/salaries-by-college-type.csv")
 salaries
+```
+
+Now I want to plot the average salary based on type of school, Party, Engineering, Liberal Arts, State and Ivy. We don't necessarily need to tidy the data anymore than when we read it in, because it seems like all the columns have variables and rows have observations. Now I want to get the average salary per school type. 
+
+```{r}
+library(dplyr)
+
+median_df = tibble(salaries$School.Name, salaries$School.Type, salaries$Mid.Career.Median.Salary)
+median_df
 
 
 
+med = filter(median_df, 'School.Type' == 'Party')
+med
 ```
