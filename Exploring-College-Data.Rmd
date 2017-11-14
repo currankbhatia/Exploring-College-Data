@@ -18,20 +18,45 @@ library(tidyverse)
 
 ```{r}
 
-salaries = read.csv("Data/college-salaries/salaries-by-college-type.csv")
+salaries = read_csv("Data/college-salaries/salaries-by-college-type.csv")
 salaries
+
+#as.numeric gsub ("[[punct]]")
+x = salaries$`Mid-Career Median Salary`
+#x = c("$135,359.00", "$135359.00", "$1,135,359.00")
+y = sub('\\$','',x)
+xy = as.numeric(sub('\\,','',as.character(y)))
+salaries$`Mid-Career Median Salary` = xy
+salaries
+
+mid_career_df = tibble(salaries$`School Name`, salaries$`School Type`, salaries$`Mid-Career Median Salary`)
+
+mid_career_df
+
+colnames(mid_career_df) = c("name", "types", "median_salary")
+
+types_colleges = unique(mid_career_df$types)
+
+avg_midcareer = vector(mode="numeric", length= 5)
+i = 1
+for (x in types_colleges) {
+  
+  sal_filter = filter(mid_career_df, types == x)
+  avg_midcareer[i] = mean(sal_filter$median_salary)
+  
+  i = i + 1
+}
+  
+avg_midcareer
+
+midcareer_type_df = tibble(types_colleges, avg_midcareer)
+midcareer_type_df
+
+ggplot(midcareer_type_df, aes(types_colleges, avg_midcareer)) + geom_col()
+
+#Received help from: https://stat.ethz.ch/pipermail/r-help/2010-May/237909.html
+# in order to change the characters into numbers
 ```
 
 Now I want to plot the average salary based on type of school, Party, Engineering, Liberal Arts, State and Ivy. We don't necessarily need to tidy the data anymore than when we read it in, because it seems like all the columns have variables and rows have observations. Now I want to get the average salary per school type. 
 
-```{r}
-library(dplyr)
-
-median_df = tibble(salaries$School.Name, salaries$School.Type, salaries$Mid.Career.Median.Salary)
-median_df
-
-
-
-med = filter(median_df, 'School.Type' == 'Party')
-med
-```
