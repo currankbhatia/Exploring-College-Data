@@ -29,7 +29,7 @@ navbarPage("Team Curry: Not Just Four Years", id="nav",
       # Shiny versions prior to 0.11 should use class = "modal" instead.
       absolutePanel(id = "controls", class = "panel panel-default", fixed = TRUE,
         draggable = TRUE, top = 60, left = "auto", right = 20, bottom = "auto",
-        width = 330, height = "auto",
+        width = 730, height = "auto",
 
         h4("This is our interactive interface where we can supplment our categories and comparative results"),
 
