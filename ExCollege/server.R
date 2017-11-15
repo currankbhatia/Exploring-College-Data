@@ -52,7 +52,7 @@ function(input, output, session) {
 
     hist(zipsInBounds()$centile,
       breaks = centileBreaks,
-      main = "We can include out histograms here",
+      main = "We can include out histograms and graphs here",
       xlab = "types-colleges",
       xlim = range(allzips$centile),
       col = '#00DD00',
