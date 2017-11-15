@@ -21,14 +21,27 @@ library(tidyverse)
 salaries = read_csv("Data/college-salaries/salaries-by-college-type.csv")
 salaries
 
-#as.numeric gsub ("[[punct]]")
-x = salaries$`Mid-Career Median Salary`
-#x = c("$135,359.00", "$135359.00", "$1,135,359.00")
-y = sub('\\$','',x)
-xy = as.numeric(sub('\\,','',as.character(y)))
-salaries$`Mid-Career Median Salary` = xy
+
+defactorize = function(dfcol) {
+  
+  x = dfcol
+  y = sub('\\$','',x)
+  xy = as.numeric(sub('\\,','',as.character(y)))
+  #dfcol = xy
+  return (xy)
+  
+}
+
+salaries$`Mid-Career Median Salary` = defactorize(salaries$`Mid-Career Median Salary`)
+
 salaries
 
+# Received help from: https://stat.ethz.ch/pipermail/r-help/2010-May/237909.html
+# in order to change the characters into numbers
+
+```
+
+```{r}
 mid_career_df = tibble(salaries$`School Name`, salaries$`School Type`, salaries$`Mid-Career Median Salary`)
 
 mid_career_df
@@ -52,10 +65,9 @@ avg_midcareer
 midcareer_type_df = tibble(types_colleges, avg_midcareer)
 midcareer_type_df
 
-ggplot(midcareer_type_df, aes(types_colleges, avg_midcareer)) + geom_col()
+ggplot(midcareer_type_df, aes(types_colleges, avg_midcareer, fill = types_colleges)) + geom_col()
 
-#Received help from: https://stat.ethz.ch/pipermail/r-help/2010-May/237909.html
-# in order to change the characters into numbers
+
 ```
 
 Now I want to plot the average salary based on type of school, Party, Engineering, Liberal Arts, State and Ivy. We don't necessarily need to tidy the data anymore than when we read it in, because it seems like all the columns have variables and rows have observations. Now I want to get the average salary per school type. 
