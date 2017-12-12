@@ -2,7 +2,8 @@ library(leaflet)
 
 # Choices for drop-downs
 vars <- c(
-  "Population" = "adultpop"
+  "High Salary" = "salhigh",
+  "Low Salary" = "sallow"
 )
 
 
@@ -27,7 +28,7 @@ navbarPage("Team Curry: Not Just Four Years", id="nav",
 
         h4("Interactive Map"),
 
-        selectInput("color", "A series of options", vars, selected = "adultpop")
+        selectInput("color", "A series of options", vars, selected = "salhigh")
       ),
 
       tags$div(id="cite",

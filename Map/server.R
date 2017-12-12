@@ -26,15 +26,23 @@ function(input, output, session) {
   # according to the variables the user has chosen to map to color and size.
   observe({
     colorBy <- input$color
+    #print(colorBy)
     
 
     colorData <- "no"
     pal <- colorFactor("viridis", colorData)
 
     radius <- 60000
+    if (colorBy == "salhigh") {
+      zip = filter(data, Starting.Median.Salary > 60000)
+    }
+    
+    if (colorBy == "sallow") {
+      zip = filter(data, Starting.Median.Salary < 50000)
+    }
     
 
-    leafletProxy("map", data = zipdata) %>%
+    leafletProxy("map", data = zip) %>%
       clearShapes() %>%
       addCircles(~Long, ~Lat, radius=radius, layerId=NULL,
         stroke=FALSE, fillOpacity=0.4, fillColor=pal(colorData)) %>%
