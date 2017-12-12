@@ -184,7 +184,7 @@ set_address("South Dakota School of Mines & Technology", "501 E St Joseph St, Ra
 
 Coordinates
 
-```{r}
+```{r cache = TRUE}
 
 library(ggmap)
 

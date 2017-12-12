@@ -4,7 +4,7 @@ library(RColorBrewer)
 library(lattice)
 library(dplyr)
 
-zipdata <- allzips
+zipdata <- data_c
 
 function(input, output, session) {
 
@@ -31,16 +31,44 @@ function(input, output, session) {
     colorData <- "no"
     pal <- colorFactor("viridis", colorData)
 
-    radius <- 3000
+    radius <- 60000
     
 
     leafletProxy("map", data = zipdata) %>%
       clearShapes() %>%
-      addCircles(~longitude, ~latitude, radius=radius, layerId=~zipcode,
+      addCircles(~Long, ~Lat, radius=radius, layerId=NULL,
         stroke=FALSE, fillOpacity=0.4, fillColor=pal(colorData)) %>%
       addLegend("bottomleft", pal=pal, values=colorData, title=colorBy,
         layerId="colorLegend")
   })
+  
+  
+  observe({
+    leafletProxy("map") %>% clearPopups()
+    event <- input$map_shape_click
+    if (is.null(event))
+      return()
+    
+    isolate({
+      showZipcodePopup( event$lat, event$lng)
+    })
+  })
+  
+  # Show a popup at the given location
+  showZipcodePopup <- function( lat, lng) {
+    selectedZip <- zipdata[zipdata$Lat == lat,]
+    if (selectedZip$Long != lng) {
+      print("Wrong one") 
+    }
+    content <- as.character(tagList(
+       tags$br(),
+      sprintf("%s", selectedZip$School.Name),
+      tags$br()
+      
+    ))
+    leafletProxy("map") %>% addPopups(lng, lat, content)
+    
+  }
 
   
 }
