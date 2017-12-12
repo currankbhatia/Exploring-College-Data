@@ -6,7 +6,8 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, cache= TRUE)
+
 ```
 
 We will start by importing the data from The Wall Street Journal and Payscale regarding Salaries based on college.
@@ -18,7 +19,7 @@ library(tidyverse)
 
 ```{r message = FALSE}
 
-salaries = read_csv("Data/college-salaries/salaries-by-college-type.csv")
+salaries = read_csv("../data/college-salaries/salaries-by-college-type.csv")
 salaries
 
 #x = names
@@ -103,3 +104,133 @@ ggplot(startingsalary_type_df, aes(types_colleges, avg_midcareer, fill = types_c
 
 
 ```
+
+### College List with Addresses
+
+```{r}
+library(stringr)
+
+salaries
+
+colnames(salaries)
+
+
+address = c(nrow = nrow(salaries))
+address[1:nrow(salaries)] = "None"
+
+
+
+colleges <- add_column(salaries, Address = address)
+colleges
+
+colnames(colleges)
+
+max_colleges = read.csv("../data/Accreditation_04_2017.csv")
+
+max2 = lapply(max_colleges, as.character)
+
+
+for (i in 1:nrow(colleges)) {
+
+  name = colleges[i,"School Name"]
+  
+  
+  
+  #name = name %>% gsub("\\(" , " ", .) %>% gsub("\\)" , " ", .)
+  
+  name = name %>% gsub("\\((.*)\\)", "", .) %>% gsub("  ", " ", .) 
+  
+  if (str_sub(name, nchar(name), nchar(name)) == " " )
+    name = str_sub(name, 1,  nchar(name)-1)
+  
+  #if (nchar(name) > 25)
+    #name = substr(name, 1, 25)
+  
+  vals = grep(name, max2$Institution_Name)
+  
+  num = vals[1]
+
+  
+  colleges[i,"Address"] = paste(max2$Institution_Address[num],
+                                max2$Institution_City[num],
+                                max2$Institution_State[num])
+}
+
+
+select(colleges, `School Name`,Address)
+
+
+
+set_address = function ( name, address) {
+  
+  vals2 = grep(name, colleges$`School Name`)
+  num = vals2[1]
+  colleges[num,"Address"] <- address
+  
+}
+```
+
+
+Individual clean-up 
+
+```{r}
+set_address("Polytechnic University of New York, Brooklyn", "6 MetroTech Center, Brooklyn, NY 11201")
+
+set_address("South Dakota School of Mines & Technology", "501 E St Joseph St, Rapid City, SD 57701")
+
+
+
+```
+
+Coordinates
+
+```{r}
+
+library(ggmap)
+
+long = c(nrow = nrow(salaries))
+long[1:nrow(salaries)] = 1.0
+
+lat = c(nrow = nrow(salaries))
+lat[1:nrow(salaries)] = 1.0
+
+
+
+colleges <- add_column(colleges, Long = long, Lat = lat)
+
+
+for (i in 1:nrow(colleges)) {
+  
+  addr = as.character(colleges[i, "Address"])
+  
+
+  if (!grepl( "NA", addr) ) {
+    
+    
+    ge = geocode(addr, output = "latlona", source = "google")
+   
+    lat = ge$lat
+    lon = ge$lon
+      
+    colleges[i, "Long"] <- lon
+    colleges[i, "Lat"] <- lat
+    
+  }
+  
+  
+  
+  
+  
+}
+
+
+select(colleges, `School Name`,Long, Lat, Address)
+
+
+write_csv(colleges, "../data/college_data.csv")
+
+
+```
+
+
+
