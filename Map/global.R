@@ -16,7 +16,7 @@ data_cc = data[complete.cases(data_s),]
 
 print(data_c)
 
-cleantable <-data_c
+cleantable <-data_cc
 
 # cleantable <- data %>%
 #   select(
