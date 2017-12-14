@@ -7,15 +7,15 @@ library(dplyr)
 zipdata <- data_cc
 
 creating_circles = function (data1, pal, colorData, stmed_sal, radius) {
-  
-  
+
+
   leafletProxy("map", data = data1) %>%
     clearShapes() %>%
     addCircles(~Long, ~Lat, radius=radius, layerId=NULL,
                stroke=FALSE, fillOpacity=0.4, fillColor=pal(colorData)) %>%
     addLegend("bottomleft", pal=pal, values=colorData, title=stmed_sal,
               layerId="colorLegend")
-  
+
 }
 
 
@@ -32,9 +32,9 @@ function(input, output, session) {
       ) %>%
       setView(lng = -93.85, lat = 37.45, zoom = 4)
   })
-  
-  
-  
+
+
+
 
   # This observer is responsible for maintaining the circles and legend,
   # according to the variables the user has chosen to map to color and size.
@@ -42,10 +42,12 @@ function(input, output, session) {
     stmed_sal <- input$stmed_sal
     midmed_sal <- input$midmed_sal
     ninety_sal <- input$ninety_sal
-    
+    tuition_cost <- input$attendance_cost
+    num_attending <- input$attendance
+
     #print(colorBy)
     typesch <- input$typesch
-    
+
 
     colorData <- "no"
     pal <- colorFactor("blue", colorData)
@@ -57,37 +59,39 @@ function(input, output, session) {
     # else if (colorBy == "salhigh") {
     #   zip = filter(data, Starting.Median.Salary > 60000)
     # }
-    # 
+    #
     # else if (colorBy == "sallow") {
     #   zip = filter(data, Starting.Median.Salary < 50000)
     # }
-    
+
     zip = filter(data, Starting.Median.Salary > stmed_sal)
     zip = filter(zip, Mid.Career.Median.Salary > midmed_sal)
     zip = filter(zip, Mid.Career.90th.Percentile.Salary > ninety_sal)
-    
+    zip = filter(zip, cost > tuition_cost)
+    zip = filter(zip, attendance > num_attending)
+
     if (typesch != "all_ty" &&  typesch != "all_c" ) {
       zip = filter(zip, School.Type == typesch)
-      
+
     }
-    
+
     if (typesch == "all_c") {
-      
+
       zip_party = filter(zip, School.Type == "Party")
       zip_state = filter(zip, School.Type == "State")
       zip_ivy = filter(zip, School.Type == "Ivy League")
       zip_lib = filter(zip, School.Type == "Liberal Arts")
       zip_eng = filter(zip, School.Type == "Engineering")
-      
+
       colorData <- "Party"
       pal <- colorFactor(c("red", "yellow", "orange", "green", "blue"),
                          c("Party", "State", "Ivy League", "Liberal Arts",
                            "Engineering"))
-      
+
       total_colors = c("Party", "State", "Ivy League", "Liberal Arts",
                        "Engineering")
-      
-      
+
+
       leafletProxy("map", data = zip_state) %>%
         clearShapes() %>%
         addCircles(zip_party$Long, zip_party$Lat, radius=radius, layerId=NULL,
@@ -102,69 +106,69 @@ function(input, output, session) {
                    stroke=FALSE, fillOpacity=0.4, fillColor=pal("Engineering")) %>%
         addLegend("bottomleft", pal, values=total_colors, title=stmed_sal,
                   layerId="colorLegend")
-      
-      
-      # creating_circles(filter(zip, School.Type == "State"), 
+
+
+      # creating_circles(filter(zip, School.Type == "State"),
       #                  pal, colorData, stmed_sal, radius)
-      
+
       # colorData <- "no"
       # pal <- colorFactor("yellow", colorData)
-      
-      # creating_circles(filter(zip, School.Type == "Party"), 
+
+      # creating_circles(filter(zip, School.Type == "Party"),
       #                  pal, colorData, stmed_sal, radius)
-      
+
       # colorData <- "no"
       # pal <- colorFactor("green", colorData)
-      # 
-      # creating_circles(filter(zip, School.Type == "Ivy League"), 
+      #
+      # creating_circles(filter(zip, School.Type == "Ivy League"),
       #                  pal, colorData, stmed_sal, radius)
-      # 
+      #
       # colorData <- "no"
       # pal <- colorFactor("grey", colorData)
-      # 
-      # creating_circles(filter(zip, School.Type == "Liberal Arts"), 
+      #
+      # creating_circles(filter(zip, School.Type == "Liberal Arts"),
       #                  pal, colorData, stmed_sal, radius)
-      # 
+      #
       # colorData <- "no"
       # pal <- colorFactor("red", colorData)
-      # 
-      # creating_circles(filter(zip, School.Type == "Engineering"), 
+      #
+      # creating_circles(filter(zip, School.Type == "Engineering"),
       #                  pal, colorData, stmed_sal, radius)
-      
-      
+
+
     }else {
-      
+
       leafletProxy("map", data = zip) %>%
         clearShapes() %>%
         addCircles(~Long, ~Lat, radius=radius, layerId=NULL,
                    stroke=FALSE, fillOpacity=0.4, fillColor=pal(colorData)) %>%
         addLegend("bottomleft", pal=pal, values=colorData, title=stmed_sal,
                   layerId="colorLegend")
-      
-    }
-    
 
-    
+    }
+
+
+
   })
-  
-  
+
+
   observe({
     leafletProxy("map") %>% clearPopups()
     event <- input$map_shape_click
     if (is.null(event))
       return()
-    
+
     isolate({
       showZipcodePopup( event$lat, event$lng)
     })
   })
-  
+
   # Show a popup at the given location
   showZipcodePopup <- function( lat, lng) {
     selectedZip <- zipdata[zipdata$Lat == lat,]
     print(selectedZip)
     if (selectedZip$Long != lng) {
-      print("Wrong one") 
+      print("Wrong one")
     }
     content <- as.character(tagList(
       sprintf("%s", selectedZip$School.Name),
@@ -173,13 +177,13 @@ function(input, output, session) {
       tags$br(),
       sprintf("Mid-Career Median: %s", selectedZip$Mid.Career.Median.Salary),
       tags$br()
-      
+
     ))
     leafletProxy("map") %>% addPopups(lng, lat, content)
-    
+
   }
 
-  
+
 }
 
 

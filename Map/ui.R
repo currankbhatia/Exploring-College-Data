@@ -2,22 +2,21 @@ library(leaflet)
 
 # Choices for drop-downs
 vars <- c(
-  "All" = "all",
-  "High Salary" = "salhigh",
-  "Medium Income Salary" = "sallow"
-  
+  "Starting Median Salary" = "medsalary",
+  "Mid-Career Median Salary" = "midsalary",
+  "Mid-Career 90th Percentile Salary" = "mid90salaray",
+  "Tuition" = "cost",
+  "Students attending" = "attendance"
 )
 
 type_school <- c(
   "All Colored" = "all_c",
   "All Types" = "all_ty",
-  "Party" = "Party", 
+  "Party" = "Party",
   "Engineering" = "Engineering",
   "Liberal Arts"= "Liberal Arts",
-  "State" = "State", 
+  "State" = "State",
   "Ivy League" = "Ivy League"
-  
-  
 )
 
 
@@ -43,33 +42,49 @@ navbarPage("Team Curry: Not Just Four Years", id="nav",
         width = 300, height = 600,
 
         h4("Interactive Map"),
-        
-        
-        
-        
+
+
+
+
 
         #selectInput("color", "A series of options", vars, selected = "all"),
-        
-          
-        
-        selectInput("typesch", "Type of School", type_school, selected = "all_c"),
-        
-        sliderInput("stmed_sal", "Starting Median Salary:",
-                    min = min(data_cc$Starting.Median.Salary), 
-                    max = max(data_cc$Starting.Median.Salary), 
-                    value = min(data_cc$Starting.Median.Salary),
-                    step = 2000),
-        
-        sliderInput("midmed_sal", "Mid-Career Median Salary:",
-                    min = min(data_cc$Mid.Career.Median.Salary), 
-                    max = max(data_cc$Mid.Career.Median.Salary), 
-                    value = min(data_cc$Mid.Career.Median.Salary)),
-        
 
-        sliderInput("ninety_sal", "Mid-Career 90th Percentile Salary:",
-                    min = min(data_cc$Mid.Career.90th.Percentile.Salary, na.rm = TRUE),
-                    max = max(data_cc$Mid.Career.90th.Percentile.Salary, na.rm = TRUE),
-                    value = min(data_cc$Mid.Career.90th.Percentile.Salary, na.rm = TRUE))
+
+
+        selectInput("typesch", "Type of School", type_school, selected = "all_c"),
+
+        selectInput("var_to_view", "Select parameter to view", vars, selected = "all_c"),
+
+        conditionalPanel("input.var_to_view == 'medsalary'",
+                         sliderInput("stmed_sal", "Starting Median Salary:",
+                                     min = min(data_cc$Starting.Median.Salary),
+                                     max = max(data_cc$Starting.Median.Salary),
+                                     value = min(data_cc$Starting.Median.Salary),
+                                     step = 2000)),
+
+        conditionalPanel("input.var_to_view == 'midsalary'",
+                         sliderInput("midmed_sal", "Mid-Career Median Salary:",
+                                     min = min(data_cc$Mid.Career.Median.Salary),
+                                     max = max(data_cc$Mid.Career.Median.Salary),
+                                     value = min(data_cc$Mid.Career.Median.Salary))),
+
+        conditionalPanel("input.var_to_view == 'mid90salary'",
+                         sliderInput("ninety_sal", "Mid-Career 90th Percentile Salary:",
+                                     min = min(data_cc$Mid.Career.90th.Percentile.Salary, na.rm = TRUE),
+                                     max = max(data_cc$Mid.Career.90th.Percentile.Salary, na.rm = TRUE),
+                                     value = min(data_cc$Mid.Career.90th.Percentile.Salary, na.rm = TRUE))),
+
+        conditionalPanel("input.var_to_view == 'cost'",
+                         sliderInput("attendance_cost", "Cost of Attendance:",
+                                     min = min(data_cc$cost, na.rm = TRUE),
+                                     max = max(data_cc$cost, na.rm = TRUE),
+                                     value = min(data_cc$cost, na.rm = TRUE))),
+
+        conditionalPanel("input.var_to_view == 'attendance'",
+                         sliderInput("attendance", "Number of Students Attending:",
+                                     min = min(data_cc$attendance, na.rm = TRUE),
+                                     max = max(data_cc$attendance, na.rm = TRUE),
+                                     value = min(data_cc$attendance, na.rm = TRUE)))
       ),
 
       tags$div(id="cite",

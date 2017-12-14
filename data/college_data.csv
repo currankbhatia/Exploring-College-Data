@@ -1,270 +1,270 @@
-School Name,School Type,Starting Median Salary,Mid-Career Median Salary,Mid-Career 10th Percentile Salary,Mid-Career 25th Percentile Salary,Mid-Career 75th Percentile Salary,Mid-Career 90th Percentile Salary,Address,Long,Lat
-Massachusetts Institute of Technology (MIT),Engineering,72200,126e3,76800,99200,168e3,22e4,77 Massachusetts Avenue Cambridge MA,-71.0930025,42.3592206
-California Institute of Technology (CIT),Engineering,75500,123e3,NA,104e3,161e3,NA,1200 E California Blvd Pasadena CA,-118.12724,34.1356666
-Harvey Mudd College,Engineering,71800,122e3,NA,96e3,18e4,NA,301 Platt Blvd. Claremont CA,-117.7089441,34.1061112
-"Polytechnic University of New York, Brooklyn",Engineering,62400,114e3,66800,94300,143e3,19e4,"6 MetroTech Center, Brooklyn, NY 11201",-73.9866394,40.6942285
-Cooper Union,Engineering,62200,114e3,NA,80200,142e3,NA,30 Cooper Square New York NY,-73.9915905,40.7281693
-Worcester Polytechnic Institute (WPI),Engineering,61e3,114e3,8e4,91200,137e3,18e4,100 Institute Road Worcester MA,NA,NA
-Carnegie Mellon University (CMU),Engineering,61800,111e3,63300,80100,15e4,209e3,5000 Forbes Ave Pittsburgh PA,-79.9433725,40.44416469999999
-Rensselaer Polytechnic Institute (RPI),Engineering,61100,11e4,71600,85500,14e4,182e3,110 8th St Troy NY,-73.6817184,42.7308677
-Georgia Institute of Technology,Engineering,58300,106e3,67200,85200,137e3,183e3,"225 North Avenue, N.W. Atlanta GA",-84.39479159999999,33.7724173
-Colorado School of Mines,Engineering,58100,106e3,62200,87900,142e3,201e3,1500 Illinois St Golden CO,-105.22257690000001,39.7510216
-Stevens Institute of Technology,Engineering,60600,105e3,68700,81900,138e3,185e3,Castle Point On Hudson Hoboken NJ,-74.025683,40.7448376
-Illinois Institute of Technology (IIT),Engineering,56e3,97800,56100,77400,121e3,165e3,10 W. 35th Street Chicago IL,-87.6272312,41.8313959
-Wentworth Institute of Technology,Engineering,53e3,96700,55200,74e3,117e3,153e3,550 Huntington Ave Boston MA,NA,NA
-Virginia Polytechnic Institute and State University (Virginia Tech),Engineering,53500,95400,50600,71400,124e3,163e3,"Office of the President, 210 Burruss Hall Blacksburg VA",-80.42341669999999,37.22838429999999
-South Dakota School of Mines & Technology,Engineering,55800,93400,71500,81900,122e3,147e3,NA NA NA,1,1
-New Mexico Institute of Mining and Technology (New Mexico Tech),Engineering,51e3,93400,NA,67400,123e3,NA,801 Leroy Place Socorro NM,-106.9041493,34.0678095
-Rochester Institute of Technology (RIT),Engineering,48900,84600,45e3,62100,112e3,159e3,1 Lomb Memorial Dr Rochester NY,NA,NA
-Embry-Riddle Aeronautical University (ERAU),Engineering,52700,80700,49800,64e3,106e3,142e3,600 S Clyde Morris Blvd Daytona Beach FL,NA,NA
-Tennessee Technological University,Engineering,46200,8e4,42100,62600,99500,121e3,1 William L. Jones Drive Cookeville TN,NA,NA
-University of Illinois at Urbana-Champaign (UIUC),Party,52900,96100,48200,68900,132e3,177e3,601 E John Street Champaign IL,NA,NA
-"University of Maryland, College Park",Party,52e3,95e3,50400,68300,126e3,166e3,NA NA NA,1,1
-"University of California, Santa Barbara (UCSB)",Party,50500,95e3,51300,71200,129e3,173e3,552 University Road Santa Barbara CA,-119.8490206,34.4122366
-University of Texas (UT) - Austin,Party,49700,93900,50100,67400,129e3,188e3,NA NA NA,1,1
-State University of New York (SUNY) at Albany,Party,44500,92200,47e3,63100,135e3,209e3,NA NA NA,1,1
-University of Florida (UF),Party,47100,87900,45400,62900,12e4,172e3,355 Tigert Hall Gainesville FL,-82.3398376,29.6494266
-Louisiana State University (LSU),Party,46900,87800,43700,61300,12e4,165e3,8100 Hwy 71 South Alexandria LA,-92.41433669999999,31.178112
-University of Georgia (UGA),Party,44100,86e3,43100,57800,118e3,164e3,456 East Broad Street Athens GA,NA,NA
-Pennsylvania State University (PSU),Party,49900,85700,46300,62e3,117e3,16e4,150 South College St Carlisle PA,-77.1978938,40.1993813
-Arizona State University (ASU),Party,47400,84100,44600,60700,114e3,163e3,P.O. Box 2203 Tempe AZ,-111.9400054,33.4255104
-"Indiana University (IU), Bloomington",Party,46300,84e3,43600,60400,119e3,178e3,NA NA NA,1,1
-University of Iowa (UI),Party,44700,83900,43300,61100,116e3,163e3,101 Jessup Hall Iowa City IA,-91.5364924,41.661897
-Randolph-Macon College,Party,42600,83600,NA,54100,123e3,NA,204 Henry Street Ashland VA,NA,NA
-"University of Alabama, Tuscaloosa",Party,41300,81400,40100,56500,117e3,161e3,NA NA NA,1,1
-University of Mississippi,Party,41400,79700,40400,53500,108e3,186e3,145 Martindale University MS,NA,NA
-University of New Hampshire (UNH),Party,41800,78300,41700,56400,114e3,147e3,"Thompson Hall, 105 Main Street Durham NH",NA,NA
-West Virginia University (WVU),Party,43100,78100,39700,55700,106e3,141e3,300 Campus Dr Parkersburg WV,NA,NA
-University of Tennessee,Party,43800,74600,41900,53200,106e3,153e3,615 McCallie Ave Chattanooga TN,NA,NA
-Ohio University,Party,42200,73400,36600,52800,106e3,15e4, Athens OH,-82.1012554,39.3292396
-Florida State University (FSU),Party,42100,73e3,39600,52800,107e3,156e3,211 Westcott Bldg Tallahassee FL,-84.2918905,30.4407399
-Bucknell University,Liberal Arts,54100,11e4,62800,80600,156e3,251e3,Dent Drive Lewisburg PA,-76.8848009,40.9547451
-Colgate University,Liberal Arts,52800,108e3,6e4,76700,167e3,265e3,13 Oak Dr Hamilton NY,-75.541671,42.822465
-Amherst College,Liberal Arts,54500,107e3,NA,84900,162e3,NA,P.O. Box 5000 Amherst MA,-72.5198537,42.3732216
-Lafayette College,Liberal Arts,53900,107e3,70600,79300,144e3,204e3,High St Easton PA,NA,NA
-Bowdoin College,Liberal Arts,48100,107e3,NA,74600,146e3,NA,5700 College Station - President's Office Brunswick ME,NA,NA
-College of the Holy Cross,Liberal Arts,50200,106e3,NA,65600,143e3,NA,"One College Street, 119 Fenwick Hall Worcester MA",NA,NA
-Occidental College,Liberal Arts,51900,105e3,NA,54800,157e3,NA,1600 Campus Rd Los Angeles CA,NA,NA
-Washington and Lee University,Liberal Arts,53600,104e3,NA,82800,146e3,NA,204 West Washington Street Lexington VA,-79.44398939999999,37.7913838
-Swarthmore College,Liberal Arts,49700,104e3,NA,67200,167e3,NA,500 College Ave Swarthmore PA,NA,NA
-Davidson College,Liberal Arts,46100,104e3,NA,70500,146e3,NA,102 N. Main Street Davidson NC,-80.847593,35.499519
-Carleton College,Liberal Arts,47500,103e3,NA,69400,141e3,NA,One North College Street Northfield MN,-93.15608399999999,44.4613041
-Williams College,Liberal Arts,51700,102e3,NA,76400,143e3,NA,880 Main St Williamstown MA,-73.20304039999999,42.7128303
-Pomona College,Liberal Arts,48600,101e3,NA,63300,161e3,NA,550 North College Avenue Claremont CA,-117.7145536,34.099078
-"Wesleyan University (Middletown, Connecticut)",Liberal Arts,46500,97900,42e3,62500,126e3,215e3,237 High St Middletown CT,-72.6561627,41.5563557
-Bates College,Liberal Arts,47300,96500,NA,60700,162e3,NA,2 Andrews Road Lewiston ME,-70.20420039999999,44.1067532
-Union College,Liberal Arts,47200,95800,48700,75200,135e3,23e4,One Angwin Ave Angwin CA,-122.4418299,38.5697401
-University of Richmond,Liberal Arts,48600,94600,44500,59400,151e3,211e3,28 Westhampton Way Richmond VA,-77.5427156,37.5739911
-Vassar College,Liberal Arts,46e3,94600,NA,60600,123e3,NA,"Box 1, Raymond Avenue Poughkeepsie NY",NA,NA
-Middlebury College,Liberal Arts,47700,94200,NA,69100,129e3,NA,Old Chapel Middlebury VT,-73.1759781,44.0090461
-Mount Holyoke College,Liberal Arts,42400,94100,NA,57100,131e3,NA,50 College Street South Hadley MA,-72.5768166,42.2575528
-Franklin and Marshall College,Liberal Arts,49100,92800,NA,55800,185e3,NA,College Ave Lancaster PA,-76.3194286,40.0441352
-DePauw University,Liberal Arts,41400,88300,49500,57400,133e3,185e3,313 S Locust St Greencastle IN,-86.860248,39.6408895
-St. Olaf College,Liberal Arts,45300,86200,41300,61e3,12e4,185e3,1520 St Olaf Ave Northfield MN,-93.1827515,44.4618913
-Colby College,Liberal Arts,46400,85800,NA,63500,129e3,NA,4000 Mayflower Hill Waterville ME,-69.6626362,44.5638691
-Gettysburg College,Liberal Arts,44700,85800,NA,66300,132e3,NA,300 N Washington St Gettysburg PA,-77.2336806,39.8341706
-Siena College,Liberal Arts,45500,85200,38700,58400,129e3,189e3,515 Loudon Rd Loudonville NY,-73.7523365,42.716635
-Smith College,Liberal Arts,44e3,83900,45100,59800,129e3,184e3,900 W. Daisy Bates Drive Little Rock AR,NA,NA
-Hamilton College,Liberal Arts,49200,83700,NA,51900,123e3,NA,198 College Hill Rd Clinton NY,NA,NA
-Randolph-Macon College,Liberal Arts,42600,83600,NA,54100,123e3,NA,204 Henry Street Ashland VA,-77.4771593,37.7607289
-Wellesley College,Liberal Arts,42800,83500,NA,58600,125e3,NA,106 Central St Wellesley MA,-71.3099246,42.2924191
-Denison University,Liberal Arts,42e3,83500,NA,62100,122e3,NA,100 West College Rd Granville OH,-82.5238552,40.0711678
-Oberlin College,Liberal Arts,43400,81600,NA,46400,128e3,NA,70 N Professor St Oberlin OH,-82.2207621,41.2934012
-University of Puget Sound,Liberal Arts,46600,81500,48900,60100,104e3,137e3,1500 N Warner Tacoma WA,-122.4823985,47.2638063
-Colorado College (CC),Liberal Arts,38500,81400,NA,43e3,148e3,NA,14 East Cache La Poudre Street Colorado Springs CO,NA,NA
-Reed College,Liberal Arts,40500,81100,NA,67400,101e3,NA,3203 SE Woodstock Boulevard Portland OR,-122.6301455,45.4809642
-Gustavus Adolphus College,Liberal Arts,44500,80600,NA,49300,101e3,NA,800 West College Avenue Saint Peter MN,-93.9757405,44.3237484
-Whitman College,Liberal Arts,43500,80100,NA,64800,111e3,NA,345 Boyer Ave Walla Walla WA,NA,NA
-Ursinus College,Liberal Arts,42100,8e4,35600,54300,1e5,16e4,601 E. Main St Collegeville PA,NA,NA
-Juniata College,Liberal Arts,41800,78900,NA,67200,11e4,NA,1700 Moore St Huntingdon PA,-78.0172906,40.50063859999999
-Wittenberg University,Liberal Arts,39200,78200,NA,54100,131e3,NA,Ward St at N Wittenberg Ave Springfield OH,NA,NA
-Grinnell College,Liberal Arts,42600,76600,NA,65100,116e3,NA,1121 Park Street Grinnell IA,NA,NA
-Skidmore College,Liberal Arts,41600,74600,NA,42800,147e3,NA,815 North Broadway Saratoga Springs NY,-73.7823318,43.095777
-Moravian College,Liberal Arts,42500,74400,NA,56700,94900,NA,1200 Main St Bethlehem PA,-75.3809254,40.6310594
-Lewis & Clark College,Liberal Arts,38900,72600,38200,53400,104e3,14e4,0615 S W Palatine Hill Rd Portland OR,-122.6701491,45.45017550000001
-Fort Lewis College,Liberal Arts,42e3,69800,NA,55e3,94e3,NA,1000 Rim Drive Durango CO,NA,NA
-Thomas Aquinas College,Liberal Arts,41500,67500,NA,44600,93100,NA,10000 N Ojai Rd Santa Paula CA,NA,NA
-Evergreen State College,Liberal Arts,39500,63900,38800,47200,91600,12e4,2700 Evergreen Pkwy NW Olympia WA,-122.9734736,47.0733706
-Dartmouth College,Ivy League,58e3,134e3,63100,90200,234e3,321e3,207 Parkhurst Hall Hanover NH,NA,NA
-Princeton University,Ivy League,66500,131e3,68900,1e5,19e4,261e3,One Nassau Hall Princeton NJ,-74.66055879999999,40.3497981
-Yale University,Ivy League,59100,126e3,58e3,80600,198e3,326e3,105 Wall Street New Haven CT,-72.9266477,41.3111478
-Harvard University,Ivy League,63400,124e3,54800,86200,179e3,288e3,Massachusetts Hall Cambridge MA,-71.1181835,42.3748446
-University of Pennsylvania,Ivy League,60900,12e4,55900,79200,192e3,282e3,400 E Second St Bloomsburg PA,-76.4472749,41.0081119
-Cornell University,Ivy League,60300,11e4,56800,79800,16e4,21e4,300 Day Hall Ithaca NY,-76.4831835,42.4472814
-Brown University,Ivy League,56200,109e3,55400,74400,159e3,228e3,2000 W University St Siloam Springs AR,NA,NA
-Columbia University,Ivy League,59400,107e3,50300,71900,161e3,241e3,2960 Broadway New York NY,-73.9631966,40.8079381
-"University of California, Berkeley",State,59900,112e3,59500,81e3,149e3,201e3,200 California Hall Berkeley CA,-122.3697299,37.81729380000001
-University of Virginia (UVA),State,52700,103e3,52200,71800,146e3,215e3,1 College Avenue Wise VA,-82.58506,36.9719232
-Cal Poly San Luis Obispo,State,57200,101e3,55e3,74700,133e3,178e3,NA NA NA,1,1
-University of California at Los Angeles (UCLA),State,52600,101e3,51300,72500,139e3,193e3,NA NA NA,1,1
-"University of California, San Diego (UCSD)",State,51100,101e3,51700,75400,131e3,177e3,NA NA NA,1,1
-"University of California, Davis",State,52300,99600,52e3,71600,135e3,202e3,NA NA NA,1,1
-University of Colorado - Boulder (UCB),State,47100,97600,51600,69e3,128e3,187e3,NA NA NA,1,1
-"University of California, Irvine (UCI)",State,48300,96700,47800,66e3,123e3,172e3,510 Aldrich Hall Irvine CA,-117.8412259,33.6484038
-University of Illinois at Urbana-Champaign (UIUC),State,52900,96100,48200,68900,132e3,177e3,601 E John Street Champaign IL,-88.23003729999999,40.1088318
-Texas A&M University,State,49700,96100,51100,71300,131e3,171e3,6300 Ocean Dr. Corpus Christi TX,-97.32414329999999,27.7127448
-Binghamton University,State,53600,95900,50900,71200,146e3,201e3,NA NA NA,1,1
-University of Missouri - Rolla (UMR),State,57100,95800,67600,80400,122e3,166e3,NA NA NA,1,1
-San Jose State University (SJSU),State,53500,95600,50700,70500,122e3,156e3,1 Washington Sq San Jose CA,NA,NA
-"University of Maryland, College Park",State,52e3,95e3,50400,68300,126e3,166e3,NA NA NA,1,1
-"University of California, Santa Barbara (UCSB)",State,50500,95e3,51300,71200,129e3,173e3,552 University Road Santa Barbara CA,NA,NA
-University of Texas (UT) - Austin,State,49700,93900,50100,67400,129e3,188e3,NA NA NA,1,1
-University of Michigan,State,52700,93e3,50900,69400,128e3,182e3,2074 Fleming Administration Building Ann Arbor MI,-83.7382241,42.2780436
-Stony Brook University,State,49500,93e3,47200,67100,129e3,181e3,NA NA NA,1,1
-State University of New York (SUNY) at Albany,State,44500,92200,47e3,63100,135e3,209e3,NA NA NA,1,1
-Rutgers University,State,50300,91800,48100,65100,128e3,176e3,NA NA NA,1,1
-Purdue University,State,51400,90500,49900,67400,121e3,168e3,2101 E. Coliseum Blvd. Fort Wayne IN,-85.1118121,41.1155795
-University of Connecticut (UConn),State,48e3,88800,46100,66400,12e4,162e3,352 Mansfield Rd. Unit 2048 Storrs CT,-72.2492938,41.8079128
-University of Massachusetts (UMass) - Amherst,State,46600,88200,43100,61300,122e3,168e3,NA NA NA,1,1
-"California State University (CSU), Chico",State,47400,88100,46800,62800,122e3,154e3,NA NA NA,1,1
-University of Florida (UF),State,47100,87900,45400,62900,12e4,172e3,355 Tigert Hall Gainesville FL,-82.3398376,29.6494266
-University of Wisconsin (UW) - Madison,State,48900,87800,47400,62400,118e3,17e4,500 Lincoln Dr Madison WI,NA,NA
-Louisiana State University (LSU),State,46900,87800,43700,61300,12e4,165e3,8100 Hwy 71 South Alexandria LA,-92.41433669999999,31.178112
-"California State University, Fullerton (CSUF)",State,45700,87e3,45400,62500,119e3,158e3,NA NA NA,1,1
-George Mason University,State,47800,86900,51300,67200,114e3,15e4,4400 University Dr Fairfax VA,-77.3110004,38.83465470000001
-University of Massachusetts (UMass) - Lowell,State,45400,86600,50900,65e3,113e3,158e3,1 University Ave Lowell MA,-71.3258936,42.6538858
-San Francisco State University (SFSU),State,47300,86400,45100,62700,114e3,15e4,1600 Holloway Ave San Francisco CA,-122.4767213,37.7227669
-University of Arizona,State,47500,86100,44800,61700,117e3,16e4,1401 E University Tucson AZ,-110.9508944,32.2327247
-Clemson University,State,48400,86e3,50500,61800,111e3,15e4,201 Sikes Hall Clemson SC,-82.8351438,34.6793819
-University of Georgia (UGA),State,44100,86e3,43100,57800,118e3,164e3,456 East Broad Street Athens GA,-83.37302299999999,33.957848
-Pennsylvania State University (PSU),State,49900,85700,46300,62e3,117e3,16e4,150 South College St Carlisle PA,-77.1978938,40.1993813
-University of Washington (UW),State,48800,85300,47e3,59800,115e3,149e3,P.O. Box 351230 Seattle WA,-122.3320708,47.6062095
-Michigan State University (MSU),State,46300,85300,44200,61500,119e3,17e4,450 Administration Bldg. East Lansing MI,-84.4821719,42.701848
-University of Rhode Island (URI),State,43900,85300,45400,60100,112e3,157e3,"Green Hall, 35 Campus Avenue Kingston RI",-71.52737309999999,41.4846985
-San Diego State University (SDSU),State,46200,85200,45500,61800,116e3,158e3,5500 Campanile Dr San Diego CA,-117.0693867,32.7747307
-Auburn University,State,45400,84700,45400,62700,109e3,145e3,7440 East Drive P.O. Box 244023 Montgomery AL,-86.177745,32.36729
-Washington State University (WSU),State,45300,84700,43600,59e3,113e3,162e3,French Administration Building Pullman WA,-117.1542121,46.7319225
-"California State University, Long Beach (CSULB)",State,45100,84700,47400,62500,113e3,154e3,NA NA NA,1,1
-Iowa State University,State,45400,84600,44400,6e4,109e3,147e3,1750 Beardshear Hall Ames IA,-93.64844049999999,42.0261746
-University of Delaware,State,45900,84500,44500,64e3,119e3,165e3,104 Hullihen Hall Newark DE,NA,NA
-University of Colorado - Denver,State,46100,84400,46400,58600,105e3,144e3,NA NA NA,1,1
-"California State University, East Bay (CSUEB)",State,49200,84300,46e3,62400,115e3,155e3,NA NA NA,1,1
-State University of New York (SUNY) at Farmingdale,State,47300,84200,50200,59800,11e4,162e3,NA NA NA,1,1
-University of Minnesota,State,46200,84200,49e3,63200,112e3,148e3,"202 Morrill Hall, 100 Church Street SE Minneapolis MN",-93.23451089999999,44.9758602
-Arizona State University (ASU),State,47400,84100,44600,60700,114e3,163e3,P.O. Box 2203 Tempe AZ,-111.9400054,33.4255104
-"University of California, Santa Cruz (UCSC)",State,44700,84100,46100,62e3,121e3,165e3,1156 High St Santa Cruz CA,NA,NA
-"Indiana University (IU), Bloomington",State,46300,84e3,43600,60400,119e3,178e3,NA NA NA,1,1
-University of Iowa (UI),State,44700,83900,43300,61100,116e3,163e3,101 Jessup Hall Iowa City IA,-91.5364924,41.661897
-Ohio State University (OSU),State,44900,83700,45500,60700,116e3,162e3,1328 Dover Rd Wooster OH,-81.92310400000001,40.775025
-North Carolina State University (NCSU),State,47200,83300,49200,64800,112e3,153e3,20 Watauga Club Drive Raleigh NC,NA,NA
-Oregon State University (OSU),State,45100,83300,46900,64e3,113e3,146e3, Corvallis OR,-123.2620435,44.5645659
-University of Utah,State,45400,83200,43e3,58400,116e3,148e3,201 Presidents Circle Salt Lake City UT,NA,NA
-"University of Nevada, Reno (UNR)",State,46500,82900,41900,54600,113e3,143e3,NA NA NA,1,1
-University of Oklahoma,State,44700,82900,41200,60300,114e3,167e3,"660 Parrington Oval, Room 110 Norman OK",-97.4457137,35.2058936
-University of Arkansas,State,44100,82800,43200,60700,113e3,16e4,2801 S University Ave Little Rock AR,NA,NA
-University of Vermont (UVM),State,44800,82700,44700,58e3,122e3,194e3,85 S Prospect St Burlington VT,NA,NA
-University of Alabama at Huntsville (UAH),State,43100,82700,46100,67800,106e3,132e3,301 Sparkman Dr Huntsville AL,-86.6413491,34.7259647
-"California State University, Sacramento (CSUS)",State,47800,82400,42900,59600,111e3,154e3,NA NA NA,1,1
-University of Idaho,State,44900,82e3,43e3,56700,104e3,142e3,875 Perimeter Drive Moscow ID,-117.0209677,46.7289073
-University of Illinois at Chicago,State,47500,81700,44700,58800,11e4,146e3,601 S. Morgan St. ; M/C 102 Chicago IL,-87.6509962,41.8737629
-State University of New York (SUNY) at Buffalo,State,46200,81700,45900,61400,11e4,147e3,NA NA NA,1,1
-University of Kansas,State,42400,81600,44800,57200,115e3,156e3,230 Strong Hall 1450 Jayhawk Blvd. Lawrence KS,NA,NA
-University of New Mexico (UNM),State,41600,81600,41800,59100,105e3,141e3,University of New Mexico Albuquerque NM,-106.6197812,35.0843187
-University of North Carolina at Chapel Hill (UNCH),State,42900,81500,43400,57500,117e3,155e3,103 South Bldg Campus Box 9100 Chapel Hill NC,NA,NA
-"University of Alabama, Tuscaloosa",State,41300,81400,40100,56500,117e3,161e3,NA NA NA,1,1
-"University of California, Riverside (UCR)",State,46800,81300,37200,59900,109e3,134e3,900 University Ave Riverside CA,-117.3315961,33.9754243
-State University of New York (SUNY) at Geneseo,State,42300,81300,39300,47600,117e3,173e3,NA NA NA,1,1
-University of Missouri - Columbia,State,41700,81e3,43500,57100,111e3,156e3,105 Jesse Hall Columbia MO,NA,NA
-University of Nebraska,State,45700,80900,42200,56600,113e3,156e3,905 W 25th St Kearney NE,-99.0925816,40.7006228
-University of Texas at Arlington (UTA),State,45400,80800,46400,61200,106e3,138e3,701 S. Nedderman Dr. Arlington TX,-97.11519709999999,32.7292117
-Northern Illinois University (NIU),State,43600,80800,43900,60200,111e3,161e3,"Altgeld Hall 300, Office of the President Dekalb IL",NA,NA
-Oklahoma State University,State,42800,80700,40100,56500,114e3,151e3,709 Oklahoma Blvd Alva OK,-98.67030609999999,36.7943988
-University of North Dakota,State,44e3,80600,43400,56400,111e3,157e3,264 Centennial Drive Stop 8193 Grand Forks ND,NA,NA
-"California State University, Northridge (CSUN)",State,45500,80400,44500,57800,108e3,153e3,NA NA NA,1,1
-University of Houston (UH),State,46e3,79900,42e3,56200,106e3,141e3,2700 Bay Area Blvd Houston TX,-95.0986427,29.5812422
-University of Mississippi,State,41400,79700,40400,53500,108e3,186e3,145 Martindale University MS,-89.538443,34.3647324
-New Mexico State University,State,44300,79500,37400,53800,102e3,131e3,P.O. Box 30001 Las Cruces NM,-106.7636538,32.3199396
-Lamar University,State,46500,79400,38700,51600,114e3,158e3,4400 MLK Beaumont TX,-94.07066329999999,30.0440162
-Mississippi State University (MSU),State,44500,79300,43300,58800,108e3,151e3,610 Allen Hall Mississippi State MS,NA,NA
-Colorado State University (CSU),State,44800,79e3,43800,57100,112e3,15e4,102 Administration Building Fort Collins CO,NA,NA
-Kansas State University (KSU),State,43300,79e3,37200,54100,106e3,138e3,110 Anderson Hall Manhattan KS,-96.58099159999999,39.1878942
-University of Wyoming (UW),State,44500,78700,41500,54e3,105e3,145e3,1000 E. University Ave. Laramie WY,NA,NA
-Utah State University,State,43800,78700,41600,55400,101e3,132e3,Old Main Hill Logan UT,NA,NA
-University of Wisconsin (UW) - Platteville,State,45800,78500,48400,61200,1e5,139e3,1 University Plz Platteville WI,NA,NA
-University of Oregon,State,42200,78400,38100,56200,117e3,186e3,110 Johnson Hall Eugene OR,-123.0726055,44.0448302
-University of Kentucky (UK),State,42800,78300,43e3,57300,107e3,149e3,101 Main Building Lexington KY,-84.4968991,38.0466166
-University of New Hampshire (UNH),State,41800,78300,41700,56400,114e3,147e3,"Thompson Hall, 105 Main Street Durham NH",-70.9324341,43.1359259
-University of Massachusetts (UMass) - Boston,State,45600,78200,36300,53800,109e3,151e3,100 Morrissey Blvd Boston MA,-71.0363686,42.3129774
-West Virginia University (WVU),State,43100,78100,39700,55700,106e3,141e3,300 Campus Dr Parkersburg WV,NA,NA
-University of Maryland Baltimore County (UMBC),State,47e3,77800,46900,59100,105e3,13e4,NA NA NA,1,1
-North Dakota State University (NDSU),State,45100,77800,39e3,55800,1e5,123e3,1301  12th Avenue North Fargo ND,-96.79812659999999,46.8903848
-State University of New York (SUNY) at Oswego,State,38e3,77800,40400,53e3,115e3,169e3,NA NA NA,1,1
-University of Massachusetts (UMass) - Dartmouth,State,43200,77700,43300,56200,107e3,132e3,285 Old Westport Rd North Dartmouth MA,NA,NA
-Montana State University - Bozeman,State,46600,77500,40200,58100,111e3,151e3,P.O. Box 172420 Bozeman MT,NA,NA
-State University of New York (SUNY) at Oneonta,State,37500,76700,4e4,54300,97700,155e3,NA NA NA,1,1
-University of Louisiana (UL) at Lafayette,State,41100,76300,42e3,54500,107e3,163e3,104 University Cir Lafayette LA,-92.01909169999999,30.21532029999999
-State University of New York (SUNY) at Plattsburgh,State,40800,76200,38400,54100,105e3,136e3,NA NA NA,1,1
-Wayne State University,State,42800,76100,40100,56200,101e3,139e3,656 West Kirby Street Detroit MI,-83.0721008,42.35832629999999
-University of Hawaii,State,43800,76e3,40400,56300,104e3,128e3,200 West Kawili Street Hilo HI,NA,NA
-University of Toledo,State,43100,75900,40100,54100,1e5,133e3,2801 W Bancroft Toledo OH,NA,NA
-Florida International University (FIU),State,43200,75500,40500,55800,98200,136e3,11200 SW 8th Street Miami FL,-80.3751759,25.7580337
-University of Wisconsin (UW) - Whitewater,State,40800,75500,38200,53500,99300,15e4,800 W Main St Whitewater WI,NA,NA
-Western Washington University,State,42700,75400,41300,56700,99200,119e3,516 High St Bellingham WA,-122.4867951,48.7377644
-Minnesota State University - Mankato,State,43300,74700,39500,53800,95700,14e4,309 Wigley Administration Center Mankato MN,-93.9994928,44.1466934
-University of Tennessee,State,43800,74600,41900,53200,106e3,153e3,615 McCallie Ave Chattanooga TN,-85.29827159999999,35.04789
-University of Wisconsin (UW) - Milwaukee,State,42300,74600,40600,54e3,93700,123e3,"Dept. of Health Sciences, Enderis Hall PO Box 413 Milwaukee WI",NA,NA
-University of Arkansas - Monticello (UAM),State,39200,74500,32800,46100,11e4,161e3,NA NA NA,1,1
-Penn State - Harrisburg,State,45700,74e3,44e3,53100,104e3,15e4,NA NA NA,1,1
-University of North Carolina at Charlotte (UNCC),State,43100,74e3,38200,53200,99500,133e3,9201 University City Blvd Charlotte NC,-80.7299271,35.3038112
-Georgia State University,State,41800,74e3,43e3,55300,99900,145e3,33 Gilmer St SE Atlanta GA,-84.38590719999999,33.7534327
-Western Michigan University (WMU),State,42300,73800,40100,52500,103e3,135e3,1903 West Michigan Avenue Kalamazoo MI,NA,NA
-South Dakota State University (SDSU),State,41100,73500,34100,49900,99400,129e3,"Box 2201, Adm 324 Brookings SD",NA,NA
-Idaho State University,State,44900,73400,35400,49600,101e3,143e3,921 S 7th Ave Pocatello ID,-112.43631,42.863288
-Ohio University,State,42200,73400,36600,52800,106e3,15e4, Athens OH,NA,NA
-Illinois State University,State,42e3,73400,39100,55200,105e3,142e3,"1000 Illinois State University, Campus Box 1000 Normal IL",-88.9946702,40.5122833
-Cleveland State University,State,43500,73100,39500,51600,97e3,137e3,2121 Euclid Avenue Cleveland OH,NA,NA
-Florida State University (FSU),State,42100,73e3,39600,52800,107e3,156e3,211 Westcott Bldg Tallahassee FL,-84.2918905,30.4407399
-"University of Alaska, Anchorage",State,45900,72600,39800,56600,99300,137e3,NA NA NA,1,1
-Fitchburg State College,State,42400,72600,43300,56100,99600,151e3,NA NA NA,1,1
-University of Nebraska at Omaha,State,41500,72600,39500,54400,97400,126e3,6001 Dodge St Omaha NE,-96.01071209999999,41.2581216
-Southern Illinois University Carbondale,State,43e3,72500,38300,51300,99300,139e3,Anthony Hall 116 Carbondale IL,-89.2167419,37.7152379
-University of Texas at El Paso (UTEP),State,43400,72100,37700,50400,99500,133e3,500 W. University Ave El Paso TX,-106.5046216,31.7708544
-"California State University, Dominguez Hills (CSUDH)",State,42700,72100,30800,47e3,92200,132e3,NA NA NA,1,1
-University Of Maine,State,41200,72100,41700,55600,99300,141e3,NA NA NA,1,1
-Eastern Michigan University,State,40300,72100,37900,52800,95400,135e3,202 Welch Ypsilanti MI,-83.6244504,42.245993
-Bowling Green State University,State,39800,72100,38200,51800,101e3,146e3,1001 East Wooster Street Bowling Green OH,NA,NA
-University of Montana,State,37300,71900,37e3,51500,96400,138e3,1115 N Roberts Street Helena MT,NA,NA
-University of Central Florida (UCF),State,42600,71700,39500,51500,98400,125e3,4000 Central Florida Blvd Orlando FL,-81.2033083,28.5968774
-University of South Carolina,State,4e4,71700,36300,49900,98400,131e3,171 Ashley Ave Charleston SC,-79.946747,32.7844632
-"University of Nevada, Las Vegas (UNLV)",State,45200,71600,39e3,52400,1e5,128e3,NA NA NA,1,1
-St. Cloud State University,State,41800,71400,38700,49400,101e3,126e3,NA NA NA,1,1
-University of Wisconsin (UW) - Parkside,State,40700,71400,40900,53100,84900,119e3,900 Wood Road Box 2000 Kenosha WI,NA,NA
-"California State University (CSU), Stanislaus",State,38e3,71400,33700,50500,94100,121e3,NA NA NA,1,1
-Humboldt State University,State,42600,71300,36e3,56300,94400,117e3,1 Harpst Street Arcata CA,NA,NA
-Florida Atlantic University (FAU),State,42600,71100,40700,53e3,99500,137e3,777 Glades Rd Boca Raton FL,-80.1019381,26.3737529
-University of South Florida (USF),State,41100,71100,39600,51500,98100,131e3,4202 East Fowler Ave Tampa FL,-82.4120689,28.0672632
-Portland State University (PSU),State,42600,70900,40700,52300,94400,123e3,724 SW Harrison Portland OR,-122.6845654,45.5111227
-Eastern Washington University,State,38600,70900,36e3,50500,93100,117e3,526 5th Street Cheney WA,NA,NA
-University of Texas at San Antonio (UTSA),State,42500,70700,39100,49800,92700,121e3,One UTSA Circle San Antonio TX,-98.61719910000001,29.5845107
-University of Akron,State,41100,70300,40600,53300,95200,127e3,302 Buchtel Common Akron OH,NA,NA
-State University of New York (SUNY) at Potsdam,State,38e3,70300,35100,51200,1e5,179e3,NA NA NA,1,1
-University of Alabama at Birmingham (UAB),State,39200,70100,43e3,53400,91400,125e3,1720 2nd Avenue South Birmingham AL,NA,NA
-University of Memphis (U of M),State,41400,69700,36100,49100,93500,127e3,341 Administration Building Memphis TN,NA,NA
-Boise State University (BSU),State,40800,69500,37400,48700,87500,11e4,1910 University Dr Boise ID,-116.206954,43.6050793
-Missouri State University (MSU),State,36100,69500,33300,46900,102e3,134e3,800 University Drive Maryville MO,-94.8838091,40.3519243
-University of Wisconsin (UW) - La Crosse,State,42200,69300,37500,47200,93100,133e3,1725 State St La Crosse WI,-91.2300094,43.8136889
-Appalachian State University,State,40400,69100,37200,50400,90800,115e3, Boone NC,-81.6745517,36.216795
-Virginia Commonwealth University (VCU),State,42e3,68400,37400,51900,1e5,123e3,910 W Franklin St Richmond VA,NA,NA
-University of Wisconsin (UW) - Stout,State,43600,68300,40900,50600,91600,136e3,712 Broad Way Street Menomonie WI,NA,NA
-East Carolina University (ECU),State,40200,67500,38400,52e3,98700,151e3,East 5th Street Greenville NC,NA,NA
-Utah Valley State College,State,42400,67100,27e3,44100,84900,11e4,NA NA NA,1,1
-University of Missouri - St. Louis (UMSL),State,41400,67100,36800,49600,97600,144e3,NA NA NA,1,1
-Western Carolina University,State,36900,66600,39e3,49500,94400,133e3, Cullowhee NC,-83.1765333,35.3137111
-University of Wisconsin (UW) - Oshkosh,State,39300,66400,37700,49700,90100,138e3,800 Algoma Blvd Oshkosh WI,-88.5508746,44.0256057
-State University of New York (SUNY) at Fredonia,State,37800,66200,32800,44200,93300,181e3,NA NA NA,1,1
-University of Missouri - Kansas City (UMKC),State,38900,65800,36300,48100,95800,124e3,5100 Rockhill Rd Kansas City MO,NA,NA
-University of Wisconsin (UW) - Eau Claire,State,41400,64800,35e3,47300,93100,125e3,105 Garfield Avenue Eau Claire WI,NA,NA
-Ball State University (BSU),State,39100,64500,35500,48200,89300,128e3,2000 University Ave Muncie IN,-85.4115988,40.1999048
-University of North Carolina at Wilmington (UNCW),State,37500,64400,32100,46600,97100,129e3,601 South College Road Wilmington NC,-77.87928,34.22714
-University of Wisconsin (UW) - Stevens Point,State,39800,64e3,38400,45100,95400,128e3,2100 Main St Stevens Point WI,NA,NA
-University of Southern Maine,State,39400,63600,40400,47900,85700,117e3,96 Falmouth St Portland ME,-70.2777677,43.6621143
-Arkansas State University (ASU),State,38700,63300,33600,45300,83900,118e3,P.O. Box 1000 Beebe AR,-91.8795856,35.0706423
-Kent State University,State,38700,62600,36100,45800,87e3,124e3,P.O. Box 5190 Kent OH,NA,NA
-Tarleton State University (TSU),State,40800,62400,32100,47400,80400,126e3,1333 W. Washington Stephenville TX,-98.2147778,32.21501
-University of Wisconsin (UW) - Green Bay,State,35800,60600,35500,46800,81800,102e3,2420 Nicolet Dr Green Bay WI,-87.9295849,44.5338277
-Morehead State University,State,34800,60600,34300,46500,72e3,91300,150 University Blvd Morehead KY,-83.43563669999999,38.1865548
-Austin Peay State University,State,37700,59200,32200,40500,73900,96200,601 College St Clarksville TN,-87.34961849999999,36.5327246
-Pittsburg State University,State,40400,58200,25600,46e3,84600,117e3,1701 S Broadway Pittsburg KS,-94.7036545,37.3913218
-Southern Utah University,State,41900,56500,30700,39700,78400,116e3,351 West University Blvd Cedar City UT,-113.0710984,37.6755016
-Montana State University - Billings,State,37900,50600,22600,31800,78500,98900,1500 University Drive Billings MT,-108.5213037,45.7967371
-Black Hills State University,State,35300,43900,27e3,32200,60900,87600,"6 MetroTech Center, Brooklyn, NY 11201",-73.9866394,40.6942285
+"School.Name","School.Type","Starting.Median.Salary","Mid.Career.Median.Salary","Mid.Career.10th.Percentile.Salary","Mid.Career.25th.Percentile.Salary","Mid.Career.75th.Percentile.Salary","Mid.Career.90th.Percentile.Salary","Address","Long","Lat","cost","attendance"
+"Massachusetts Institute of Technology (MIT)","Engineering",72200,126000,76800,99200,168000,220000,"77 Massachusetts Avenue Cambridge MA",-71.0930025,42.3592206,48452,4527
+"California Institute of Technology (CIT)","Engineering",75500,123000,NA,104000,161000,NA,"1200 E California Blvd Pasadena CA",NA,NA,47577,1001
+"Harvey Mudd College","Engineering",71800,122000,NA,96000,180000,NA,"301 Platt Blvd. Claremont CA",-117.7089441,34.1061112,NA,NA
+"Polytechnic University of New York, Brooklyn","Engineering",62400,114000,66800,94300,143000,190000,"NA NA NA",1,1,NA,NA
+"Cooper Union","Engineering",62200,114000,NA,80200,142000,NA,"30 Cooper Square New York NY",NA,NA,NA,NA
+"Worcester Polytechnic Institute (WPI)","Engineering",61000,114000,80000,91200,137000,180000,"100 Institute Road Worcester MA",-71.8058616,42.2748978,46994,4299
+"Carnegie Mellon University (CMU)","Engineering",61800,111000,63300,80100,150000,209000,"5000 Forbes Ave Pittsburgh PA",-79.9433725,40.4441647,52040,6454
+"Rensselaer Polytechnic Institute (RPI)","Engineering",61100,110000,71600,85500,140000,182000,"110 8th St Troy NY",NA,NA,50797,5864
+"Georgia Institute of Technology","Engineering",58300,106000,67200,85200,137000,183000,"225 North Avenue, N.W. Atlanta GA",-84.3947916,33.7724173,32404,15142
+"Colorado School of Mines","Engineering",58100,106000,62200,87900,142000,201000,"1500 Illinois St Golden CO",NA,NA,34828,4608
+"Stevens Institute of Technology","Engineering",60600,105000,68700,81900,138000,185000,"Castle Point On Hudson Hoboken NJ",-74.025683,40.7448376,48838,2873
+"Illinois Institute of Technology (IIT)","Engineering",56000,97800,56100,77400,121000,165000,"10 W. 35th Street Chicago IL",NA,NA,45214,2991
+"Wentworth Institute of Technology","Engineering",53000,96700,55200,74000,117000,153000,"550 Huntington Ave Boston MA",-71.0957617,42.3366871,NA,NA
+"Virginia Polytechnic Institute and State University (Virginia Tech)","Engineering",53500,95400,50600,71400,124000,163000,"Office of the President, 210 Burruss Hall Blacksburg VA",NA,NA,NA,NA
+"South Dakota School of Mines & Technology","Engineering",55800,93400,71500,81900,122000,147000,"NA NA NA",1,1,NA,NA
+"New Mexico Institute of Mining and Technology (New Mexico Tech)","Engineering",51000,93400,NA,67400,123000,NA,"801 Leroy Place Socorro NM",-106.9041493,34.0678095,NA,NA
+"Rochester Institute of Technology (RIT)","Engineering",48900,84600,45000,62100,112000,159000,"1 Lomb Memorial Dr Rochester NY",-77.6745378,43.0860023,38568,12607
+"Embry-Riddle Aeronautical University (ERAU)","Engineering",52700,80700,49800,64000,106000,142000,"600 S Clyde Morris Blvd Daytona Beach FL",-81.0502367,29.1879316,NA,NA
+"Tennessee Technological University","Engineering",46200,80000,42100,62600,99500,121000,"1 William L. Jones Drive Cookeville TN",-85.5085876,36.1756361,24800,9801
+"University of Illinois at Urbana-Champaign (UIUC)","Party",52900,96100,48200,68900,132000,177000,"601 E John Street Champaign IL",-88.2300373,40.1088318,NA,NA
+"University of Maryland, College Park","Party",52000,95000,50400,68300,126000,166000,"NA NA NA",1,1,NA,NA
+"University of California, Santa Barbara (UCSB)","Party",50500,95000,51300,71200,129000,173000,"552 University Road Santa Barbara CA",-119.8490206,34.4122366,NA,NA
+"University of Texas (UT) - Austin","Party",49700,93900,50100,67400,129000,188000,"NA NA NA",1,1,NA,NA
+"State University of New York (SUNY) at Albany","Party",44500,92200,47000,63100,135000,209000,"NA NA NA",1,1,NA,NA
+"University of Florida (UF)","Party",47100,87900,45400,62900,120000,172000,"355 Tigert Hall Gainesville FL",-82.3398376,29.6494266,28666,35043
+"Louisiana State University (LSU)","Party",46900,87800,43700,61300,120000,165000,"8100 Hwy 71 South Alexandria LA",NA,NA,NA,NA
+"University of Georgia (UGA)","Party",44100,86000,43100,57800,118000,164000,"456 East Broad Street Athens GA",-83.373023,33.957848,29844,27547
+"Pennsylvania State University (PSU)","Party",49900,85700,46300,62000,117000,160000,"150 South College St Carlisle PA",-77.1978938,40.1993813,NA,NA
+"Arizona State University (ASU)","Party",47400,84100,44600,60700,114000,163000,"P.O. Box 2203 Tempe AZ",-111.9400054,33.4255104,NA,NA
+"Indiana University (IU), Bloomington","Party",46300,84000,43600,60400,119000,178000,"NA NA NA",1,1,NA,NA
+"University of Iowa (UI)","Party",44700,83900,43300,61100,116000,163000,"101 Jessup Hall Iowa City IA",-91.5364924,41.661897,28413,23357
+"Randolph-Macon College","Party",42600,83600,NA,54100,123000,NA,"204 Henry Street Ashland VA",-77.4771593,37.7607289,NA,NA
+"University of Alabama, Tuscaloosa","Party",41300,81400,40100,56500,117000,161000,"NA NA NA",1,1,NA,NA
+"University of Mississippi","Party",41400,79700,40400,53500,108000,186000,"145 Martindale University MS",-89.538443,34.3647324,22012,18785
+"University of New Hampshire (UNH)","Party",41800,78300,41700,56400,114000,147000,"Thompson Hall, 105 Main Street Durham NH",-70.9324341,43.1359259,31424,13034
+"West Virginia University (WVU)","Party",43100,78100,39700,55700,106000,141000,"300 Campus Dr Parkersburg WV",-81.5056562,39.2167378,21432,22498
+"University of Tennessee","Party",43800,74600,41900,53200,106000,153000,"615 McCallie Ave Chattanooga TN",-85.2982716,35.04789,30858,21863
+"Ohio University","Party",42200,73400,36600,52800,106000,150000," Athens OH",-82.1012554,39.3292396,21208,23513
+"Florida State University (FSU)","Party",42100,73000,39600,52800,107000,156000,"211 Westcott Bldg Tallahassee FL",-84.2918905,30.4407399,24673,32706
+"Bucknell University","Liberal Arts",54100,110000,62800,80600,156000,251000,"Dent Drive Lewisburg PA",-76.8848009,40.9547451,NA,NA
+"Colgate University","Liberal Arts",52800,108000,60000,76700,167000,265000,"13 Oak Dr Hamilton NY",-75.541671,42.822465,NA,NA
+"Amherst College","Liberal Arts",54500,107000,NA,84900,162000,NA,"P.O. Box 5000 Amherst MA",-72.5198537,42.3732216,NA,NA
+"Lafayette College","Liberal Arts",53900,107000,70600,79300,144000,204000,"High St Easton PA",-75.2064757,40.700327,NA,NA
+"Bowdoin College","Liberal Arts",48100,107000,NA,74600,146000,NA,"5700 College Station - President's Office Brunswick ME",NA,NA,NA,NA
+"College of the Holy Cross","Liberal Arts",50200,106000,NA,65600,143000,NA,"One College Street, 119 Fenwick Hall Worcester MA",NA,NA,NA,NA
+"Occidental College","Liberal Arts",51900,105000,NA,54800,157000,NA,"1600 Campus Rd Los Angeles CA",NA,NA,NA,NA
+"Washington and Lee University","Liberal Arts",53600,104000,NA,82800,146000,NA,"204 West Washington Street Lexington VA",-79.4439894,37.7913838,NA,NA
+"Swarthmore College","Liberal Arts",49700,104000,NA,67200,167000,NA,"500 College Ave Swarthmore PA",-75.351473,39.9069574,NA,NA
+"Davidson College","Liberal Arts",46100,104000,NA,70500,146000,NA,"102 N. Main Street Davidson NC",-80.847593,35.499519,NA,NA
+"Carleton College","Liberal Arts",47500,103000,NA,69400,141000,NA,"One North College Street Northfield MN",-93.156084,44.4613041,NA,NA
+"Williams College","Liberal Arts",51700,102000,NA,76400,143000,NA,"880 Main St Williamstown MA",-73.2030404,42.7128303,NA,NA
+"Pomona College","Liberal Arts",48600,101000,NA,63300,161000,NA,"550 North College Avenue Claremont CA",-117.7145536,34.099078,NA,NA
+"Wesleyan University (Middletown, Connecticut)","Liberal Arts",46500,97900,42000,62500,126000,215000,"237 High St Middletown CT",-72.6561627,41.5563557,NA,NA
+"Bates College","Liberal Arts",47300,96500,NA,60700,162000,NA,"2 Andrews Road Lewiston ME",-70.2042004,44.1067532,NA,NA
+"Union College","Liberal Arts",47200,95800,48700,75200,135000,230000,"One Angwin Ave Angwin CA",NA,NA,NA,NA
+"University of Richmond","Liberal Arts",48600,94600,44500,59400,151000,211000,"28 Westhampton Way Richmond VA",-77.5427156,37.5739911,NA,NA
+"Vassar College","Liberal Arts",46000,94600,NA,60600,123000,NA,"Box 1, Raymond Avenue Poughkeepsie NY",NA,NA,NA,NA
+"Middlebury College","Liberal Arts",47700,94200,NA,69100,129000,NA,"Old Chapel Middlebury VT",-73.1759781,44.0090461,NA,NA
+"Mount Holyoke College","Liberal Arts",42400,94100,NA,57100,131000,NA,"50 College Street South Hadley MA",NA,NA,NA,NA
+"Franklin and Marshall College","Liberal Arts",49100,92800,NA,55800,185000,NA,"College Ave Lancaster PA",-76.3194286,40.0441352,NA,NA
+"DePauw University","Liberal Arts",41400,88300,49500,57400,133000,185000,"313 S Locust St Greencastle IN",-86.860248,39.6408895,NA,NA
+"St. Olaf College","Liberal Arts",45300,86200,41300,61000,120000,185000,"1520 St Olaf Ave Northfield MN",-93.1827515,44.4618913,NA,NA
+"Colby College","Liberal Arts",46400,85800,NA,63500,129000,NA,"4000 Mayflower Hill Waterville ME",-69.6626362,44.5638691,NA,NA
+"Gettysburg College","Liberal Arts",44700,85800,NA,66300,132000,NA,"300 N Washington St Gettysburg PA",-77.2336806,39.8341706,NA,NA
+"Siena College","Liberal Arts",45500,85200,38700,58400,129000,189000,"515 Loudon Rd Loudonville NY",-73.7523365,42.716635,NA,NA
+"Smith College","Liberal Arts",44000,83900,45100,59800,129000,184000,"900 W. Daisy Bates Drive Little Rock AR",NA,NA,NA,NA
+"Hamilton College","Liberal Arts",49200,83700,NA,51900,123000,NA,"198 College Hill Rd Clinton NY",-75.4065406,43.0522552,NA,NA
+"Randolph-Macon College","Liberal Arts",42600,83600,NA,54100,123000,NA,"204 Henry Street Ashland VA",-77.4771593,37.7607289,NA,NA
+"Wellesley College","Liberal Arts",42800,83500,NA,58600,125000,NA,"106 Central St Wellesley MA",-71.3099246,42.2924191,NA,NA
+"Denison University","Liberal Arts",42000,83500,NA,62100,122000,NA,"100 West College Rd Granville OH",-82.5238552,40.0711678,NA,NA
+"Oberlin College","Liberal Arts",43400,81600,NA,46400,128000,NA,"70 N Professor St Oberlin OH",-82.2207621,41.2934012,NA,NA
+"University of Puget Sound","Liberal Arts",46600,81500,48900,60100,104000,137000,"1500 N Warner Tacoma WA",-122.4823985,47.2638063,NA,NA
+"Colorado College (CC)","Liberal Arts",38500,81400,NA,43000,148000,NA,"14 East Cache La Poudre Street Colorado Springs CO",-104.823665,38.847021,NA,NA
+"Reed College","Liberal Arts",40500,81100,NA,67400,101000,NA,"3203 SE Woodstock Boulevard Portland OR",-122.6301455,45.4809642,NA,NA
+"Gustavus Adolphus College","Liberal Arts",44500,80600,NA,49300,101000,NA,"800 West College Avenue Saint Peter MN",-93.9757405,44.3237484,NA,NA
+"Whitman College","Liberal Arts",43500,80100,NA,64800,111000,NA,"345 Boyer Ave Walla Walla WA",NA,NA,NA,NA
+"Ursinus College","Liberal Arts",42100,80000,35600,54300,100000,160000,"601 E. Main St Collegeville PA",-75.4571055,40.1939175,NA,NA
+"Juniata College","Liberal Arts",41800,78900,NA,67200,110000,NA,"1700 Moore St Huntingdon PA",NA,NA,NA,NA
+"Wittenberg University","Liberal Arts",39200,78200,NA,54100,131000,NA,"Ward St at N Wittenberg Ave Springfield OH",-83.813736,39.9330898,NA,NA
+"Grinnell College","Liberal Arts",42600,76600,NA,65100,116000,NA,"1121 Park Street Grinnell IA",-92.7230514,41.7469499,NA,NA
+"Skidmore College","Liberal Arts",41600,74600,NA,42800,147000,NA,"815 North Broadway Saratoga Springs NY",-73.7823318,43.095777,NA,NA
+"Moravian College","Liberal Arts",42500,74400,NA,56700,94900,NA,"1200 Main St Bethlehem PA",-75.3809254,40.6310594,NA,NA
+"Lewis & Clark College","Liberal Arts",38900,72600,38200,53400,104000,140000,"0615 S W Palatine Hill Rd Portland OR",-122.6701491,45.4501755,NA,NA
+"Fort Lewis College","Liberal Arts",42000,69800,NA,55000,94000,NA,"1000 Rim Drive Durango CO",NA,NA,NA,NA
+"Thomas Aquinas College","Liberal Arts",41500,67500,NA,44600,93100,NA,"10000 N Ojai Rd Santa Paula CA",NA,NA,NA,NA
+"Evergreen State College","Liberal Arts",39500,63900,38800,47200,91600,120000,"2700 Evergreen Pkwy NW Olympia WA",-122.9734736,47.0733706,NA,NA
+"Dartmouth College","Ivy League",58000,134000,63100,90200,234000,321000,"207 Parkhurst Hall Hanover NH",-72.2899456,43.704034,51438,4307
+"Princeton University","Ivy League",66500,131000,68900,100000,190000,261000,"One Nassau Hall Princeton NJ",NA,NA,45320,5402
+"Yale University","Ivy League",59100,126000,58000,80600,198000,326000,"105 Wall Street New Haven CT",-72.9266477,41.3111478,49480,5532
+"Harvard University","Ivy League",63400,124000,54800,86200,179000,288000,"Massachusetts Hall Cambridge MA",-71.1181835,42.3748446,47074,6699
+"University of Pennsylvania","Ivy League",60900,120000,55900,79200,192000,282000,"400 E Second St Bloomsburg PA",-76.4472749,41.0081119,51464,9726
+"Cornell University","Ivy League",60300,110000,56800,79800,160000,210000,"300 Day Hall Ithaca NY",-76.4831835,42.4472814,50953,14315
+"Brown University","Ivy League",56200,109000,55400,74400,159000,228000,"2000 W University St Siloam Springs AR",-94.5586525,36.1915718,51367,6652
+"Columbia University","Ivy League",59400,107000,50300,71900,161000,241000,"2960 Broadway New York NY",-73.9631966,40.8079381,55056,6102
+"University of California, Berkeley","State",59900,112000,59500,81000,149000,201000,"200 California Hall Berkeley CA",-122.3697299,37.8172938,NA,NA
+"University of Virginia (UVA)","State",52700,103000,52200,71800,146000,215000,"1 College Avenue Wise VA",-82.58506,36.9719232,45066,16736
+"Cal Poly San Luis Obispo","State",57200,101000,55000,74700,133000,178000,"NA NA NA",1,1,NA,NA
+"University of California at Los Angeles (UCLA)","State",52600,101000,51300,72500,139000,193000,"NA NA NA",1,1,NA,NA
+"University of California, San Diego (UCSD)","State",51100,101000,51700,75400,131000,177000,"NA NA NA",1,1,NA,NA
+"University of California, Davis","State",52300,99600,52000,71600,135000,202000,"NA NA NA",1,1,NA,NA
+"University of Colorado - Boulder (UCB)","State",47100,97600,51600,69000,128000,187000,"NA NA NA",1,1,NA,NA
+"University of California, Irvine (UCI)","State",48300,96700,47800,66000,123000,172000,"510 Aldrich Hall Irvine CA",-117.8412259,33.6484038,NA,NA
+"University of Illinois at Urbana-Champaign (UIUC)","State",52900,96100,48200,68900,132000,177000,"601 E John Street Champaign IL",-88.2300373,40.1088318,NA,NA
+"Texas A&M University","State",49700,96100,51100,71300,131000,171000,"6300 Ocean Dr. Corpus Christi TX",NA,NA,NA,NA
+"Binghamton University","State",53600,95900,50900,71200,146000,201000,"NA NA NA",1,1,NA,NA
+"University of Missouri - Rolla (UMR)","State",57100,95800,67600,80400,122000,166000,"NA NA NA",1,1,NA,NA
+"San Jose State University (SJSU)","State",53500,95600,50700,70500,122000,156000,"1 Washington Sq San Jose CA",-121.8812758,37.3351424,NA,NA
+"University of Maryland, College Park","State",52000,95000,50400,68300,126000,166000,"NA NA NA",1,1,NA,NA
+"University of California, Santa Barbara (UCSB)","State",50500,95000,51300,71200,129000,173000,"552 University Road Santa Barbara CA",-119.8490206,34.4122366,NA,NA
+"University of Texas (UT) - Austin","State",49700,93900,50100,67400,129000,188000,"NA NA NA",1,1,NA,NA
+"University of Michigan","State",52700,93000,50900,69400,128000,182000,"2074 Fleming Administration Building Ann Arbor MI",-83.7382241,42.2780436,NA,NA
+"Stony Brook University","State",49500,93000,47200,67100,129000,181000,"NA NA NA",1,1,NA,NA
+"State University of New York (SUNY) at Albany","State",44500,92200,47000,63100,135000,209000,"NA NA NA",1,1,NA,NA
+"Rutgers University","State",50300,91800,48100,65100,128000,176000,"NA NA NA",1,1,NA,NA
+"Purdue University","State",51400,90500,49900,67400,121000,168000,"2101 E. Coliseum Blvd. Fort Wayne IN",-85.1118121,41.1155795,NA,NA
+"University of Connecticut (UConn)","State",48000,88800,46100,66400,120000,162000,"352 Mansfield Rd. Unit 2048 Storrs CT",-72.2492938,41.8079128,35858,18826
+"University of Massachusetts (UMass) - Amherst","State",46600,88200,43100,61300,122000,168000,"NA NA NA",1,1,NA,NA
+"California State University (CSU), Chico","State",47400,88100,46800,62800,122000,154000,"NA NA NA",1,1,NA,NA
+"University of Florida (UF)","State",47100,87900,45400,62900,120000,172000,"355 Tigert Hall Gainesville FL",-82.3398376,29.6494266,28666,35043
+"University of Wisconsin (UW) - Madison","State",48900,87800,47400,62400,118000,170000,"500 Lincoln Dr Madison WI",-89.4037032,43.074648,NA,NA
+"Louisiana State University (LSU)","State",46900,87800,43700,61300,120000,165000,"8100 Hwy 71 South Alexandria LA",-92.4143367,31.178112,NA,NA
+"California State University, Fullerton (CSUF)","State",45700,87000,45400,62500,119000,158000,"NA NA NA",1,1,NA,NA
+"George Mason University","State",47800,86900,51300,67200,114000,150000,"4400 University Dr Fairfax VA",-77.3110004,38.8346547,32582,23062
+"University of Massachusetts (UMass) - Lowell","State",45400,86600,50900,65000,113000,158000,"1 University Ave Lowell MA",-71.3258936,42.6538858,NA,NA
+"San Francisco State University (SFSU)","State",47300,86400,45100,62700,114000,150000,"1600 Holloway Ave San Francisco CA",-122.4767213,37.7227669,NA,NA
+"University of Arizona","State",47500,86100,44800,61700,117000,160000,"1401 E University Tucson AZ",-110.9508944,32.2327247,30025,33732
+"Clemson University","State",48400,86000,50500,61800,111000,150000,"201 Sikes Hall Clemson SC",-82.8351438,34.6793819,32796,18016
+"University of Georgia (UGA)","State",44100,86000,43100,57800,118000,164000,"456 East Broad Street Athens GA",-83.373023,33.957848,29844,27547
+"Pennsylvania State University (PSU)","State",49900,85700,46300,62000,117000,160000,"150 South College St Carlisle PA",-77.1978938,40.1993813,NA,NA
+"University of Washington (UW)","State",48800,85300,47000,59800,115000,149000,"P.O. Box 351230 Seattle WA",NA,NA,34791,31063
+"Michigan State University (MSU)","State",46300,85300,44200,61500,119000,170000,"450 Administration Bldg. East Lansing MI",-84.4821719,42.701848,39090,39143
+"University of Rhode Island (URI)","State",43900,85300,45400,60100,112000,157000,"Green Hall, 35 Campus Avenue Kingston RI",-71.5273731,41.4846985,28852,13641
+"San Diego State University (SDSU)","State",46200,85200,45500,61800,116000,158000,"5500 Campanile Dr San Diego CA",NA,NA,18244,29234
+"Auburn University","State",45400,84700,45400,62700,109000,145000,"7440 East Drive P.O. Box 244023 Montgomery AL",-86.177745,32.36729,28840,21786
+"Washington State University (WSU)","State",45300,84700,43600,59000,113000,162000,"French Administration Building Pullman WA",-117.1542121,46.7319225,25673,24470
+"California State University, Long Beach (CSULB)","State",45100,84700,47400,62500,113000,154000,"NA NA NA",1,1,NA,NA
+"Iowa State University","State",45400,84600,44400,60000,109000,147000,"1750 Beardshear Hall Ames IA",-93.6484405,42.0261746,21483,30034
+"University of Delaware","State",45900,84500,44500,64000,119000,165000,"104 Hullihen Hall Newark DE",-75.7634995,39.6804452,31420,18322
+"University of Colorado - Denver","State",46100,84400,46400,58600,105000,144000,"NA NA NA",1,1,NA,NA
+"California State University, East Bay (CSUEB)","State",49200,84300,46000,62400,115000,155000,"NA NA NA",1,1,NA,NA
+"State University of New York (SUNY) at Farmingdale","State",47300,84200,50200,59800,110000,162000,"NA NA NA",1,1,NA,NA
+"University of Minnesota","State",46200,84200,49000,63200,112000,148000,"202 Morrill Hall, 100 Church Street SE Minneapolis MN",NA,NA,NA,NA
+"Arizona State University (ASU)","State",47400,84100,44600,60700,114000,163000,"P.O. Box 2203 Tempe AZ",-111.9400054,33.4255104,NA,NA
+"University of California, Santa Cruz (UCSC)","State",44700,84100,46100,62000,121000,165000,"1156 High St Santa Cruz CA",-122.0632371,37.000369,NA,NA
+"Indiana University (IU), Bloomington","State",46300,84000,43600,60400,119000,178000,"NA NA NA",1,1,NA,NA
+"University of Iowa (UI)","State",44700,83900,43300,61100,116000,163000,"101 Jessup Hall Iowa City IA",-91.5364924,41.661897,28413,23357
+"Ohio State University (OSU)","State",44900,83700,45500,60700,116000,162000,"1328 Dover Rd Wooster OH",-81.923104,40.775025,NA,NA
+"North Carolina State University (NCSU)","State",47200,83300,49200,64800,112000,153000,"20 Watauga Club Drive Raleigh NC",-78.6640114,35.7854807,NA,NA
+"Oregon State University (OSU)","State",45100,83300,46900,64000,113000,146000," Corvallis OR",NA,NA,28846,24612
+"University of Utah","State",45400,83200,43000,58400,116000,148000,"201 Presidents Circle Salt Lake City UT",-111.848931,40.765023,27039,23794
+"University of Nevada, Reno (UNR)","State",46500,82900,41900,54600,113000,143000,"NA NA NA",1,1,NA,NA
+"University of Oklahoma","State",44700,82900,41200,60300,114000,167000,"660 Parrington Oval, Room 110 Norman OK",-97.4457137,35.2058936,21451,22132
+"University of Arkansas","State",44100,82800,43200,60700,113000,160000,"2801 S University Ave Little Rock AR",-92.3415734,34.7215425,23168,22159
+"University of Vermont (UVM)","State",44800,82700,44700,58000,122000,194000,"85 S Prospect St Burlington VT",-73.201147,44.4782586,40364,10973
+"University of Alabama at Huntsville (UAH)","State",43100,82700,46100,67800,106000,132000,"301 Sparkman Dr Huntsville AL",-86.6413491,34.7259647,NA,NA
+"California State University, Sacramento (CSUS)","State",47800,82400,42900,59600,111000,154000,"NA NA NA",1,1,NA,NA
+"University of Idaho","State",44900,82000,43000,56700,104000,142000,"875 Perimeter Drive Moscow ID",-117.0209677,46.7289073,22040,9116
+"University of Illinois at Chicago","State",47500,81700,44700,58800,110000,146000,"601 S. Morgan St. ; M/C 102 Chicago IL",-87.6509962,41.8737629,NA,NA
+"State University of New York (SUNY) at Buffalo","State",46200,81700,45900,61400,110000,147000,"NA NA NA",1,1,NA,NA
+"University of Kansas","State",42400,81600,44800,57200,115000,156000,"230 Strong Hall 1450 Jayhawk Blvd. Lawrence KS",-95.2476138,38.958542,25932,19245
+"University of New Mexico (UNM)","State",41600,81600,41800,59100,105000,141000,"University of New Mexico Albuquerque NM",-106.6197812,35.0843187,21302,20522
+"University of North Carolina at Chapel Hill (UNCH)","State",42900,81500,43400,57500,117000,155000,"103 South Bldg Campus Box 9100 Chapel Hill NC",-79.0469134,35.9049122,NA,NA
+"University of Alabama, Tuscaloosa","State",41300,81400,40100,56500,117000,161000,"NA NA NA",1,1,NA,NA
+"University of California, Riverside (UCR)","State",46800,81300,37200,59900,109000,134000,"900 University Ave Riverside CA",-117.3315961,33.9754243,NA,NA
+"State University of New York (SUNY) at Geneseo","State",42300,81300,39300,47600,117000,173000,"NA NA NA",1,1,NA,NA
+"University of Missouri - Columbia","State",41700,81000,43500,57100,111000,156000,"105 Jesse Hall Columbia MO",-92.328801,38.945325,NA,NA
+"University of Nebraska","State",45700,80900,42200,56600,113000,156000,"905 W 25th St Kearney NE",-99.0925816,40.7006228,NA,NA
+"University of Texas at Arlington (UTA)","State",45400,80800,46400,61200,106000,138000,"701 S. Nedderman Dr. Arlington TX",-97.1151971,32.7292117,NA,NA
+"Northern Illinois University (NIU)","State",43600,80800,43900,60200,111000,161000,"Altgeld Hall 300, Office of the President Dekalb IL",NA,NA,23799,15027
+"Oklahoma State University","State",42800,80700,40100,56500,114000,151000,"709 Oklahoma Blvd Alva OK",-98.6703061,36.7943988,20978,21046
+"University of North Dakota","State",44000,80600,43400,56400,111000,157000,"264 Centennial Drive Stop 8193 Grand Forks ND",-97.0768014,47.922891,18899,11577
+"California State University, Northridge (CSUN)","State",45500,80400,44500,57800,108000,153000,"NA NA NA",1,1,NA,NA
+"University of Houston (UH)","State",46000,79900,42000,56200,106000,141000,"2700 Bay Area Blvd Houston TX",-95.0986427,29.5812422,25410,34716
+"University of Mississippi","State",41400,79700,40400,53500,108000,186000,"145 Martindale University MS",-89.538443,34.3647324,22012,18785
+"New Mexico State University","State",44300,79500,37400,53800,102000,131000,"P.O. Box 30001 Las Cruces NM",-106.7636538,32.3199396,21234,12526
+"Lamar University","State",46500,79400,38700,51600,114000,158000,"4400 MLK Beaumont TX",-94.0706633,30.0440162,NA,NA
+"Mississippi State University (MSU)","State",44500,79300,43300,58800,108000,151000,"610 Allen Hall Mississippi State MS",-88.7817928,32.1412002,20142,17421
+"Colorado State University (CSU)","State",44800,79000,43800,57100,112000,150000,"102 Administration Building Fort Collins CO",-105.0807267,40.5747743,28374,24433
+"Kansas State University (KSU)","State",43300,79000,37200,54100,106000,138000,"110 Anderson Hall Manhattan KS",-96.5809916,39.1878942,23429,19859
+"University of Wyoming (UW)","State",44500,78700,41500,54000,105000,145000,"1000 E. University Ave. Laramie WY",-105.5846008,41.3140214,16215,10045
+"Utah State University","State",43800,78700,41600,55400,101000,132000,"Old Main Hill Logan UT",-111.8076272,41.7421538,19772,25259
+"University of Wisconsin (UW) - Platteville","State",45800,78500,48400,61200,100000,139000,"1 University Plz Platteville WI",-90.4849669,42.7338109,NA,NA
+"University of Oregon","State",42200,78400,38100,56200,117000,186000,"110 Johnson Hall Eugene OR",-123.0726055,44.0448302,33442,20538
+"University of Kentucky (UK)","State",42800,78300,43000,57300,107000,149000,"101 Main Building Lexington KY",-84.4968991,38.0466166,26334,22705
+"University of New Hampshire (UNH)","State",41800,78300,41700,56400,114000,147000,"Thompson Hall, 105 Main Street Durham NH",NA,NA,31424,13034
+"University of Massachusetts (UMass) - Boston","State",45600,78200,36300,53800,109000,151000,"100 Morrissey Blvd Boston MA",NA,NA,NA,NA
+"West Virginia University (WVU)","State",43100,78100,39700,55700,106000,141000,"300 Campus Dr Parkersburg WV",-81.5056562,39.2167378,21432,22498
+"University of Maryland Baltimore County (UMBC)","State",47000,77800,46900,59100,105000,130000,"NA NA NA",1,1,NA,NA
+"North Dakota State University (NDSU)","State",45100,77800,39000,55800,100000,123000,"1301  12th Avenue North Fargo ND",-96.7981266,46.8903848,19790,12037
+"State University of New York (SUNY) at Oswego","State",38000,77800,40400,53000,115000,169000,"NA NA NA",1,1,NA,NA
+"University of Massachusetts (UMass) - Dartmouth","State",43200,77700,43300,56200,107000,132000,"285 Old Westport Rd North Dartmouth MA",-71.0083835,41.6306559,NA,NA
+"Montana State University - Bozeman","State",46600,77500,40200,58100,111000,151000,"P.O. Box 172420 Bozeman MT",-111.0429339,45.6769979,NA,NA
+"State University of New York (SUNY) at Oneonta","State",37500,76700,40000,54300,97700,155000,"NA NA NA",1,1,NA,NA
+"University of Louisiana (UL) at Lafayette","State",41100,76300,42000,54500,107000,163000,"104 University Cir Lafayette LA",-92.0190917,30.2153203,NA,NA
+"State University of New York (SUNY) at Plattsburgh","State",40800,76200,38400,54100,105000,136000,"NA NA NA",1,1,NA,NA
+"Wayne State University","State",42800,76100,40100,56200,101000,139000,"656 West Kirby Street Detroit MI",-83.0721008,42.3583263,NA,NA
+"University of Hawaii","State",43800,76000,40400,56300,104000,128000,"200 West Kawili Street Hilo HI",-155.081293,19.701598,NA,NA
+"University of Toledo","State",43100,75900,40100,54100,100000,133000,"2801 W Bancroft Toledo OH",-83.6126008,41.6624584,NA,NA
+"Florida International University (FIU)","State",43200,75500,40500,55800,98200,136000,"11200 SW 8th Street Miami FL",-80.3751759,25.7580337,NA,NA
+"University of Wisconsin (UW) - Whitewater","State",40800,75500,38200,53500,99300,150000,"800 W Main St Whitewater WI",-88.7440268,42.8361071,NA,NA
+"Western Washington University","State",42700,75400,41300,56700,99200,119000,"516 High St Bellingham WA",-122.4867951,48.7377644,NA,NA
+"Minnesota State University - Mankato","State",43300,74700,39500,53800,95700,140000,"309 Wigley Administration Center Mankato MN",-93.9994928,44.1466934,NA,NA
+"University of Tennessee","State",43800,74600,41900,53200,106000,153000,"615 McCallie Ave Chattanooga TN",-85.2982716,35.04789,30858,21863
+"University of Wisconsin (UW) - Milwaukee","State",42300,74600,40600,54000,93700,123000,"Dept. of Health Sciences, Enderis Hall PO Box 413 Milwaukee WI",-87.884356,43.0784619,NA,NA
+"University of Arkansas - Monticello (UAM)","State",39200,74500,32800,46100,110000,161000,"NA NA NA",1,1,NA,NA
+"Penn State - Harrisburg","State",45700,74000,44000,53100,104000,150000,"NA NA NA",1,1,NA,NA
+"University of North Carolina at Charlotte (UNCC)","State",43100,74000,38200,53200,99500,133000,"9201 University City Blvd Charlotte NC",-80.7299271,35.3038112,NA,NA
+"Georgia State University","State",41800,74000,43000,55300,99900,145000,"33 Gilmer St SE Atlanta GA",-84.3859072,33.7534327,NA,NA
+"Western Michigan University (WMU)","State",42300,73800,40100,52500,103000,135000,"1903 West Michigan Avenue Kalamazoo MI",-85.6122304,42.2851393,25713,18567
+"South Dakota State University (SDSU)","State",41100,73500,34100,49900,99400,129000,"Box 2201, Adm 324 Brookings SD",NA,NA,11403,11007
+"Idaho State University","State",44900,73400,35400,49600,101000,143000,"921 S 7th Ave Pocatello ID",-112.43631,42.863288,NA,NA
+"Ohio University","State",42200,73400,36600,52800,106000,150000," Athens OH",-82.1012554,39.3292396,21208,23513
+"Illinois State University","State",42000,73400,39100,55200,105000,142000,"1000 Illinois State University, Campus Box 1000 Normal IL",-88.9946702,40.5122833,20886,18426
+"Cleveland State University","State",43500,73100,39500,51600,97000,137000,"2121 Euclid Avenue Cleveland OH",-81.6753359,41.5022406,NA,NA
+"Florida State University (FSU)","State",42100,73000,39600,52800,107000,156000,"211 Westcott Bldg Tallahassee FL",-84.2918905,30.4407399,24673,32706
+"University of Alaska, Anchorage","State",45900,72600,39800,56600,99300,137000,"NA NA NA",1,1,NA,NA
+"Fitchburg State College","State",42400,72600,43300,56100,99600,151000,"NA NA NA",1,1,NA,NA
+"University of Nebraska at Omaha","State",41500,72600,39500,54400,97400,126000,"6001 Dodge St Omaha NE",-96.0107121,41.2581216,NA,NA
+"Southern Illinois University Carbondale","State",43000,72500,38300,51300,99300,139000,"Anthony Hall 116 Carbondale IL",-89.2167419,37.7152379,NA,NA
+"University of Texas at El Paso (UTEP)","State",43400,72100,37700,50400,99500,133000,"500 W. University Ave El Paso TX",-106.5046216,31.7708544,NA,NA
+"California State University, Dominguez Hills (CSUDH)","State",42700,72100,30800,47000,92200,132000,"NA NA NA",1,1,NA,NA
+"University Of Maine","State",41200,72100,41700,55600,99300,141000,"NA NA NA",1,1,NA,NA
+"Eastern Michigan University","State",40300,72100,37900,52800,95400,135000,"202 Welch Ypsilanti MI",-83.6244504,42.245993,NA,NA
+"Bowling Green State University","State",39800,72100,38200,51800,101000,146000,"1001 East Wooster Street Bowling Green OH",NA,NA,18332,14334
+"University of Montana","State",37300,71900,37000,51500,96400,138000,"1115 N Roberts Street Helena MT",-112.0158914,46.5955459,24562,8732
+"University of Central Florida (UCF)","State",42600,71700,39500,51500,98400,125000,"4000 Central Florida Blvd Orlando FL",-81.2033083,28.5968774,22467,54513
+"University of South Carolina","State",40000,71700,36300,49900,98400,131000,"171 Ashley Ave Charleston SC",NA,NA,31282,25237
+"University of Nevada, Las Vegas (UNLV)","State",45200,71600,39000,52400,100000,128000,"NA NA NA",1,1,NA,NA
+"St. Cloud State University","State",41800,71400,38700,49400,101000,126000,"NA NA NA",1,1,NA,NA
+"University of Wisconsin (UW) - Parkside","State",40700,71400,40900,53100,84900,119000,"900 Wood Road Box 2000 Kenosha WI",NA,NA,NA,NA
+"California State University (CSU), Stanislaus","State",38000,71400,33700,50500,94100,121000,"NA NA NA",1,1,NA,NA
+"Humboldt State University","State",42600,71300,36000,56300,94400,117000,"1 Harpst Street Arcata CA",NA,NA,NA,NA
+"Florida Atlantic University (FAU)","State",42600,71100,40700,53000,99500,137000,"777 Glades Rd Boca Raton FL",-80.1023478,26.3655442,NA,NA
+"University of South Florida (USF)","State",41100,71100,39600,51500,98100,131000,"4202 East Fowler Ave Tampa FL",NA,NA,17325,31111
+"Portland State University (PSU)","State",42600,70900,40700,52300,94400,123000,"724 SW Harrison Portland OR",-122.6845654,45.5111227,NA,NA
+"Eastern Washington University","State",38600,70900,36000,50500,93100,117000,"526 5th Street Cheney WA",-117.5779793,47.4908212,NA,NA
+"University of Texas at San Antonio (UTSA)","State",42500,70700,39100,49800,92700,121000,"One UTSA Circle San Antonio TX",-98.6171991,29.5845107,NA,NA
+"University of Akron","State",41100,70300,40600,53300,95200,127000,"302 Buchtel Common Akron OH",-81.513005,41.076276,NA,NA
+"State University of New York (SUNY) at Potsdam","State",38000,70300,35100,51200,100000,179000,"NA NA NA",1,1,NA,NA
+"University of Alabama at Birmingham (UAB)","State",39200,70100,43000,53400,91400,125000,"1720 2nd Avenue South Birmingham AL",-86.8067248,33.5095707,NA,NA
+"University of Memphis (U of M)","State",41400,69700,36100,49100,93500,127000,"341 Administration Building Memphis TN",-90.0500844,35.1492983,NA,NA
+"Boise State University (BSU)","State",40800,69500,37400,48700,87500,110000,"1910 University Dr Boise ID",-116.206954,43.6050793,NA,NA
+"Missouri State University (MSU)","State",36100,69500,33300,46900,102000,134000,"800 University Drive Maryville MO",-94.8838091,40.3519243,NA,NA
+"University of Wisconsin (UW) - La Crosse","State",42200,69300,37500,47200,93100,133000,"1725 State St La Crosse WI",-91.2300094,43.8136889,NA,NA
+"Appalachian State University","State",40400,69100,37200,50400,90800,115000," Boone NC",-81.6745517,36.216795,NA,NA
+"Virginia Commonwealth University (VCU)","State",42000,68400,37400,51900,100000,123000,"910 W Franklin St Richmond VA",-77.4526597,37.5496312,31608,24051
+"University of Wisconsin (UW) - Stout","State",43600,68300,40900,50600,91600,136000,"712 Broad Way Street Menomonie WI",-91.9295688,44.8886483,NA,NA
+"East Carolina University (ECU)","State",40200,67500,38400,52000,98700,151000,"East 5th Street Greenville NC",-77.3559964,35.6066409,22904,23039
+"Utah Valley State College","State",42400,67100,27000,44100,84900,110000,"NA NA NA",1,1,NA,NA
+"University of Missouri - St. Louis (UMSL)","State",41400,67100,36800,49600,97600,144000,"NA NA NA",1,1,NA,NA
+"Western Carolina University","State",36900,66600,39000,49500,94400,133000," Cullowhee NC",-83.1765333,35.3137111,NA,NA
+"University of Wisconsin (UW) - Oshkosh","State",39300,66400,37700,49700,90100,138000,"800 Algoma Blvd Oshkosh WI",-88.5508746,44.0256057,NA,NA
+"State University of New York (SUNY) at Fredonia","State",37800,66200,32800,44200,93300,181000,"NA NA NA",1,1,NA,NA
+"University of Missouri - Kansas City (UMKC)","State",38900,65800,36300,48100,95800,124000,"5100 Rockhill Rd Kansas City MO",-94.5762784,39.0335836,NA,NA
+"University of Wisconsin (UW) - Eau Claire","State",41400,64800,35000,47300,93100,125000,"105 Garfield Avenue Eau Claire WI",-91.5015933,44.7983771,NA,NA
+"Ball State University (BSU)","State",39100,64500,35500,48200,89300,128000,"2000 University Ave Muncie IN",-85.4115988,40.1999048,25428,16602
+"University of North Carolina at Wilmington (UNCW)","State",37500,64400,32100,46600,97100,129000,"601 South College Road Wilmington NC",-77.87928,34.22714,NA,NA
+"University of Wisconsin (UW) - Stevens Point","State",39800,64000,38400,45100,95400,128000,"2100 Main St Stevens Point WI",NA,NA,NA,NA
+"University of Southern Maine","State",39400,63600,40400,47900,85700,117000,"96 Falmouth St Portland ME",-70.2777677,43.6621143,NA,NA
+"Arkansas State University (ASU)","State",38700,63300,33600,45300,83900,118000,"P.O. Box 1000 Beebe AR",-91.8795856,35.0706423,NA,NA
+"Kent State University","State",38700,62600,36100,45800,87000,124000,"P.O. Box 5190 Kent OH",-81.3578859,41.1536674,18376,23607
+"Tarleton State University (TSU)","State",40800,62400,32100,47400,80400,126000,"1333 W. Washington Stephenville TX",-98.2147778,32.21501,NA,NA
+"University of Wisconsin (UW) - Green Bay","State",35800,60600,35500,46800,81800,102000,"2420 Nicolet Dr Green Bay WI",-87.9295849,44.5338277,NA,NA
+"Morehead State University","State",34800,60600,34300,46500,72000,91300,"150 University Blvd Morehead KY",-83.4356367,38.1865548,NA,NA
+"Austin Peay State University","State",37700,59200,32200,40500,73900,96200,"601 College St Clarksville TN",-87.3496185,36.5327246,NA,NA
+"Pittsburg State University","State",40400,58200,25600,46000,84600,117000,"1701 S Broadway Pittsburg KS",-94.7036545,37.3913218,NA,NA
+"Southern Utah University","State",41900,56500,30700,39700,78400,116000,"351 West University Blvd Cedar City UT",-113.0710984,37.6755016,NA,NA
+"Montana State University - Billings","State",37900,50600,22600,31800,78500,98900,"1500 University Drive Billings MT",-108.5213037,45.7967371,NA,NA
+"Black Hills State University","State",35300,43900,27000,32200,60900,87600,"1200 University St Spearfish SD",-103.8712643,44.4965054,NA,NA

@@ -224,10 +224,43 @@ for (i in 1:nrow(colleges)) {
 select(colleges, `School Name`,Long, Lat, Address)
 
 
-write_csv(colleges, "../data/college_data.csv")
+#write_csv(colleges, "../data/college_data.csv")
 
 
 ```
 
 
 
+
+```{r}
+college_cost = read.csv("../data/college_cost.csv", header = TRUE)
+head(college_cost)
+```
+
+```{r}
+# college_database = html_session("http://college-tuition.startclass.com/")
+cost = numeric(length(colleges$`School Name`))
+attendance = numeric(length(colleges$`School Name`))
+i = 1
+for(query in colleges$`School Name`) {
+  query = gsub("[ ]\\((.*)\\)", "", query) # remove acronyms
+  #query = gsub("^University of (.*)", "University of --", query)
+  #query = gsub("University of California(.*)", "University of California--", query)
+  query_cost = as.character(college_cost[college_cost$Name == query,]$Tuition.and.fees)
+  query_attendance = as.character(college_cost[college_cost$Name == query,]$Undergrad.Enrollment)
+  if(length(query_cost) == 0)
+    query_cost = NA
+  if(length(query_attendance) == 0)
+    query_attendance = NA
+  query_cost = gsub("\\$", "", query_cost)
+  query_cost = as.numeric(gsub(",", "", query_cost))
+  query_attendance = as.numeric(gsub(",", "", query_attendance))
+  cost[i] = query_cost
+  attendance[i] = query_attendance
+  i = i + 1
+}
+college_data = data.frame(colleges, cost, attendance)
+#head(college_data)
+#length(cost[!is.na(cost)])
+write.csv(college_data, "../data/college_data.csv", row.names = FALSE)
+```
