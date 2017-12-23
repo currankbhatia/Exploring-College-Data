@@ -6,6 +6,8 @@ library(dplyr)
 
 zipdata <- data_cc
 
+
+
 creating_circles = function (data1, pal, colorData, stmed_sal, radius) {
 
 
@@ -20,6 +22,24 @@ creating_circles = function (data1, pal, colorData, stmed_sal, radius) {
 
 
 function(input, output, session) {
+  
+  
+  
+  ## Explore Data ############################
+  
+  
+  
+  
+  observe({
+    
+    output$plot1<-renderPlot({
+      
+      na.omit(data) %>% ggplot( aes_string(x = input$inputX, y = input$inputY)) + geom_line() + geom_smooth(method='lm')
+      
+    })
+    
+  })
+  
 
   ## Interactive Map ###########################################
 
@@ -33,7 +53,7 @@ function(input, output, session) {
       setView(lng = -93.85, lat = 37.45, zoom = 4)
   })
 
-
+  
 
 
   # This observer is responsible for maintaining the circles and legend,

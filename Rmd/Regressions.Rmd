@@ -1,0 +1,39 @@
+---
+title: "Regressions"
+author: "Curran Bhatia"
+date: "12/22/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Input Data
+```{r}
+library(tidyverse)
+
+data = read.csv("../data/college_data.csv")
+
+```
+
+Regression on Mid-Career Salary vs Cost to Attend School
+```{r}
+
+#sal_cost = select(data, School.Name, Mid.Career.Median.Salary, cost)
+#sal_cost = na.omit(sal_cost)
+
+g = na.omit(data) %>% ggplot( aes(x = cost, y = Mid.Career.Median.Salary)) + geom_line() + geom_smooth(method='lm')
+
+
+g = g + ggtitle("Salary vs Cost")
+
+g
+
+
+
+
+```
+
+
