@@ -19,6 +19,7 @@ type_school <- c(
   "Ivy League" = "Ivy League"
 )
 
+vars_data <- colnames(data)
 
 
 
@@ -39,7 +40,7 @@ navbarPage("Team Curry: Not Just Four Years", id="nav",
       # Shiny versions prior to 0.11 should use class = "modal" instead.
       absolutePanel(id = "controls", class = "panel panel-default", fixed = TRUE,
         draggable = TRUE, top = 60, left = "auto", right = 20, bottom = "auto",
-        width = 300, height = 600,
+        width = 350, height = 600,
 
         h4("Interactive Map"),
 
@@ -95,7 +96,28 @@ navbarPage("Team Curry: Not Just Four Years", id="nav",
 
   tabPanel("Explore Data",
     hr(),
-    DT::dataTableOutput("ziptable")
+    DT::dataTableOutput("ziptable"),
+    
+    titlePanel("Explore the Data Set"),
+    
+    sidebarLayout(
+      sidebarPanel(
+        helpText("Data"),
+        selectInput("inputY", "Y- value", vars_data, selected = "Starting.Median.Salary"),
+        selectInput("inputX", "X- value", vars_data, selected = "cost")
+        
+        
+        
+        
+        ),
+      
+      mainPanel(
+        helpText("Data"),
+        plotOutput("plot1")
+        
+        
+      )
+    )
   ),
 
   conditionalPanel("false", icon("crosshair"))
