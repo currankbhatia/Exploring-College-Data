@@ -20,6 +20,8 @@ vars <- c(
 
 vars_data <- colnames(college_data)
 
+vars_dy <- vars_data[grep("grad", vars_data)]
+
 
 
 navbarPage("Team Curry: Not Just Four Years", id="nav",
@@ -152,7 +154,7 @@ navbarPage("Team Curry: Not Just Four Years", id="nav",
     sidebarLayout(
       sidebarPanel(
         helpText("Data"),
-        selectInput("inputY", "Y- value", vars_data, selected = "college_out_state_rates"),
+        selectInput("inputY", "Y- value", vars_dy, selected = "college_out_state_rates"),
         selectInput("inputX", "X- value", vars_data, selected = "college_admission_rates")
         ),
       
