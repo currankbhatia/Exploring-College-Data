@@ -1,0 +1,153 @@
+---
+title: "college_data"
+author: "Anshuman Dikhit, dikhit2"
+date: "12/21/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+function to de-factorize variables
+
+```{r}
+defactorize = function(var) {
+  return(as.numeric(as.character(var)))
+}
+```
+
+
+
+Import the entire dataset
+
+```{r}
+college_dataset = read.csv("../data/MERGED2015_16_PP.csv", header = TRUE)
+head(college_dataset)
+```
+
+split and combine college name and location coordinates
+
+```{r}
+college_names = as.character(college_dataset$INSTNM) # Institution name
+college_zipcodes = defactorize(college_dataset$ZIP) # Institution zip code
+college_latitudes = defactorize(college_dataset$LATITUDE) # Institution latitude
+college_longitudes = defactorize(college_dataset$LONGITUDE) # Institution longitude
+college_data = data.frame(college_names, college_zipcodes, college_latitudes, college_longitudes)
+head(college_data)
+```
+
+split and combine admission rates and % STEM degrees
+
+```{r}
+college_admission_rates = defactorize(college_dataset$ADM_RATE) # Insitution admission rate
+college_STEM_degrees = defactorize(college_dataset$PCIP15) # Institution % of STEM Degrees given out
+college_data = data.frame(college_data, college_admission_rates, college_STEM_degrees)
+head(college_data)
+```
+
+split and combine University costs in state and out of state
+
+```{r}
+college_in_state_cost = defactorize(college_dataset$TUITIONFEE_IN) # Institution in state tuition
+college_out_state_cost = defactorize(college_dataset$TUITIONFEE_OUT) # Institution out of state tuition
+college_data = data.frame(college_data, college_in_state_cost, college_out_state_cost)
+head(college_data)
+```
+
+split and combine family income quartile cost for public universities
+
+```{r}
+public_avg_cost_25 = defactorize(college_dataset$NPT41_PUB) # Average cost for $0-$30,000 family income
+public_avg_cost_50 = defactorize(college_dataset$NPT42_PUB) # Average cost for $31,000-$48,000 family income
+public_avg_cost_75 = defactorize(college_dataset$NPT43_PUB) # Average cost for $49,000-$75,000 family income
+public_avg_cost_100 = defactorize(college_dataset$NPT44_PUB) # Average cost for $76,000-$110,000 family income
+public_avg_cost_rest = defactorize(college_dataset$NPT45_PUB) # Average cost for +$110,000 family income
+college_data = data.frame(college_data, public_avg_cost_25, public_avg_cost_50, public_avg_cost_75, public_avg_cost_100, public_avg_cost_rest)
+head(college_data)
+```
+
+split and combine family income quartile cost for private universities
+
+```{r}
+private_avg_cost_25 = defactorize(college_dataset$NPT41_PRIV) # Average cost for $0-$30,000 family income
+private_avg_cost_50 = defactorize(college_dataset$NPT42_PRIV) # Average cost for $31,000-$48,000 family income
+private_avg_cost_75 = defactorize(college_dataset$NPT43_PRIV) # Average cost for $49,000-$75,000 family income
+private_avg_cost_100 = defactorize(college_dataset$NPT44_PRIV) # Average cost for $76,000-$110,000 family income 
+private_avg_cost_rest = defactorize(college_dataset$NPT45_PRIV) # Average cost for +$110,000 family income
+college_data = data.frame(college_data, private_avg_cost_25, private_avg_cost_50, private_avg_cost_75, private_avg_cost_100, private_avg_cost_rest)
+head(college_data)
+```
+
+split and combine Number of Title IV students
+
+```{r}
+title_4_public = defactorize(college_dataset$NUM4_PUB) # Number of students getting financial aid from Title IV
+title_4_private = defactorize(college_dataset$NUM4_PRIV) # Number of students getting financial aid from Title IV
+college_data = data.frame(college_data, title_4_public, title_4_private)
+head(college_data)
+```
+
+split and combine faculty salary
+
+```{r}
+faculty_salary = defactorize(college_dataset$AVGFACSAL)
+college_data = data.frame(college_data, faculty_salary)
+head(college_data)
+```
+
+split and combine median debt upon graduation
+
+```{r}
+median_grad_debt = defactorize(college_dataset$GRAD_DEBT_MDN)
+college_data = data.frame(college_data, median_grad_debt)
+head(college_data)
+```
+
+Import dataset with all the information on salaries
+split and combine variables on salary 2 years after graduation
+
+```{r}
+college_grad_salaries = read.csv("../data/Most-Recent-Cohorts-Treasury-Elements.csv", header = TRUE)
+head(college_grad_salaries)
+```
+
+split and combine household income variable
+
+```{r}
+household_income = defactorize(college_grad_salaries$MEDIAN_HH_INC)
+college_data = data.frame(college_data, household_income)
+head(college_data)
+```
+
+split and combine percentile income 2 years after graduation
+
+```{r}
+grad_income_10th.2 = defactorize(college_grad_salaries$PCT10_EARN_WNE_P6)
+grad_income_25th.2 = defactorize(college_grad_salaries$PCT25_EARN_WNE_P6)
+grad_income_75th.2 = defactorize(college_grad_salaries$PCT75_EARN_WNE_P6)
+grad_income_90th.2 = defactorize(college_grad_salaries$PCT90_EARN_WNE_P6)
+college_data = data.frame(college_data, grad_income_10th.2, grad_income_25th.2, grad_income_75th.2, grad_income_90th.2)
+head(college_data)
+```
+
+split and combine percentile income 6 years after graduation
+
+```{r}
+grad_income_10th.6 = defactorize(college_grad_salaries$PCT10_EARN_WNE_P10)
+grad_income_25th.6 = defactorize(college_grad_salaries$PCT25_EARN_WNE_P10)
+grad_income_75th.6 = defactorize(college_grad_salaries$PCT75_EARN_WNE_P10)
+grad_income_90th.6 = defactorize(college_grad_salaries$PCT90_EARN_WNE_P10)
+college_data = data.frame(college_data, grad_income_10th.6, grad_income_25th.6, grad_income_75th.6, grad_income_90th.6)
+head(college_data)
+```
+
+create .csv file
+
+```{r}
+write.csv(college_data, "../data/college_data.csv", row.names = FALSE)
+```
+
+
+
+

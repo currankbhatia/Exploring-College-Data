@@ -2,24 +2,24 @@ library(leaflet)
 
 # Choices for drop-downs
 vars <- c(
-  "Starting Median Salary" = "medsalary",
-  "Mid-Career Median Salary" = "midsalary",
-  "Mid-Career 90th Percentile Salary" = "mid90salaray",
-  "Tuition" = "cost",
-  "Students attending" = "attendance"
+  "Admission Rates" = "adm_rate",
+  "Percentage of STEM degrees" = "STEM_deg_rate",
+  "In-state tuition" = "in_state_cost",
+  "Out-of-state tuition" = "out_state_cost",
+  "Faculty Salary" = "facsal",
+  "Debt upon Graduation" = "grad_debt",
+  "Starting 10th Percentile Salary" = "grad_income_10th.2",
+  "Starting 25th Percentile Salary" = "grad_income_25th.2",
+  "Starting 75th Percentile Salary" = "grad_income_75th.2",
+  "Starting 90th Percentile Salary" = "grad_income_90th.2",
+  "Mid-Career 10th Percentile Salary" = "grad_income_10th.6",
+  "Mid-Career 25th Percentile Salary" = "grad_income_25th.6",
+  "Mid-Career 75th Percentile Salary" = "grad_income_75th.6",
+  "Mid-Career 90th Percentile Salary" = "grad_income_90th.6"
 )
 
-type_school <- c(
-  "All Colored" = "all_c",
-  "All Types" = "all_ty",
-  "Party" = "Party",
-  "Engineering" = "Engineering",
-  "Liberal Arts"= "Liberal Arts",
-  "State" = "State",
-  "Ivy League" = "Ivy League"
-)
 
-vars_data <- colnames(data)
+# vars_data <- colnames(data)
 
 
 
@@ -44,48 +44,105 @@ navbarPage("Team Curry: Not Just Four Years", id="nav",
 
         h4("Interactive Map"),
 
+        selectInput("var_to_view", "Select parameter to view", vars, selected = "adm_rate"),
 
+         conditionalPanel("input.var_to_view == 'adm_rate'",
+                          sliderInput("admission_rate", "Admission Rates:",
+                                      min = min(college_data$college_admission_rates, na.rm = TRUE),
+                                      max = max(college_data$college_admission_rates, na.rm = TRUE),
+                                      value = min(college_data$college_admission_rates, na.rm = TRUE),
+                                      step = 0.01)),
+         
+        conditionalPanel("input.var_to_view == 'STEM_deg_rate'",
+                          sliderInput("percent_STEM", "Percentage of STEM degrees awarded:",
+                                      min = min(college_data$college_STEM_degrees, na.rm = TRUE),
+                                      max = max(college_data$college_STEM_degrees, na.rm = TRUE),
+                                      value = min(college_data$college_STEM_degrees, na.rm = TRUE),
+                                      step = 0.01)),
+        
+        conditionalPanel("input.var_to_view == 'in_state_cost'",
+                          sliderInput("instate_tuition", "In State Tuition:",
+                                      min = min(college_data$college_in_state_cost, na.rm = TRUE),
+                                      max = max(college_data$college_in_state_cost, na.rm = TRUE),
+                                      value = min(college_data$college_in_state_cost, na.rm = TRUE),
+                                      step = 1000)),
+         
+        conditionalPanel("input.var_to_view == 'out_state_cost'",
+                          sliderInput("outstate_tuition", "Out of State Tuition:",
+                                      min = min(college_data$college_out_state_cost, na.rm = TRUE),
+                                      max = max(college_data$college_out_state_cost, na.rm = TRUE),
+                                      value = min(college_data$college_out_state_cost, na.rm = TRUE),
+                                      step = 1000)),
+        
+        conditionalPanel("input.var_to_view == 'facsal'",
+                          sliderInput("faculty_salary", "Faculty Salary:",
+                                      min = min(college_data$faculty_salary, na.rm = TRUE),
+                                      max = max(college_data$faculty_salary, na.rm = TRUE),
+                                      value = min(college_data$faculty_salary, na.rm = TRUE),
+                                      step = 1000)),
+        
+        conditionalPanel("input.var_to_view == 'grad_debt'",
+                          sliderInput("graduation_debt", "Amount of debt upon graduation:",
+                                      min = min(college_data$median_grad_debt, na.rm = TRUE),
+                                      max = max(college_data$median_grad_debt, na.rm = TRUE),
+                                      value = min(college_data$median_grad_debt, na.rm = TRUE),
+                                      step = 1000)),
+         
+        conditionalPanel("input.var_to_view == 'grad_income_10th.2'",
+                          sliderInput("10th_starting_income", "10th Percentile of Starting Income:",
+                                      min = min(college_data$grad_income_10th.2, na.rm = TRUE),
+                                      max = max(college_data$grad_income_10th.2, na.rm = TRUE),
+                                      value = min(college_data$grad_income_10th.2, na.rm = TRUE),
+                                      step = 1000)),
+         
+        conditionalPanel("input.var_to_view == 'grad_income_25th.2'",
+                          sliderInput("25th_starting_income", "25th percentile of starting income:",
+                                      min = min(college_data$grad_income_25th.2, na.rm = TRUE),
+                                      max = max(college_data$grad_income_25th.2, na.rm = TRUE),
+                                      value = min(college_data$grad_income_25th.2, na.rm = TRUE),
+                                      step = 1000)),
+        
+        conditionalPanel("input.var_to_view == 'grad_income_75th.2'",
+                         sliderInput("75th_starting_income", "75th percentile of starting income:",
+                                     min = min(college_data$grad_income_75th.2, na.rm = TRUE),
+                                     max = max(college_data$grad_income_75th.2, na.rm = TRUE),
+                                     value = min(college_data$grad_income_75th.2, na.rm = TRUE),
+                                     step = 1000)),
 
+        conditionalPanel("input.var_to_view == 'grad_income_90th.2'",
+                         sliderInput("90th_starting_income", "90th percentile of starting income:",
+                                     min = min(college_data$grad_income_90th.2, na.rm = TRUE),
+                                     max = max(college_data$grad_income_90th.2, na.rm = TRUE),
+                                     value = min(college_data$grad_income_90th.2, na.rm = TRUE),
+                                     step = 1000)),
 
+        conditionalPanel("input.var_to_view == 'grad_income_10th.6'",
+                         sliderInput("10th_mid_income", "10th Percentile of Mid-Career Income:",
+                                     min = min(college_data$grad_income_10th.6, na.rm = TRUE),
+                                     max = max(college_data$grad_income_10th.6, na.rm = TRUE),
+                                     value = min(college_data$grad_income_10th.6, na.rm = TRUE),
+                                     step = 1000)),
 
-        #selectInput("color", "A series of options", vars, selected = "all"),
+        conditionalPanel("input.var_to_view == 'grad_income_25th.6'",
+                         sliderInput("25th_mid_income", "25th percentile of Mid-Career income:",
+                                     min = min(college_data$grad_income_25th.6, na.rm = TRUE),
+                                     max = max(college_data$grad_income_25th.6, na.rm = TRUE),
+                                     value = min(college_data$grad_income_25th.6, na.rm = TRUE),
+                                     step = 1000)),
 
+        conditionalPanel("input.var_to_view == 'grad_income_75th.6'",
+                         sliderInput("75th_mid_income", "75th percentile of Mid-Career income:",
+                                     min = min(college_data$grad_income_75th.6, na.rm = TRUE),
+                                     max = max(college_data$grad_income_75th.6, na.rm = TRUE),
+                                     value = min(college_data$grad_income_75th.6, na.rm = TRUE),
+                                     step = 1000)),
 
-
-        selectInput("typesch", "Type of School", type_school, selected = "all_c"),
-
-        selectInput("var_to_view", "Select parameter to view", vars, selected = "all_c"),
-
-        conditionalPanel("input.var_to_view == 'medsalary'",
-                         sliderInput("stmed_sal", "Starting Median Salary:",
-                                     min = min(data_cc$Starting.Median.Salary),
-                                     max = max(data_cc$Starting.Median.Salary),
-                                     value = min(data_cc$Starting.Median.Salary),
-                                     step = 2000)),
-
-        conditionalPanel("input.var_to_view == 'midsalary'",
-                         sliderInput("midmed_sal", "Mid-Career Median Salary:",
-                                     min = min(data_cc$Mid.Career.Median.Salary),
-                                     max = max(data_cc$Mid.Career.Median.Salary),
-                                     value = min(data_cc$Mid.Career.Median.Salary))),
-
-        conditionalPanel("input.var_to_view == 'mid90salary'",
-                         sliderInput("ninety_sal", "Mid-Career 90th Percentile Salary:",
-                                     min = min(data_cc$Mid.Career.90th.Percentile.Salary, na.rm = TRUE),
-                                     max = max(data_cc$Mid.Career.90th.Percentile.Salary, na.rm = TRUE),
-                                     value = min(data_cc$Mid.Career.90th.Percentile.Salary, na.rm = TRUE))),
-
-        conditionalPanel("input.var_to_view == 'cost'",
-                         sliderInput("attendance_cost", "Cost of Attendance:",
-                                     min = min(data_cc$cost, na.rm = TRUE),
-                                     max = max(data_cc$cost, na.rm = TRUE),
-                                     value = min(data_cc$cost, na.rm = TRUE))),
-
-        conditionalPanel("input.var_to_view == 'attendance'",
-                         sliderInput("attendance", "Number of Students Attending:",
-                                     min = min(data_cc$attendance, na.rm = TRUE),
-                                     max = max(data_cc$attendance, na.rm = TRUE),
-                                     value = min(data_cc$attendance, na.rm = TRUE)))
+        conditionalPanel("input.var_to_view == 'grad_income_90th.6'",
+                         sliderInput("90th_mid_income", "90th percentile of Mid-Career income:",
+                                     min = min(college_data$grad_income_90th.6, na.rm = TRUE),
+                                     max = max(college_data$grad_income_90th.6, na.rm = TRUE),
+                                     value = min(college_data$grad_income_90th.6, na.rm = TRUE),
+                                     step = 1000))
       ),
 
       tags$div(id="cite",
@@ -103,12 +160,8 @@ navbarPage("Team Curry: Not Just Four Years", id="nav",
     sidebarLayout(
       sidebarPanel(
         helpText("Data"),
-        selectInput("inputY", "Y- value", vars_data, selected = "Starting.Median.Salary"),
-        selectInput("inputX", "X- value", vars_data, selected = "cost")
-        
-        
-        
-        
+        selectInput("inputY", "Y- value", vars, selected = "adm_rate"),
+        selectInput("inputX", "X- value", vars, selected = "grad_income_10th.2")
         ),
       
       mainPanel(

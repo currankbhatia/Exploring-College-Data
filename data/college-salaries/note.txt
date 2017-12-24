@@ -1,5 +1,0 @@
-
-This data was downloaded from kaggle here:
-https://www.kaggle.com/wsj/college-salaries#_=_
-
-The data is from The Wall Street Journal, who got it from Payscale, Inc

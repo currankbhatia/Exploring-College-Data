@@ -3,22 +3,20 @@ library(leaflet)
 library(RColorBrewer)
 library(lattice)
 library(dplyr)
-
-zipdata <- data_cc
-
+library(ggplot2)
 
 
-creating_circles = function (data1, pal, colorData, stmed_sal, radius) {
 
 
-  leafletProxy("map", data = data1) %>%
-    clearShapes() %>%
-    addCircles(~Long, ~Lat, radius=radius, layerId=NULL,
-               stroke=FALSE, fillOpacity=0.4, fillColor=pal(colorData)) %>%
-    addLegend("bottomleft", pal=pal, values=colorData, title=stmed_sal,
-              layerId="colorLegend")
 
-}
+# creating_circles = function (data1, pal, colorData, stmed_sal, radius) {
+#   leafletProxy("map", data = data1) %>%
+#     clearShapes() %>%
+#     addCircles(~Long, ~Lat, radius=radius, layerId=NULL,
+#                stroke=FALSE, fillOpacity=0.4, fillColor=pal(colorData)) %>%
+#     addLegend("bottomleft", pal=pal, values=colorData, title=stmed_sal,
+#               layerId="colorLegend")
+# }
 
 
 function(input, output, session) {
@@ -33,8 +31,9 @@ function(input, output, session) {
   observe({
     
     output$plot1<-renderPlot({
-      
-      na.omit(data) %>% ggplot( aes_string(x = input$inputX, y = input$inputY)) + geom_line() + geom_smooth(method='lm')
+      na.omit(data) %>% ggplot(aes_string(x = input$inputX, y = input$inputY)) + 
+        geom_line() + 
+        geom_smooth(method='lm')
       
     })
     
@@ -59,116 +58,74 @@ function(input, output, session) {
   # This observer is responsible for maintaining the circles and legend,
   # according to the variables the user has chosen to map to color and size.
   observe({
-    stmed_sal <- input$stmed_sal
-    midmed_sal <- input$midmed_sal
-    ninety_sal <- input$ninety_sal
-    tuition_cost <- input$attendance_cost
-    num_attending <- input$attendance
+    req(input$var_to_view)
+    param <- input$var_to_view
+    
+    # reactive slider values for user chosen parameters
+    adm_rate <- input$admission_rate
+    STEM_percentage <- input$percent_STEM
+    in_state_cost <- input$instate_tuition
+    out_state_cost <- input$outstate_tuition
+    faculty_sal <- input$faculty_salary
+    graduation_debt <- input$graduation_debt
+    starting_10_percentile <- input$`10th_starting_income`
+    starting_25_percentile <- input$`25th_starting_income`
+    starting_75_percentile <- input$`75th_starting_income`
+    starting_90_percentile <- input$`90th_starting_income`
+    mid_10_percentile <- input$`10th_mid_income`
+    mid_25_percentile <- input$`25th_mid_income`
+    mid_75_percentile <- input$`75th_mid_income`
+    mid_90_percentile <- input$`90th_mid_income`
 
-    #print(colorBy)
-    typesch <- input$typesch
 
-
-    colorData <- "no"
-    pal <- colorFactor("blue", colorData)
-
-    radius <- 60000
-    # if (colorBy == "all") {
-    #   zip = data
-    # }
-    # else if (colorBy == "salhigh") {
-    #   zip = filter(data, Starting.Median.Salary > 60000)
-    # }
-    #
-    # else if (colorBy == "sallow") {
-    #   zip = filter(data, Starting.Median.Salary < 50000)
-    # }
-
-    zip = filter(data, Starting.Median.Salary > stmed_sal)
-    zip = filter(zip, Mid.Career.Median.Salary > midmed_sal)
-    zip = filter(zip, Mid.Career.90th.Percentile.Salary > ninety_sal)
-    zip = filter(zip, cost > tuition_cost)
-    zip = filter(zip, attendance > num_attending)
-
-    if (typesch != "all_ty" &&  typesch != "all_c" ) {
-      zip = filter(zip, School.Type == typesch)
-
+    # colorData <- "no"
+    # pal <- colorFactor("blue", colorData)
+    zip = college_data
+    
+    if(param == 'adm_rate') {
+      data_adm = select(college_data, college_names, college_admission_rates, college_latitudes, college_longitudes)
+      college_adm_rate = data_adm[complete.cases(data_adm),]
+      zip = filter(college_adm_rate, college_admission_rates <= adm_rate)
+    } 
+    
+    if(param == 'STEM_percentage') {
+      data_STEM = select(college_data, college_names, college_STEM_degrees, college_latitudes, college_longitudes)
+      college_STEM_degs = data_STEM[complete.cases(data_STEM),]
+      zip = filter(college_STEM_degs, college_STEM_degrees > STEM_percentage)
+    } 
+    
+    if(param == 'in_state_cost') {
+      data_in_cost = select(college_data, college_names, college_in_state_cost, college_latitudes, college_longitudes)
+      college_in_cost = data_in_cost[complete.cases(data_in_cost),]
+      zip = filter(college_in_cost, college_in_state_cost <= in_state_cost)
     }
-
-    if (typesch == "all_c") {
-
-      zip_party = filter(zip, School.Type == "Party")
-      zip_state = filter(zip, School.Type == "State")
-      zip_ivy = filter(zip, School.Type == "Ivy League")
-      zip_lib = filter(zip, School.Type == "Liberal Arts")
-      zip_eng = filter(zip, School.Type == "Engineering")
-
-      colorData <- "Party"
-      pal <- colorFactor(c("red", "yellow", "orange", "green", "blue"),
-                         c("Party", "State", "Ivy League", "Liberal Arts",
-                           "Engineering"))
-
-      total_colors = c("Party", "State", "Ivy League", "Liberal Arts",
-                       "Engineering")
-
-
-      leafletProxy("map", data = zip_state) %>%
-        clearShapes() %>%
-        addCircles(zip_party$Long, zip_party$Lat, radius=radius, layerId=NULL,
-                   stroke=FALSE, fillOpacity=0.4, fillColor=pal("Party")) %>%
-        addCircles(zip_state$Long, zip_state$Lat, radius=radius, layerId=NULL,
-                   stroke=FALSE, fillOpacity=0.4, fillColor=pal("State")) %>%
-        addCircles(zip_ivy$Long, zip_ivy$Lat, radius=radius, layerId=NULL,
-                   stroke=FALSE, fillOpacity=0.4, fillColor=pal("Ivy League")) %>%
-        addCircles(zip_lib$Long, zip_lib$Lat, radius=radius, layerId=NULL,
-                   stroke=FALSE, fillOpacity=0.4, fillColor=pal("Liberal Arts")) %>%
-        addCircles(zip_eng$Long, zip_eng$Lat, radius=radius, layerId=NULL,
-                   stroke=FALSE, fillOpacity=0.4, fillColor=pal("Engineering")) %>%
-        addLegend("bottomleft", pal, values=total_colors, title=stmed_sal,
-                  layerId="colorLegend")
-
-
-      # creating_circles(filter(zip, School.Type == "State"),
-      #                  pal, colorData, stmed_sal, radius)
-
-      # colorData <- "no"
-      # pal <- colorFactor("yellow", colorData)
-
-      # creating_circles(filter(zip, School.Type == "Party"),
-      #                  pal, colorData, stmed_sal, radius)
-
-      # colorData <- "no"
-      # pal <- colorFactor("green", colorData)
-      #
-      # creating_circles(filter(zip, School.Type == "Ivy League"),
-      #                  pal, colorData, stmed_sal, radius)
-      #
-      # colorData <- "no"
-      # pal <- colorFactor("grey", colorData)
-      #
-      # creating_circles(filter(zip, School.Type == "Liberal Arts"),
-      #                  pal, colorData, stmed_sal, radius)
-      #
-      # colorData <- "no"
-      # pal <- colorFactor("red", colorData)
-      #
-      # creating_circles(filter(zip, School.Type == "Engineering"),
-      #                  pal, colorData, stmed_sal, radius)
-
-
-    }else {
-
-      leafletProxy("map", data = zip) %>%
-        clearShapes() %>%
-        addCircles(~Long, ~Lat, radius=radius, layerId=NULL,
-                   stroke=FALSE, fillOpacity=0.4, fillColor=pal(colorData)) %>%
-        addLegend("bottomleft", pal=pal, values=colorData, title=stmed_sal,
-                  layerId="colorLegend")
-
+    
+    if(param == 'out_state_cost') {
+      data_out_cost = select(college_data, college_names, college_out_state_cost, college_latitudes, college_longitudes)
+      college_out_cost = data_out_cost[complete.cases(data_out_cost),]
+      zip = filter(college_out_cost, college_out_state_cost <= out_state_cost)
     }
-
-
-
+    
+    if(param == 'faculty_sal') {
+      data_facsal = select(college_data, college_names, faculty_salary, college_latitudes, college_longitudes)
+      college_facsal = data_facsal[complete.cases(data_facsal),]
+      zip = filter(college_facsal, faculty_salary == faculty_sal)
+    }
+    # zip = filter(zip, faculty_salary > faculty_sal)
+    # zip = filter(zip, median_grad_debt > graduation_debt)
+    # zip = filter(zip, grad_income_10th.2 > starting_10_percentile)
+    # zip = filter(zip, grad_income_25th.2 > starting_25_percentile)
+    # zip = filter(zip, grad_income_75th.2 > starting_75_percentile)
+    # zip = filter(zip, grad_income_90th.2 > starting_90_percentile)
+    # zip = filter(zip, grad_income_10th.6 > mid_10_percentile)
+    # zip = filter(zip, grad_income_25th.6 > mid_25_percentile)
+    # zip = filter(zip, grad_income_75th.6 > mid_75_percentile)
+    # zip = filter(zip, grad_income_90th.6 > mid_90_percentile)
+    
+    leafletProxy("map", data = college_data) %>%
+      clearShapes() %>%
+      addCircles(zip$college_longitudes, zip$college_latitudes, radius = 60000,
+                 stroke = FALSE, fillOpacity = 0.4, fillColor = "blue")
   })
 
 
@@ -177,30 +134,26 @@ function(input, output, session) {
     event <- input$map_shape_click
     if (is.null(event))
       return()
-
     isolate({
-      showZipcodePopup( event$lat, event$lng)
+      showZipcodePopup(event$lat, event$lng)
     })
   })
 
   # Show a popup at the given location
-  showZipcodePopup <- function( lat, lng) {
-    selectedZip <- zipdata[zipdata$Lat == lat,]
+  showZipcodePopup <- function(lat, lng) {
+    selectedZip <- college_data[college_data$college_latitudes == lat,]
     print(selectedZip)
-    if (selectedZip$Long != lng) {
+    if (selectedZip$college_longitudes != lng) {
       print("Wrong one")
     }
+    # selectedZip should only be one college at this point
     content <- as.character(tagList(
-      sprintf("%s", selectedZip$School.Name),
+      sprintf("%s", selectedZip$college_names),
       tags$br(),
-      sprintf("School Type: %s", selectedZip$School.Type),
-      tags$br(),
-      sprintf("Mid-Career Median: %s", selectedZip$Mid.Career.Median.Salary),
+      sprintf("Zip Code: %s", selectedZip$college_zipcodes),
       tags$br()
-
     ))
     leafletProxy("map") %>% addPopups(lng, lat, content)
-
   }
 
 
