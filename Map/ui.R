@@ -17,18 +17,12 @@ vars <- c(
   "Mid-Career 90th Percentile Salary" = "grad_income_90th.6"
 )
 
-
 vars_data <- colnames(college_data)
-
 vars_dy <- vars_data[grep("grad", vars_data)]
 
-
-
 navbarPage("Team Curry: Not Just Four Years", id="nav",
-
   tabPanel("Interactive map",
     div(class="outer",
-
       tags$head(
         # Include our custom CSS
         includeCSS("styles.css"),
@@ -80,7 +74,7 @@ navbarPage("Team Curry: Not Just Four Years", id="nav",
                                       min = min(college_data$median_grad_debt, na.rm = TRUE),
                                       max = max(college_data$median_grad_debt, na.rm = TRUE),
                                       value = min(college_data$median_grad_debt, na.rm = TRUE),
-                                      step = 1000)),
+                                      step = 2000)),
          
         conditionalPanel("input.var_to_view == 'grad_income_10th.2'",
                           sliderInput("10th_starting_income", "10th Percentile of Starting Income:",
@@ -155,14 +149,14 @@ navbarPage("Team Curry: Not Just Four Years", id="nav",
       sidebarPanel(
         helpText("Data"),
         selectInput("inputY", "Y- value", vars_dy, selected = "college_out_state_rates"),
-        selectInput("inputX", "X- value", vars_data, selected = "college_admission_rates")
+        selectInput("inputX", "X- value", vars_data, selected = "college_admission_rates"),
+        checkboxInput("regression", "Do you want to see a linear extrapolation?", value = FALSE),
+        submitButton("Submit!")
         ),
       
       mainPanel(
         helpText("Data"),
         plotOutput("plot1")
-        
-        
       )
     )
   ),
