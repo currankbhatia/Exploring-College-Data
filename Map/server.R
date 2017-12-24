@@ -6,9 +6,6 @@ library(dplyr)
 library(ggplot2)
 
 
-
-
-
 # creating_circles = function (data1, pal, colorData, stmed_sal, radius) {
 #   leafletProxy("map", data = data1) %>%
 #     clearShapes() %>%
@@ -18,29 +15,19 @@ library(ggplot2)
 #               layerId="colorLegend")
 # }
 
+## Explore Data ############################
 
-function(input, output, session) {
-  
-  
-  
-  ## Explore Data ############################
-  
-  
-  
-  
-  observe({
-    
-    output$plot1<-renderPlot({
-      select(college_data, matches(input$inputX), matches(input$inputY)) %>% na.omit() %>% ggplot(aes_string(x = input$inputX, y = input$inputY)) + 
-        geom_line() + 
-        geom_smooth(method='lm')
-      
+  function(input, output, session) {
+    observe({
+      output$plot1<-renderPlot({
+        select(college_data, matches(input$inputX), matches(input$inputY)) %>% na.omit() %>% ggplot(aes_string(x = input$inputX, y = input$inputY)) + 
+          geom_line() + 
+          geom_smooth(method='lm')
+      })
     })
-    
-  })
   
 
-  ## Interactive Map ###########################################
+## Interactive Map ##########################
 
   # Create the map
   output$map <- renderLeaflet({
@@ -52,15 +39,11 @@ function(input, output, session) {
       setView(lng = -93.85, lat = 37.45, zoom = 4)
   })
 
-  
-
-
   # This observer is responsible for maintaining the circles and legend,
   # according to the variables the user has chosen to map to color and size.
   observe({
     req(input$var_to_view)
     param <- input$var_to_view
-    
     # reactive slider values for user chosen parameters
     adm_rate <- input$admission_rate
     in_state_cost <- input$instate_tuition
@@ -75,7 +58,6 @@ function(input, output, session) {
     mid_25_percentile <- input$`25th_mid_income`
     mid_75_percentile <- input$`75th_mid_income`
     mid_90_percentile <- input$`90th_mid_income`
-
 
     # colorData <- "no"
     # pal <- colorFactor("blue", colorData)
@@ -105,7 +87,6 @@ function(input, output, session) {
       zip = filter(college_facsal, faculty_salary > faculty_sal)
     }
     
-    
     # zip = filter(zip, median_grad_debt > graduation_debt)
     # zip = filter(zip, grad_income_10th.2 > starting_10_percentile)
     # zip = filter(zip, grad_income_25th.2 > starting_25_percentile)
@@ -121,7 +102,6 @@ function(input, output, session) {
       addCircles(zip$college_longitudes, zip$college_latitudes, radius = 30000,
                  stroke = FALSE, fillOpacity = 0.4, fillColor = "blue")
   })
-
 
   observe({
     leafletProxy("map") %>% clearPopups()
@@ -147,8 +127,6 @@ function(input, output, session) {
     ))
     leafletProxy("map") %>% addPopups(lng, lat, content)
   }
-
-
 }
 
 
