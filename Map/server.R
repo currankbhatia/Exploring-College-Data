@@ -20,11 +20,14 @@ library(ggplot2)
   function(input, output, session) {
     observe({
       output$plot1<-renderPlot({
-        select(college_data, matches(input$inputX), matches(input$inputY)) %>% na.omit() %>% ggplot(aes_string(x = input$inputX, y = input$inputY)) + 
-          geom_line() + 
-          geom_smooth(method='lm')
+        
+          select(college_data, matches(input$inputX), matches(input$inputY)) %>% na.omit() %>% ggplot(aes_string(x = input$inputX, y = input$inputY)) + 
+            geom_line() +
+           if (input$regression == TRUE){
+            geom_smooth(method='lm')
+           }
       })
-    })
+   })
     
   
 ## Interactive Map ##########################
