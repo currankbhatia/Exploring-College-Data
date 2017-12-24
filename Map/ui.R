@@ -62,7 +62,7 @@ navbarPage("Team Curry: Not Just Four Years", id="nav",
                                       min = min(college_data$college_admission_rates, na.rm = TRUE),
                                       max = max(college_data$college_admission_rates, na.rm = TRUE),
                                       value = min(college_data$college_admission_rates, na.rm = TRUE),
-                                      step = 0.01)),
+                                      step = 0.1)),
         
         conditionalPanel("input.var_to_view == 'in_state_cost'",
                           sliderInput("instate_tuition", "In State Tuition:",

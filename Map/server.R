@@ -86,13 +86,13 @@ library(ggplot2)
     if(param == 'facsal') {
       data_facsal = select(college_data, college_names, faculty_salary, college_latitudes, college_longitudes)
       data_facsal = data_facsal[complete.cases(data_facsal),]
-      zip = filter(data_facsal, faculty_salary > facsal)
+      zip = filter(data_facsal, faculty_salary <= facsal)
     }
 
     if(param == 'grad_debt') {
       data_grad_debt = select(college_data, college_names, median_grad_debt, college_latitudes, college_longitudes)
       data_grad_debt = data_grad_debt[complete.cases(data_grad_debt),]
-      zip = filter(data_grad_debt, median_grad_debt > grad_debt)
+      zip = filter(data_grad_debt, median_grad_debt <= grad_debt)
     }
 
     if(param == 'starting_10_percentile') {
@@ -178,9 +178,9 @@ library(ggplot2)
         sprintf("In State Cost: %d", selectedZip$college_in_state_cost)
       else if(input$var_to_view == 'out_state_cost')
         sprintf("Out of State Cost: %d", selectedZip$college_out_state_cost)
-      else if(input$var_to_view == 'faculty_sal')
+      else if(input$var_to_view == 'facsal')
         sprintf("Faculty Salary: %d", selectedZip$faculty_salary)
-      else if(input$var_to_view == 'graduation_debt')
+      else if(input$var_to_view == 'grad_debt')
         sprintf("Grad Debt: %d", selectedZip$median_grad_debt)
       else if(input$var_to_view == 'starting_10_percentile')
         sprintf("Starting 10th percentile salary: %d", selectedZip$grad_income_10th.2)
