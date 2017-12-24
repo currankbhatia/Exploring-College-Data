@@ -44,6 +44,7 @@ library(ggplot2)
   observe({
     req(input$var_to_view)
     param <- input$var_to_view
+    
     # reactive slider values for user chosen parameters
     adm_rate <- input$admission_rate
     in_state_cost <- input$instate_tuition
@@ -61,7 +62,7 @@ library(ggplot2)
 
     # colorData <- "no"
     # pal <- colorFactor("blue", colorData)
-    #zip = college_data
+    zip = college_data
     
     if(param == 'adm_rate') {
       data_adm = select(college_data, college_names, college_admission_rates, college_latitudes, college_longitudes)
@@ -86,10 +87,7 @@ library(ggplot2)
       college_facsal = data_facsal[complete.cases(data_facsal),]
       zip = filter(college_facsal, faculty_salary > faculty_sal)
     }
-    
-<<<<<<< Updated upstream
-    # zip = filter(zip, median_grad_debt > graduation_debt)
-=======
+
     if(param == 'graduation_debt') {
       data_grad_debt = select(college_data, median_grad_debt, college_latitudes, college_longitudes)
       college_debt = data_grad_debt[complete.cases(data_grad_debt),]
@@ -102,8 +100,6 @@ library(ggplot2)
       zip = filter(college_starting_10_percentile, grad_income_10th.2 <= starting_10_percentile)
     }
     
->>>>>>> Stashed changes
-    # zip = filter(zip, grad_income_10th.2 > starting_10_percentile)
     # zip = filter(zip, grad_income_25th.2 > starting_25_percentile)
     # zip = filter(zip, grad_income_75th.2 > starting_75_percentile)
     # zip = filter(zip, grad_income_90th.2 > starting_90_percentile)
