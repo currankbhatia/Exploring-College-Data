@@ -74,7 +74,7 @@ navbarPage("Team Curry: Not Just Four Years", id="nav",
                                       min = min(college_data$median_grad_debt, na.rm = TRUE),
                                       max = max(college_data$median_grad_debt, na.rm = TRUE),
                                       value = min(college_data$median_grad_debt, na.rm = TRUE),
-                                      step = 2000)),
+                                      step = 1000)),
          
         conditionalPanel("input.var_to_view == 'grad_income_10th.2'",
                           sliderInput("10th_starting_income", "10th Percentile of Starting Income:",
