@@ -23,7 +23,9 @@ library(ggplot2)
         
           select(college_data, matches(input$inputX), matches(input$inputY)) %>% na.omit() %>% ggplot(aes_string(x = input$inputX, y = input$inputY)) + 
             geom_point() +
+          if (input$regression == TRUE){
             geom_smooth(method='lm')
+          }
       })
    })
     
