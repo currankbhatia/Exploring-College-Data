@@ -26,9 +26,7 @@ library(ggplot2)
       })
     })
     
-    
   
-
 ## Interactive Map ##########################
 
   # Create the map
