@@ -150,7 +150,7 @@ navbarPage("Team Curry: Not Just Four Years", id="nav",
         helpText("Data"),
         selectInput("inputY", "Y- value", vars_dy, selected = "college_out_state_rates"),
         selectInput("inputX", "X- value", vars_data, selected = "college_admission_rates"),
-        checkboxInput("regression", "Would you want to see a regression extrapolation?", value = FALSE),
+        checkboxInput("regression", "Do you want to see a linear extrapolation?", value = FALSE),
         submitButton("Submit!")
         ),
       
