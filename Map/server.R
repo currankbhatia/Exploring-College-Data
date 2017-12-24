@@ -102,9 +102,10 @@ function(input, output, session) {
     if(param == 'faculty_sal') {
       data_facsal = select(college_data, college_names, faculty_salary, college_latitudes, college_longitudes)
       college_facsal = data_facsal[complete.cases(data_facsal),]
-      zip = filter(college_facsal, faculty_salary == faculty_sal)
+      zip = filter(college_facsal, faculty_salary > faculty_sal)
     }
-    # zip = filter(zip, faculty_salary > faculty_sal)
+    
+    
     # zip = filter(zip, median_grad_debt > graduation_debt)
     # zip = filter(zip, grad_income_10th.2 > starting_10_percentile)
     # zip = filter(zip, grad_income_25th.2 > starting_25_percentile)
@@ -115,9 +116,9 @@ function(input, output, session) {
     # zip = filter(zip, grad_income_75th.6 > mid_75_percentile)
     # zip = filter(zip, grad_income_90th.6 > mid_90_percentile)
     
-    leafletProxy("map", data = college_data) %>%
+    leafletProxy("map", data = zip) %>%
       clearShapes() %>%
-      addCircles(zip$college_longitudes, zip$college_latitudes, radius = 60000,
+      addCircles(zip$college_longitudes, zip$college_latitudes, radius = 30000,
                  stroke = FALSE, fillOpacity = 0.4, fillColor = "blue")
   })
 
@@ -142,8 +143,6 @@ function(input, output, session) {
     # selectedZip should only be one college at this point
     content <- as.character(tagList(
       sprintf("%s", selectedZip$college_names),
-      tags$br(),
-      sprintf("Zip Code: %s", selectedZip$college_zipcodes),
       tags$br()
     ))
     leafletProxy("map") %>% addPopups(lng, lat, content)
