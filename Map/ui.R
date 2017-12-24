@@ -3,7 +3,6 @@ library(leaflet)
 # Choices for drop-downs
 vars <- c(
   "Admission Rates" = "adm_rate",
-  "Percentage of STEM degrees" = "STEM_deg_rate",
   "In-state tuition" = "in_state_cost",
   "Out-of-state tuition" = "out_state_cost",
   "Faculty Salary" = "facsal",
@@ -51,13 +50,6 @@ navbarPage("Team Curry: Not Just Four Years", id="nav",
                                       min = min(college_data$college_admission_rates, na.rm = TRUE),
                                       max = max(college_data$college_admission_rates, na.rm = TRUE),
                                       value = min(college_data$college_admission_rates, na.rm = TRUE),
-                                      step = 0.01)),
-         
-        conditionalPanel("input.var_to_view == 'STEM_deg_rate'",
-                          sliderInput("percent_STEM", "Percentage of STEM degrees awarded:",
-                                      min = min(college_data$college_STEM_degrees, na.rm = TRUE),
-                                      max = max(college_data$college_STEM_degrees, na.rm = TRUE),
-                                      value = min(college_data$college_STEM_degrees, na.rm = TRUE),
                                       step = 0.01)),
         
         conditionalPanel("input.var_to_view == 'in_state_cost'",

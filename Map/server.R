@@ -63,7 +63,6 @@ function(input, output, session) {
     
     # reactive slider values for user chosen parameters
     adm_rate <- input$admission_rate
-    STEM_percentage <- input$percent_STEM
     in_state_cost <- input$instate_tuition
     out_state_cost <- input$outstate_tuition
     faculty_sal <- input$faculty_salary
@@ -86,12 +85,6 @@ function(input, output, session) {
       data_adm = select(college_data, college_names, college_admission_rates, college_latitudes, college_longitudes)
       college_adm_rate = data_adm[complete.cases(data_adm),]
       zip = filter(college_adm_rate, college_admission_rates <= adm_rate)
-    } 
-    
-    if(param == 'STEM_percentage') {
-      data_STEM = select(college_data, college_names, college_STEM_degrees, college_latitudes, college_longitudes)
-      college_STEM_degs = data_STEM[complete.cases(data_STEM),]
-      zip = filter(college_STEM_degs, college_STEM_degrees > STEM_percentage)
     } 
     
     if(param == 'in_state_cost') {
