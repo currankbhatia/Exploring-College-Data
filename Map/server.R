@@ -20,12 +20,9 @@ library(ggplot2)
   function(input, output, session) {
     observe({
       output$plot1<-renderPlot({
-        
           select(college_data, matches(input$inputX), matches(input$inputY)) %>% na.omit() %>% ggplot(aes_string(x = input$inputX, y = input$inputY)) + 
-          if (input$regression == TRUE){
-            geom_point() +
-            geom_smooth(method='lm')
-          }
+             geom_point() +
+             geom_smooth(method='lm')
       })
    })
     
