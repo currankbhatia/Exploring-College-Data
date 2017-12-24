@@ -18,7 +18,7 @@ vars <- c(
 )
 
 
-# vars_data <- colnames(data)
+vars_data <- colnames(college_data)
 
 
 
@@ -152,8 +152,8 @@ navbarPage("Team Curry: Not Just Four Years", id="nav",
     sidebarLayout(
       sidebarPanel(
         helpText("Data"),
-        selectInput("inputY", "Y- value", vars, selected = "adm_rate"),
-        selectInput("inputX", "X- value", vars, selected = "grad_income_10th.2")
+        selectInput("inputY", "Y- value", vars_data, selected = "college_out_state_rates"),
+        selectInput("inputX", "X- value", vars_data, selected = "college_admission_rates")
         ),
       
       mainPanel(

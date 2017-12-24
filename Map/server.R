@@ -31,7 +31,7 @@ function(input, output, session) {
   observe({
     
     output$plot1<-renderPlot({
-      na.omit(data) %>% ggplot(aes_string(x = input$inputX, y = input$inputY)) + 
+      select(college_data, matches(input$inputX), matches(input$inputY)) %>% na.omit() %>% ggplot(aes_string(x = input$inputX, y = input$inputY)) + 
         geom_line() + 
         geom_smooth(method='lm')
       
