@@ -83,7 +83,7 @@ navbarPage("Team Curry: Not Just Four Years", id="nav",
                                       min = min(college_data$faculty_salary, na.rm = TRUE),
                                       max = max(college_data$faculty_salary, na.rm = TRUE),
                                       value = min(college_data$faculty_salary, na.rm = TRUE),
-                                      step = 1000)),
+                                      step = 10000)),
 
         conditionalPanel("input.var_to_view == 'grad_debt'",
                           sliderInput("graduation_debt", "Amount of debt upon graduation:",
