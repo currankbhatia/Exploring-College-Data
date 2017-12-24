@@ -61,7 +61,7 @@ library(ggplot2)
 
     # colorData <- "no"
     # pal <- colorFactor("blue", colorData)
-    zip = college_data
+    #zip = college_data
     
     if(param == 'adm_rate') {
       data_adm = select(college_data, college_names, college_admission_rates, college_latitudes, college_longitudes)
@@ -87,7 +87,22 @@ library(ggplot2)
       zip = filter(college_facsal, faculty_salary > faculty_sal)
     }
     
+<<<<<<< Updated upstream
     # zip = filter(zip, median_grad_debt > graduation_debt)
+=======
+    if(param == 'graduation_debt') {
+      data_grad_debt = select(college_data, median_grad_debt, college_latitudes, college_longitudes)
+      college_debt = data_grad_debt[complete.cases(data_grad_debt),]
+      zip = filter(college_debt, median_grad_debt > graduation_debt)
+    }
+    
+    if(param == 'starting_10_percentile') {
+      data_starting_10_percentile = select(college_data, grad_income_10th.2, college_latitudes, college_longitudes)
+      college_starting_10_percentile = data_starting_10_percentile[complete.cases(data_starting_10_percentile),]
+      zip = filter(college_starting_10_percentile, grad_income_10th.2 <= starting_10_percentile)
+    }
+    
+>>>>>>> Stashed changes
     # zip = filter(zip, grad_income_10th.2 > starting_10_percentile)
     # zip = filter(zip, grad_income_25th.2 > starting_25_percentile)
     # zip = filter(zip, grad_income_75th.2 > starting_75_percentile)
