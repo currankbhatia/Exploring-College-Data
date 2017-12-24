@@ -69,47 +69,83 @@ library(ggplot2)
     
     if(param == 'adm_rate') {
       data_adm = select(college_data, college_names, college_admission_rates, college_latitudes, college_longitudes)
-      college_adm_rate = data_adm[complete.cases(data_adm),]
-      zip = filter(college_adm_rate, college_admission_rates <= adm_rate)
+      data_adm = data_adm[complete.cases(data_adm),]
+      zip = filter(data_adm, college_admission_rates <= adm_rate)
     } 
     
     if(param == 'in_state_cost') {
       data_in_cost = select(college_data, college_names, college_in_state_cost, college_latitudes, college_longitudes)
-      college_in_cost = data_in_cost[complete.cases(data_in_cost),]
-      zip = filter(college_in_cost, college_in_state_cost <= in_state_cost)
+      data_in_cost = data_in_cost[complete.cases(data_in_cost),]
+      zip = filter(data_in_cost, college_in_state_cost <= in_state_cost)
     }
     
     if(param == 'out_state_cost') {
       data_out_cost = select(college_data, college_names, college_out_state_cost, college_latitudes, college_longitudes)
-      college_out_cost = data_out_cost[complete.cases(data_out_cost),]
-      zip = filter(college_out_cost, college_out_state_cost <= out_state_cost)
+      data_out_cost = data_out_cost[complete.cases(data_out_cost),]
+      zip = filter(data_out_cost, college_out_state_cost <= out_state_cost)
     }
     
     if(param == 'faculty_sal') {
       data_facsal = select(college_data, college_names, faculty_salary, college_latitudes, college_longitudes)
-      college_facsal = data_facsal[complete.cases(data_facsal),]
-      zip = filter(college_facsal, faculty_salary > faculty_sal)
+      data_facsal = data_facsal[complete.cases(data_facsal),]
+      zip = filter(data_facsal, faculty_salary > faculty_sal)
     }
 
     if(param == 'graduation_debt') {
-      data_grad_debt = select(college_data, median_grad_debt, college_latitudes, college_longitudes)
-      college_debt = data_grad_debt[complete.cases(data_grad_debt),]
-      zip = filter(college_debt, median_grad_debt > graduation_debt)
+      data_grad_debt = select(college_data, college_names, median_grad_debt, college_latitudes, college_longitudes)
+      data_grad_debt = data_grad_debt[complete.cases(data_grad_debt),]
+      zip = filter(data_grad_debt, median_grad_debt > graduation_debt)
     }
     
     if(param == 'starting_10_percentile') {
-      data_starting_10_percentile = select(college_data, grad_income_10th.2, college_latitudes, college_longitudes)
-      college_starting_10_percentile = data_starting_10_percentile[complete.cases(data_starting_10_percentile),]
-      zip = filter(college_starting_10_percentile, grad_income_10th.2 <= starting_10_percentile)
+      data_starting_10_percentile = select(college_data, college_names, grad_income_10th.2, college_latitudes, college_longitudes)
+      data_starting_10_percentile = data_starting_10_percentile[complete.cases(data_starting_10_percentile),]
+      zip = filter(data_starting_10_percentile, grad_income_10th.2 > starting_10_percentile)
     }
     
-    # zip = filter(zip, grad_income_25th.2 > starting_25_percentile)
-    # zip = filter(zip, grad_income_75th.2 > starting_75_percentile)
-    # zip = filter(zip, grad_income_90th.2 > starting_90_percentile)
-    # zip = filter(zip, grad_income_10th.6 > mid_10_percentile)
-    # zip = filter(zip, grad_income_25th.6 > mid_25_percentile)
-    # zip = filter(zip, grad_income_75th.6 > mid_75_percentile)
-    # zip = filter(zip, grad_income_90th.6 > mid_90_percentile)
+    if(param == 'starting_25_percentile') {
+      data_starting_25_percentile = select(college_data, college_names, grad_income_25th.2, college_latitudes, college_longitudes)
+      data_starting_25_percentile = data_starting_25_percentile[complete.cases(data_starting_25_percentile),]
+      zip = filter(data_starting_25_percentile, grad_income_25th.2 > starting_25_percentile)
+    }
+    
+    if(param == 'starting_75_percentile') {
+      data_starting_75_percentile = select(college_data, college_names, grad_income_75th.2, college_latitudes, college_longitudes)
+      data_starting_75_percentile = data_starting_75_percentile[complete.cases(data_starting_75_percentile),]
+      zip = filter(data_starting_75_percentile, grad_income_75th.2 > starting_75_percentile)
+    }
+    
+    if(param == 'starting_90_percentile') {
+      data_starting_90_percentile = select(college_data, college_names, grad_income_90th.2, college_latitudes, college_longitudes)
+      data_starting_90_percentile = data_starting_90_percentile[complete.cases(data_starting_90_percentile),]
+      zip = filter(data_starting_90_percentile, grad_income_90th.2 > starting_90_percentile)
+    }
+    
+    if(param == 'mid_10_percentile') {
+      data_mid_10_percentile = select(college_data, college_names, grad_income_10th.6, college_latitudes, college_longitudes)
+      data_mid_10_percentile = data_mid_10_percentile[complete.cases(data_mid_10_percentile),]
+      zip = filter(data_mid_10_percentile, grad_income_10th.6 > mid_10_percentile)
+    }
+    
+    if(param == 'mid_25_percentile') {
+      data_mid_25_percentile = select(college_data, college_names, grad_income_25th.6, college_latitudes, college_longitudes)
+      data_mid_25_percentile = data_mid_25_percentile[complete.cases(data_mid_25_percentile),]
+      zip = filter(data_mid_25_percentile, grad_income_25th.6 > mid_25_percentile)
+    }
+    
+    if(param == 'mid_75_percentile') {
+      data_mid_75_percentile = select(college_data, college_names, grad_income_75th.6, college_latitudes, college_longitudes)
+      data_mid_75_percentile = data_mid_75_percentile[complete.cases(data_mid_75_percentile),]
+      zip = filter(data_mid_75_percentile, grad_income_75th.6 > mid_75_percentile)
+    }
+    
+    if(param == 'mid_90_percentile') {
+      data_mid_90_percentile = select(college_data, college_names, grad_income_90th.6, college_latitudes, college_longitudes)
+      data_mid_90_percentile = data_mid_10_percentile[complete.cases(data_mid_90_percentile),]
+      zip = filter(data_mid_90_percentile, grad_income_90th.6 > mid_90_percentile)
+    }
+    
+    
     
     leafletProxy("map", data = zip) %>%
       clearShapes() %>%
