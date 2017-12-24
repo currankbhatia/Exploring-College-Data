@@ -10,7 +10,7 @@ library(dplyr)
 
 
 college_data = read.csv("../data/college_data.csv")
-#data_cc = data[complete.cases(college_data),]
+
 
 
 

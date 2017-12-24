@@ -7,6 +7,25 @@ vars <- c(
   "Out-of-state tuition" = "out_state_cost",
   "Faculty Salary" = "facsal",
   "Debt upon Graduation" = "grad_debt",
+  "Starting 10th Percentile Salary" = "starting_10_percentile",
+  "Starting 25th Percentile Salary" = "starting_25_percentile",
+  "Starting 75th Percentile Salary" = "starting_75_percentile",
+  "Starting 90th Percentile Salary" = "starting_90_percentile",
+  "Mid-Career 10th Percentile Salary" = "mid_10_percentile",
+  "Mid-Career 25th Percentile Salary" = "mid_25_percentile",
+  "Mid-Career 75th Percentile Salary" = "mid_75_percentile",
+  "Mid-Career 90th Percentile Salary" = "mid_90_percentile"
+)
+
+vars_data <- c(
+  "Admission Rates" = "college_admission_rates",
+  "In-state Tuition" = "college_in_state_cost",
+  "Out-of-state Tuition" = "college_out_state_cost",
+  "Faculty Salary" = "faculty_salary",
+  "Debt upon Graduation" = "median_grad_debt"
+)
+# vars_dy <- vars_data[grep("grad", vars_data)]
+vars_dy <- c(
   "Starting 10th Percentile Salary" = "grad_income_10th.2",
   "Starting 25th Percentile Salary" = "grad_income_25th.2",
   "Starting 75th Percentile Salary" = "grad_income_75th.2",
@@ -16,9 +35,6 @@ vars <- c(
   "Mid-Career 75th Percentile Salary" = "grad_income_75th.6",
   "Mid-Career 90th Percentile Salary" = "grad_income_90th.6"
 )
-
-vars_data <- colnames(college_data)
-vars_dy <- vars_data[grep("grad", vars_data)]
 
 navbarPage("Team Curry: Not Just Four Years", id="nav",
   tabPanel("Interactive map",
@@ -41,7 +57,7 @@ navbarPage("Team Curry: Not Just Four Years", id="nav",
 
         selectInput("var_to_view", "Select parameter to view", vars, selected = "adm_rate"),
 
-         conditionalPanel("input.var_to_view == 'adm_rate'",
+        conditionalPanel("input.var_to_view == 'adm_rate'",
                           sliderInput("admission_rate", "Admission Rates:",
                                       min = min(college_data$college_admission_rates, na.rm = TRUE),
                                       max = max(college_data$college_admission_rates, na.rm = TRUE),
@@ -54,78 +70,78 @@ navbarPage("Team Curry: Not Just Four Years", id="nav",
                                       max = max(college_data$college_in_state_cost, na.rm = TRUE),
                                       value = min(college_data$college_in_state_cost, na.rm = TRUE),
                                       step = 1000)),
-         
+
         conditionalPanel("input.var_to_view == 'out_state_cost'",
                           sliderInput("outstate_tuition", "Out of State Tuition:",
                                       min = min(college_data$college_out_state_cost, na.rm = TRUE),
                                       max = max(college_data$college_out_state_cost, na.rm = TRUE),
                                       value = min(college_data$college_out_state_cost, na.rm = TRUE),
                                       step = 1000)),
-        
+
         conditionalPanel("input.var_to_view == 'facsal'",
                           sliderInput("faculty_salary", "Faculty Salary:",
                                       min = min(college_data$faculty_salary, na.rm = TRUE),
                                       max = max(college_data$faculty_salary, na.rm = TRUE),
                                       value = min(college_data$faculty_salary, na.rm = TRUE),
                                       step = 1000)),
-        
+
         conditionalPanel("input.var_to_view == 'grad_debt'",
                           sliderInput("graduation_debt", "Amount of debt upon graduation:",
                                       min = min(college_data$median_grad_debt, na.rm = TRUE),
                                       max = max(college_data$median_grad_debt, na.rm = TRUE),
                                       value = min(college_data$median_grad_debt, na.rm = TRUE),
                                       step = 2000)),
-         
-        conditionalPanel("input.var_to_view == 'grad_income_10th.2'",
+
+        conditionalPanel("input.var_to_view == 'starting_10_percentile'",
                           sliderInput("10th_starting_income", "10th Percentile of Starting Income:",
                                       min = min(college_data$grad_income_10th.2, na.rm = TRUE),
                                       max = max(college_data$grad_income_10th.2, na.rm = TRUE),
                                       value = min(college_data$grad_income_10th.2, na.rm = TRUE),
                                       step = 1000)),
-         
-        conditionalPanel("input.var_to_view == 'grad_income_25th.2'",
+
+        conditionalPanel("input.var_to_view == 'starting_25_percentile'",
                           sliderInput("25th_starting_income", "25th percentile of starting income:",
                                       min = min(college_data$grad_income_25th.2, na.rm = TRUE),
                                       max = max(college_data$grad_income_25th.2, na.rm = TRUE),
                                       value = min(college_data$grad_income_25th.2, na.rm = TRUE),
                                       step = 1000)),
-        
-        conditionalPanel("input.var_to_view == 'grad_income_75th.2'",
+
+        conditionalPanel("input.var_to_view == 'starting_75_percentile'",
                          sliderInput("75th_starting_income", "75th percentile of starting income:",
                                      min = min(college_data$grad_income_75th.2, na.rm = TRUE),
                                      max = max(college_data$grad_income_75th.2, na.rm = TRUE),
                                      value = min(college_data$grad_income_75th.2, na.rm = TRUE),
                                      step = 1000)),
 
-        conditionalPanel("input.var_to_view == 'grad_income_90th.2'",
+        conditionalPanel("input.var_to_view == 'starting_90_percentile'",
                          sliderInput("90th_starting_income", "90th percentile of starting income:",
                                      min = min(college_data$grad_income_90th.2, na.rm = TRUE),
                                      max = max(college_data$grad_income_90th.2, na.rm = TRUE),
                                      value = min(college_data$grad_income_90th.2, na.rm = TRUE),
                                      step = 1000)),
 
-        conditionalPanel("input.var_to_view == 'grad_income_10th.6'",
+        conditionalPanel("input.var_to_view == 'mid_10_percentile'",
                          sliderInput("10th_mid_income", "10th Percentile of Mid-Career Income:",
                                      min = min(college_data$grad_income_10th.6, na.rm = TRUE),
                                      max = max(college_data$grad_income_10th.6, na.rm = TRUE),
                                      value = min(college_data$grad_income_10th.6, na.rm = TRUE),
                                      step = 1000)),
 
-        conditionalPanel("input.var_to_view == 'grad_income_25th.6'",
+        conditionalPanel("input.var_to_view == 'mid_25_percentile'",
                          sliderInput("25th_mid_income", "25th percentile of Mid-Career income:",
                                      min = min(college_data$grad_income_25th.6, na.rm = TRUE),
                                      max = max(college_data$grad_income_25th.6, na.rm = TRUE),
                                      value = min(college_data$grad_income_25th.6, na.rm = TRUE),
                                      step = 1000)),
 
-        conditionalPanel("input.var_to_view == 'grad_income_75th.6'",
+        conditionalPanel("input.var_to_view == 'mid_75_percentile'",
                          sliderInput("75th_mid_income", "75th percentile of Mid-Career income:",
                                      min = min(college_data$grad_income_75th.6, na.rm = TRUE),
                                      max = max(college_data$grad_income_75th.6, na.rm = TRUE),
                                      value = min(college_data$grad_income_75th.6, na.rm = TRUE),
                                      step = 1000)),
 
-        conditionalPanel("input.var_to_view == 'grad_income_90th.6'",
+        conditionalPanel("input.var_to_view == 'mid_90_percentile'",
                          sliderInput("90th_mid_income", "90th percentile of Mid-Career income:",
                                      min = min(college_data$grad_income_90th.6, na.rm = TRUE),
                                      max = max(college_data$grad_income_90th.6, na.rm = TRUE),
@@ -148,10 +164,8 @@ navbarPage("Team Curry: Not Just Four Years", id="nav",
     sidebarLayout(
       sidebarPanel(
         helpText("Data"),
-        selectInput("inputY", "Y- value", vars_dy, selected = "college_out_state_rates"),
-        selectInput("inputX", "X- value", vars_data, selected = "college_admission_rates"),
-        checkboxInput("regression", "Do you want to see a linear extrapolation?", value = FALSE),
-        submitButton("Submit!")
+        selectInput("inputY", "Y- value", vars_dy, selected = "grad_income_10th.2"),
+        selectInput("inputX", "X- value", vars_data, selected = "college_admission_rates")
         ),
       
       mainPanel(

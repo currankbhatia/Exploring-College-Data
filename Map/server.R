@@ -22,10 +22,8 @@ library(ggplot2)
       output$plot1<-renderPlot({
         
           select(college_data, matches(input$inputX), matches(input$inputY)) %>% na.omit() %>% ggplot(aes_string(x = input$inputX, y = input$inputY)) + 
-            geom_line() +
-           if (input$regression == TRUE){
+            geom_point() +
             geom_smooth(method='lm')
-           }
       })
    })
     
@@ -52,8 +50,8 @@ library(ggplot2)
     adm_rate <- input$admission_rate
     in_state_cost <- input$instate_tuition
     out_state_cost <- input$outstate_tuition
-    faculty_sal <- input$faculty_salary
-    graduation_debt <- input$graduation_debt
+    facsal <- input$faculty_salary
+    grad_debt <- input$graduation_debt
     starting_10_percentile <- input$`10th_starting_income`
     starting_25_percentile <- input$`25th_starting_income`
     starting_75_percentile <- input$`75th_starting_income`
@@ -78,70 +76,70 @@ library(ggplot2)
       data_in_cost = data_in_cost[complete.cases(data_in_cost),]
       zip = filter(data_in_cost, college_in_state_cost <= in_state_cost)
     }
-    
+
     if(param == 'out_state_cost') {
       data_out_cost = select(college_data, college_names, college_out_state_cost, college_latitudes, college_longitudes)
       data_out_cost = data_out_cost[complete.cases(data_out_cost),]
       zip = filter(data_out_cost, college_out_state_cost <= out_state_cost)
     }
-    
-    if(param == 'faculty_sal') {
+
+    if(param == 'facsal') {
       data_facsal = select(college_data, college_names, faculty_salary, college_latitudes, college_longitudes)
       data_facsal = data_facsal[complete.cases(data_facsal),]
-      zip = filter(data_facsal, faculty_salary > faculty_sal)
+      zip = filter(data_facsal, faculty_salary > facsal)
     }
 
-    if(param == 'graduation_debt') {
+    if(param == 'grad_debt') {
       data_grad_debt = select(college_data, college_names, median_grad_debt, college_latitudes, college_longitudes)
       data_grad_debt = data_grad_debt[complete.cases(data_grad_debt),]
-      zip = filter(data_grad_debt, median_grad_debt > graduation_debt)
+      zip = filter(data_grad_debt, median_grad_debt > grad_debt)
     }
-    
+
     if(param == 'starting_10_percentile') {
       data_starting_10_percentile = select(college_data, college_names, grad_income_10th.2, college_latitudes, college_longitudes)
       data_starting_10_percentile = data_starting_10_percentile[complete.cases(data_starting_10_percentile),]
       zip = filter(data_starting_10_percentile, grad_income_10th.2 > starting_10_percentile)
     }
-    
+
     if(param == 'starting_25_percentile') {
       data_starting_25_percentile = select(college_data, college_names, grad_income_25th.2, college_latitudes, college_longitudes)
       data_starting_25_percentile = data_starting_25_percentile[complete.cases(data_starting_25_percentile),]
       zip = filter(data_starting_25_percentile, grad_income_25th.2 > starting_25_percentile)
     }
-    
+
     if(param == 'starting_75_percentile') {
       data_starting_75_percentile = select(college_data, college_names, grad_income_75th.2, college_latitudes, college_longitudes)
       data_starting_75_percentile = data_starting_75_percentile[complete.cases(data_starting_75_percentile),]
       zip = filter(data_starting_75_percentile, grad_income_75th.2 > starting_75_percentile)
     }
-    
+
     if(param == 'starting_90_percentile') {
       data_starting_90_percentile = select(college_data, college_names, grad_income_90th.2, college_latitudes, college_longitudes)
       data_starting_90_percentile = data_starting_90_percentile[complete.cases(data_starting_90_percentile),]
       zip = filter(data_starting_90_percentile, grad_income_90th.2 > starting_90_percentile)
     }
-    
+
     if(param == 'mid_10_percentile') {
       data_mid_10_percentile = select(college_data, college_names, grad_income_10th.6, college_latitudes, college_longitudes)
       data_mid_10_percentile = data_mid_10_percentile[complete.cases(data_mid_10_percentile),]
       zip = filter(data_mid_10_percentile, grad_income_10th.6 > mid_10_percentile)
     }
-    
+
     if(param == 'mid_25_percentile') {
       data_mid_25_percentile = select(college_data, college_names, grad_income_25th.6, college_latitudes, college_longitudes)
       data_mid_25_percentile = data_mid_25_percentile[complete.cases(data_mid_25_percentile),]
       zip = filter(data_mid_25_percentile, grad_income_25th.6 > mid_25_percentile)
     }
-    
+
     if(param == 'mid_75_percentile') {
       data_mid_75_percentile = select(college_data, college_names, grad_income_75th.6, college_latitudes, college_longitudes)
       data_mid_75_percentile = data_mid_75_percentile[complete.cases(data_mid_75_percentile),]
       zip = filter(data_mid_75_percentile, grad_income_75th.6 > mid_75_percentile)
     }
-    
+
     if(param == 'mid_90_percentile') {
       data_mid_90_percentile = select(college_data, college_names, grad_income_90th.6, college_latitudes, college_longitudes)
-      data_mid_90_percentile = data_mid_10_percentile[complete.cases(data_mid_90_percentile),]
+      data_mid_90_percentile = data_mid_90_percentile[complete.cases(data_mid_90_percentile),]
       zip = filter(data_mid_90_percentile, grad_income_90th.6 > mid_90_percentile)
     }
     
@@ -173,7 +171,34 @@ library(ggplot2)
     # selectedZip should only be one college at this point
     content <- as.character(tagList(
       sprintf("%s", selectedZip$college_names),
-      tags$br()
+      tags$br(),
+      if(input$var_to_view == 'adm_rate') 
+        sprintf("Admission Rate: %f", selectedZip$college_admission_rates)
+      else if(input$var_to_view == 'in_state_cost') 
+        sprintf("In State Cost: %d", selectedZip$college_in_state_cost)
+      else if(input$var_to_view == 'out_state_cost')
+        sprintf("Out of State Cost: %d", selectedZip$college_out_state_cost)
+      else if(input$var_to_view == 'faculty_sal')
+        sprintf("Faculty Salary: %d", selectedZip$faculty_salary)
+      else if(input$var_to_view == 'graduation_debt')
+        sprintf("Grad Debt: %d", selectedZip$median_grad_debt)
+      else if(input$var_to_view == 'starting_10_percentile')
+        sprintf("Starting 10th percentile salary: %d", selectedZip$grad_income_10th.2)
+      else if(input$var_to_view == 'starting_25_percentile')
+        sprintf("Starting 25th percentile salary: %d", selectedZip$grad_income_25th.2)
+      else if(input$var_to_view == 'starting_75_percentile')
+        sprintf("Starting 75th percentile salary: %d", selectedZip$grad_income_75th.2)
+      else if(input$var_to_view == 'starting_90_percentile')
+        sprintf("Starting 90th percentile salary: %d", selectedZip$grad_income_90th.2)
+      else if(input$var_to_view == 'mid_10_percentile')
+        sprintf("Mid-Career 10th percentile salary: %d", selectedZip$grad_income_10th.6)
+      else if(input$var_to_view == 'mid_25_percentile')
+        sprintf("Mid-Career 25th percentile salary: %d", selectedZip$grad_income_25th.6)
+      else if(input$var_to_view == 'mid_75_percentile')
+        sprintf("Mid-Career 75th percentile salary: %d", selectedZip$grad_income_75th.6)
+      else if(input$var_to_view == 'mid_90_percentile')
+        sprintf("Mid-Career 90th percentile salary: %d", selectedZip$grad_income_90th.6)
+      
     ))
     leafletProxy("map") %>% addPopups(lng, lat, content)
   }
