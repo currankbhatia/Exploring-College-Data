@@ -170,7 +170,7 @@ navbarPage("Team Curry: Not Just Four Years", id="nav",
       
       mainPanel(
         helpText("Data"),
-        plotOutput("plot1")
+        plotlyOutput("plot1")
       )
     )
   ),

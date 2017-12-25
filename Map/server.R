@@ -4,25 +4,18 @@ library(RColorBrewer)
 library(lattice)
 library(dplyr)
 library(ggplot2)
+library(plotly)
 
-
-# creating_circles = function (data1, pal, colorData, stmed_sal, radius) {
-#   leafletProxy("map", data = data1) %>%
-#     clearShapes() %>%
-#     addCircles(~Long, ~Lat, radius=radius, layerId=NULL,
-#                stroke=FALSE, fillOpacity=0.4, fillColor=pal(colorData)) %>%
-#     addLegend("bottomleft", pal=pal, values=colorData, title=stmed_sal,
-#               layerId="colorLegend")
-# }
 
 ## Explore Data ############################
 
   function(input, output, session) {
     observe({
-      output$plot1<-renderPlot({
-          select(college_data, matches(input$inputX), matches(input$inputY)) %>% na.omit() %>% ggplot(aes_string(x = input$inputX, y = input$inputY)) + 
+      output$plot1 <- renderPlotly({
+          college_plot = select(college_data, matches(input$inputX), matches(input$inputY)) %>% na.omit() %>% ggplot(aes_string(x = input$inputX, y = input$inputY)) + 
              geom_point() +
-             geom_smooth(method='lm')
+             geom_smooth(method='lm') 
+          ggplotly(college_plot)
       })
    })
     
